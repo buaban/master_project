@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ArrayListMultimap;
@@ -52,14 +53,53 @@ public class JSCoverage {
             e.printStackTrace();
             // Return a special error code used specifically by the web front-end.
             System.exit(1);        
-        }
-		
-		
-		
-		
-		
+        }		
 		
 	}
+	
+	
+	public JSCoverage(String input, boolean devMode){
+		Boolean isDirectory = false;
+		String outputLocation;
+		isDirectory = IsPathDirectory(input);
+		functionList = new ArrayList<ArrayList<String>>();
+		outputLocation = UUID.randomUUID().toString()+".js";
+		
+		
+		/*   Instrument files       */
+		try {
+			if (isDirectory){			
+				outputLocation = input;
+	            DirectoryInstrumenter.instrument(input, outputLocation);
+	        } else {  	
+	        	Path inputPath = Paths.get(input);
+	        	// 1 Create original folder to store original source code
+	        	Path oriFolder = Paths.get(inputPath.getParent().toString()+"\\original");
+	        	if(!Files.exists(oriFolder)){
+	        		Files.createDirectory(oriFolder);
+	        	}	
+	        	outputLocation = Paths.get(inputPath.getParent().toString()).toString()+"\\"+outputLocation;
+	        	// 2 instrument file and move original src to original folder
+	        	instrumentFile(input, outputLocation);
+	        	
+	        	// 3 Add number of code lines of each function to _yuitest_coverfunc in instrumented code 
+	        	addNumberOfLines(outputLocation);
+	        	
+	        	// 4 Create Functions List
+	        	createFunctionList(outputLocation);
+	        	
+	        }
+		} catch (Exception e) {
+            e.printStackTrace();
+            // Return a special error code used specifically by the web front-end.
+            System.exit(1);        
+        }		
+		
+	}
+	
+	
+	
+	
 	
 	public ArrayList<ArrayList<String>> getFunctionList(){
 		return this.functionList;
@@ -178,4 +218,30 @@ public class JSCoverage {
     		
     	}
 	}
+	
+	private void instrumentFile(String input, String outputLocation){
+		
+    	try {
+    		// 1 Create temp file
+    		Path inputPath = Paths.get(input);
+        	Path tempPath = Paths.get(input+".tmp");
+	    	Files.copy(inputPath, tempPath);
+	    	
+	    	// 2 Copy file to original folder
+	    	Path oriFolder = Paths.get(inputPath.getParent().toString()+"\\original");
+	    	Path oriFile = Paths.get(oriFolder.toString() + "\\" + Paths.get(input).getFileName());
+	    	if(!Files.exists(oriFile)){
+	    		Files.copy(Paths.get(input), oriFile);
+	    	}
+	    	
+	    	// 3 Send temp file to instrumenter and replace result to the input	        	
+	        FileInstrumenter.instrument(tempPath.toString(), outputLocation);
+	        
+	        // 4 Delete the temp file
+	        Files.deleteIfExists(tempPath);
+    	} catch(Exception e){
+    		
+    	}
+	}
+
 }

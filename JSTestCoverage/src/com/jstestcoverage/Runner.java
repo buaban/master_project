@@ -7,7 +7,8 @@ public class Runner {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		JSCoverage jsc = new JSCoverage("D:\\Boxes\\Dropbox\\workspace\\JSTestCoverage\\input\\input_b.js");
+		boolean devMode = true;
+		JSCoverage jsc = new JSCoverage("D:\\Boxes\\Dropbox\\workspace\\JSTestCoverage\\input\\input_b.js", devMode);
 	}
 
 }

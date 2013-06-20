@@ -1,14 +1,2 @@
 ${build.dir}/
-ANTLR Tutorial 3.x - 1/
-antlr6-tutorial/
-Example_js/
-Instrumentor/
-JSTestCoverageClient/
-RemoteSystemsTempFiles/
-Rhino/
-RhinoProject/
-Test/
-TestRhino/
-TestRhinoAST/
-XXXXXX/
-YUITest/
+${tmp.dir}/

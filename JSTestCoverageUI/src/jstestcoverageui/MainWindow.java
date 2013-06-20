@@ -2,14 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package examples;
+package jstestcoverageui;
 
+import checkboxlist.*;
 import com.jstestcoverage.JSCoverage;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.JCheckBox;
+import javax.swing.ListModel;
+import org.jdesktop.layout.GroupLayout;
 
 /**
  *
@@ -20,8 +24,20 @@ public class MainWindow extends javax.swing.JFrame {
     /**
      * Creates new form MainWindow
      */
+    
+    private static boolean DEVMODE = true;
+    private CheckBoxList checkboxList;
+    private ArrayList<ArrayList<String>> selectedFuncList;
+    private ArrayList<ArrayList<String>> allFuncList;
+    private ArrayList<ArrayList<String>> funcList;
+    
     public MainWindow() {
         initComponents();
+        checkboxList = new CheckBoxList();        
+        jScrollPane2.setViewportView(checkboxList);
+        selectedFuncList = new ArrayList<ArrayList<String>>();
+        allFuncList = new ArrayList<ArrayList<String>>();
+        funcList = new ArrayList<ArrayList<String>>();
     }
 
     /**
@@ -35,13 +51,15 @@ public class MainWindow extends javax.swing.JFrame {
 
         fileChooser = new javax.swing.JFileChooser();
         funcListPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        runButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         openFile = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+
+        fileChooser.setSelectedFile(new java.io.File("D:\\Boxes\\Dropbox\\workspace\\JSTestCoverage\\input\\input_b.js"));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,28 +67,24 @@ public class MainWindow extends javax.swing.JFrame {
         funcListPanel.setLayout(funcListPanelLayout);
         funcListPanelLayout.setHorizontalGroup(
             funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 291, Short.MAX_VALUE)
+            .addGroup(funcListPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         funcListPanelLayout.setVerticalGroup(
             funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane2)
         );
 
-        jButton1.setText("Run Test");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        runButton.setText("Run Test");
+        runButton.setEnabled(false);
+        runButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                runButtonActionPerformed(evt);
             }
         });
 
         jButton2.setText("Exit");
-
-        jButton3.setText("Analyse");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         jMenu1.setText("File");
 
@@ -96,12 +110,11 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(funcListPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(runButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,10 +122,8 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                        .addComponent(runButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
                         .addComponent(jButton2))
                     .addComponent(funcListPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -130,16 +141,38 @@ public class MainWindow extends javax.swing.JFrame {
               // What to do with the file, e.g. display it in a TextArea
                 //textarea.read( new FileReader( file.getAbsolutePath() ), null );
                 if(file.getAbsolutePath() != null){
-                    JSCoverage jscov = new JSCoverage(file.getAbsolutePath());
-                    ArrayList<ArrayList<String>> funcList = jscov.getFunctionList();
-                    if(funcList!=null && funcList.size()>0){
-                        for(ArrayList func : funcList){
-                            JCheckBox cb =new JCheckBox("Function: " + func.get(0) + " Parameter:" + func.get(2));
-                            funcListPanel.add(cb);
-                        }
-                    }
-                    //redraw Panel
+                    JSCoverage jscov = new JSCoverage(file.getAbsolutePath(), DEVMODE);
+                    allFuncList = jscov.getFunctionList();
+                    javax.swing.GroupLayout funcListPanelLayout = new javax.swing.GroupLayout(funcListPanel);
                     
+                    
+                    //funcListPanelLayout.setHorizontalGroup(cbGroup);
+        
+                    if(allFuncList!=null && allFuncList.size()>0){
+                        funcList.clear();
+                        for(ArrayList func : allFuncList){
+                            String funcName = (String)func.get(0);
+                            funcName = funcName.replaceAll("\"", "");
+                            String param = (String)func.get(2);
+                            param = param.replaceAll("\"", "");
+                            JCheckBox cb =new JCheckBox("Function: " + funcName + " Parameter:" + param);
+                            if(param.contains("null") || param.isEmpty()){
+                                cb.setEnabled(false);
+                                //cb.setDisabledSelectedIcon(null);
+                            } else {
+                                this.checkboxList.addCheckbox(cb);
+                                this.funcList.add(func);
+                            }
+                            
+                            
+                            //funcListPanel.add(cb);
+                            //redraw Panel
+                            //funcListPanel.revalidate();
+                            //funcListPanel.repaint();
+                        }
+                        runButton.setEnabled(true);
+                    }
+                                                            
                     
                 }
                 
@@ -151,13 +184,23 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_openFileActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        ListModel currentList = checkboxList.getModel();    
+        selectedFuncList.clear();
+        for (int i = 0; i < currentList.getSize(); i++) {
+            JCheckBox cb = (JCheckBox) currentList.getElementAt(i);
+            if(cb.isSelected()){
+                selectedFuncList.add(funcList.get(i));
+            }
+        }
+        
+        for (ArrayList func : selectedFuncList) {
+            System.out.println(func.get(0) + " " + func.get(1) + " " + func.get(2));
+            
+        }
+        
+    }//GEN-LAST:event_runButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,12 +239,12 @@ public class MainWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser fileChooser;
     private javax.swing.JPanel funcListPanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JMenuItem openFile;
+    private javax.swing.JButton runButton;
     // End of variables declaration//GEN-END:variables
 }
