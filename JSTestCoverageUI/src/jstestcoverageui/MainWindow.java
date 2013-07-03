@@ -10,8 +10,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.JCheckBox;
+import javax.swing.JFileChooser;
 import javax.swing.ListModel;
 import org.jdesktop.layout.GroupLayout;
 
@@ -24,20 +26,24 @@ public class MainWindow extends javax.swing.JFrame {
     /**
      * Creates new form MainWindow
      */
-    
+
     private static boolean DEVMODE = true;
     private CheckBoxList checkboxList;
     private ArrayList<ArrayList<String>> selectedFuncList;
     private ArrayList<ArrayList<String>> allFuncList;
     private ArrayList<ArrayList<String>> funcList;
-    
+    private String fileName;
+    private HashMap allFileList;
+
     public MainWindow() {
         initComponents();
-        checkboxList = new CheckBoxList();        
+        checkboxList = new CheckBoxList();
         jScrollPane2.setViewportView(checkboxList);
-        selectedFuncList = new ArrayList<ArrayList<String>>();
-        allFuncList = new ArrayList<ArrayList<String>>();
-        funcList = new ArrayList<ArrayList<String>>();
+        selectedFuncList = new ArrayList<>();
+        allFuncList = new ArrayList<>();
+        funcList = new ArrayList<>();
+        allFileList = new HashMap();
+        
     }
 
     /**
@@ -135,73 +141,100 @@ public class MainWindow extends javax.swing.JFrame {
     private void openFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFileActionPerformed
         // TODO add your handling code here:
         int returnVal = fileChooser.showOpenDialog(this);
-        if (returnVal == fileChooser.APPROVE_OPTION) {
-            File file = fileChooser.getSelectedFile();
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file;
+            file = fileChooser.getSelectedFile();
             try {
               // What to do with the file, e.g. display it in a TextArea
                 //textarea.read( new FileReader( file.getAbsolutePath() ), null );
                 if(file.getAbsolutePath() != null){
-                    JSCoverage jscov = new JSCoverage(file.getAbsolutePath(), DEVMODE);
-                    allFuncList = jscov.getFunctionList();
-                    javax.swing.GroupLayout funcListPanelLayout = new javax.swing.GroupLayout(funcListPanel);
+                    if(file.isDirectory()){
                     
-                    
-                    //funcListPanelLayout.setHorizontalGroup(cbGroup);
-        
-                    if(allFuncList!=null && allFuncList.size()>0){
-                        funcList.clear();
-                        for(ArrayList func : allFuncList){
-                            String funcName = (String)func.get(0);
-                            funcName = funcName.replaceAll("\"", "");
-                            String param = (String)func.get(2);
-                            param = param.replaceAll("\"", "");
-                            JCheckBox cb =new JCheckBox("Function: " + funcName + " Parameter:" + param);
-                            if(param.contains("null") || param.isEmpty()){
-                                cb.setEnabled(false);
-                                //cb.setDisabledSelectedIcon(null);
-                            } else {
-                                this.checkboxList.addCheckbox(cb);
-                                this.funcList.add(func);
-                            }
-                            
-                            
-                            //funcListPanel.add(cb);
-                            //redraw Panel
-                            //funcListPanel.revalidate();
-                            //funcListPanel.repaint();
-                        }
-                        runButton.setEnabled(true);
+                    } else {
+                        this.fileName = file.getName();                        
+                        this.allFuncList = getFunctionList(file.getAbsolutePath());
+                        this.allFileList.put(fileName, allFuncList);
+                        
+                        renderCheckBoxList(allFileList);
+                        
+                        
+                        
                     }
-                                                            
-                    
                 }
-                
+
             } catch(Exception ex) {
                 ex.toString();
             }
         } else {
-        
+
         }
     }//GEN-LAST:event_openFileActionPerformed
 
-    private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
-        // TODO add your handling code here:
-        ListModel currentList = checkboxList.getModel();    
-        selectedFuncList.clear();
-        for (int i = 0; i < currentList.getSize(); i++) {
-            JCheckBox cb = (JCheckBox) currentList.getElementAt(i);
-            if(cb.isSelected()){
-                selectedFuncList.add(funcList.get(i));
+    private ArrayList getFunctionList(String file){
+        
+        try {
+            JSCoverage jscov = new JSCoverage(file, DEVMODE);
+            return jscov.getFunctionList();
+        } catch(Exception e){
+            e.toString();
+            return null;
+        }
+        
+    }
+    
+    private void renderCheckBoxList(HashMap list){
+        javax.swing.GroupLayout funcListPanelLayout = new javax.swing.GroupLayout(funcListPanel);
+        for(int i=0;i<list.size();i++){
+            String fileName;
+            if(allFuncList!=null && allFuncList.size()>0){
+                funcList.clear();
+                for(ArrayList func : allFuncList){
+                    if(func.size()>0){
+                        String funcName = (String)func.get(0);
+                        funcName = funcName.replaceAll("\"", "");
+                        String param = (String)func.get(2);
+                        param = param.replaceAll("\"", "");
+                        JCheckBox cb =new JCheckBox("Function: " + funcName + " Parameter:" + param);
+                        if(param.contains("null") || param.isEmpty()){
+                            cb.setEnabled(false);
+                            //cb.setDisabledSelectedIcon(null);
+                        } else {
+                            this.checkboxList.addCheckbox(cb);
+                            this.funcList.add(func);
+                        }
+                    }
+                }
+                runButton.setEnabled(true);
             }
         }
         
-        for (ArrayList func : selectedFuncList) {
-            System.out.println(func.get(0) + " " + func.get(1) + " " + func.get(2));
+    }
+    
+    
+    private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
+        // TODO add your handling code here:
+        ListModel currentList = checkboxList.getModel();
+        this.selectedFuncList.clear();
+        for (int i = 0; i < currentList.getSize(); i++) {
+            JCheckBox cb = (JCheckBox) currentList.getElementAt(i);
+            if(cb.isSelected()){
+                this.selectedFuncList.add(funcList.get(i));
+            }
+        }
+
+        for (ArrayList func : this.selectedFuncList) {
+            String[] line = func.get(1).toString().replaceAll("\"","").split(":");
+            String[] param = func.get(2).toString().replaceAll("\"","").split("\\|");
+            DOHTestCase tc = new DOHTestCase(this.fileName, func.get(0).toString(), Integer.parseInt(line[0]), Integer.parseInt(line[1]), param);
             
         }
-        
+
     }//GEN-LAST:event_runButtonActionPerformed
 
+    private void runTest(ArrayList<String> selectedFuncList){
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -209,7 +242,7 @@ public class MainWindow extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -231,6 +264,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MainWindow().setVisible(true);
             }

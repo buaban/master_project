@@ -14,3 +14,8 @@ XXXXXX/
 YUITest/
 /JSTestCoverageUI/nbproject/private/
 /JSTestCoverageUI/build/
+/JSTestCoverageUI/dist/
+/website/dojo
+/website/dijit
+/website/dojox
+/website/util
