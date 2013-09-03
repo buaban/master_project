@@ -65,7 +65,7 @@ public class MainWindow extends javax.swing.JFrame {
         openFile = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        fileChooser.setSelectedFile(new java.io.File("D:\\Boxes\\Dropbox\\workspace\\JSTestCoverage\\input\\input_b.js"));
+        fileChooser.setSelectedFile(new java.io.File("D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\input"));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 

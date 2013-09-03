@@ -116,13 +116,20 @@ public class JSCoverage {
     		for(int i = 0; i<lineNum; i++) {
     			String line = lines.get(i);
     			String lastCoverLine = "";
+    			String firstCoverLine = "";
     			if(line.contains("_yuitest_coverfunc(")){
     				int j = i+1;
-    				
+    				firstCoverLine = "";
     				for(;j<lineNum;j++){
     					String subLine = lines.get(j);
+    					
     					if(subLine.contains("_yuitest_coverline(")){
     						String txt = subLine.substring(subLine.indexOf("("), subLine.lastIndexOf(")"));
+    						
+    						if(firstCoverLine==""){
+    							firstCoverLine = txt.split(",")[1].trim();
+    						}
+    						
     						lastCoverLine = txt.split(",")[1].trim();
     					} else if(subLine.contains("_yuitest_coverfunc(")){
     						break;
@@ -130,9 +137,9 @@ public class JSCoverage {
     				}
     				
     				String[] tmpLine = line.split(",");
-    				String funcLength = tmpLine[2].trim();
-    				funcLength = funcLength + ":" + lastCoverLine;
-    				tmpLine[2] = "\"" + funcLength +"\"";
+    				String funcLength = tmpLine[3].trim();
+    				funcLength = firstCoverLine + ":" + lastCoverLine;
+    				tmpLine[3] = "\"" + funcLength +"\"";
     				
     				Joiner jo = Joiner.on(",");
     				String newLine = jo.join(tmpLine);
@@ -171,6 +178,7 @@ public class JSCoverage {
     				func.add(tmp[1].trim());
     				func.add(tmp[2].trim());
     				func.add(tmp[3].trim());
+    				func.add(tmp[4].trim());
     				funcList.add(func);
     			}
     		}
@@ -220,11 +228,11 @@ public class JSCoverage {
 	}
 	
 	private void instrumentFile(String input, String outputLocation){
-		
+		Path inputPath = Paths.get(input);
+    	Path tempPath = Paths.get(input+".tmp");
+    	
     	try {
-    		// 1 Create temp file
-    		Path inputPath = Paths.get(input);
-        	Path tempPath = Paths.get(input+".tmp");
+    		// 1 Create temp file    		
 	    	Files.copy(inputPath, tempPath);
 	    	
 	    	// 2 Copy file to original folder
@@ -237,10 +245,17 @@ public class JSCoverage {
 	    	// 3 Send temp file to instrumenter and replace result to the input	        	
 	        FileInstrumenter.instrument(tempPath.toString(), outputLocation);
 	        
-	        // 4 Delete the temp file
-	        Files.deleteIfExists(tempPath);
-    	} catch(Exception e){
-    		
+	        
+    	} catch(Exception ex){
+    		ex.getStackTrace();
+    		ex.printStackTrace();
+    	} finally {
+    		// 4 Delete the temp file
+	        try {
+				Files.deleteIfExists(tempPath);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}    		
     	}
 	}
 

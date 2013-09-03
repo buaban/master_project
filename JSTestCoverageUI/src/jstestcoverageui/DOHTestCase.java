@@ -16,15 +16,15 @@ public class DOHTestCase {
     public DOHTestCase(String fileName,String funcName, int lineStart, int lineEnd, String[] param){
         ArrayList<String> testScript = new ArrayList<String>();
         
+        System.out.println(fileName + funcName + lineStart + lineEnd + param.toString());
         
         try{
-        FileWriter writer = new FileWriter("test");
-        for(String l: testScript){
-        l = l + "\r\n";
-                writer.write(l);
-
+            FileWriter writer = new FileWriter("test");
+            for(String l: testScript){
+                l = l + "\r\n";
+                //writer.write(l);
         }	
-        writer.close();
+            writer.close();
         } catch(Exception e){
         
         }

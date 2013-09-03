@@ -1,9 +1,6 @@
-dojo.provide("space.commonUtils");
+dojo.provide("sample.commonUtils");
 
-dojo.require("rts.core.URLParser");
-dojo.require("rts.ccf.ccfcomponent2");
-
-space.commonUtils = {
+sample.commonUtils = {
     /*float*/dojoVersionNum: function () {
         return parseFloat(dojo.version.major + "." + dojo.version.minor);
     },
@@ -197,9 +194,4 @@ space.commonUtils = {
         }
         return x1 + x2;
     }
-
-	var t = function test(){
-	
-	
-	}
 };
