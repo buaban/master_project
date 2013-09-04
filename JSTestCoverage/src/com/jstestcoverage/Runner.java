@@ -10,7 +10,7 @@ public class Runner {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		boolean devMode = true;
-		JSCoverage jsc = new JSCoverage("D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\input\\input_b.js", devMode);
+		JSCoverage jsc = new JSCoverage("D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\input\\input_c.js", devMode);
 		//JSCoverage jsc = new JSCoverage("D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\input\\input_x.js", devMode);
 		ArrayList<ArrayList<String>> test = jsc.getFunctionList();
 		//y.replace(":","");

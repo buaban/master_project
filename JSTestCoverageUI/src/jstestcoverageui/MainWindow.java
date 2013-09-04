@@ -33,7 +33,9 @@ public class MainWindow extends javax.swing.JFrame {
     private ArrayList<ArrayList<String>> allFuncList;
     private ArrayList<ArrayList<String>> funcList;
     private String fileName;
+    private String filePath;
     private HashMap allFileList;
+    private static String ROOT_FOLDER = "D:\\Boxes\\Dropbox\\GIT\\master_project\\website";
 
     public MainWindow() {
         initComponents();
@@ -42,8 +44,7 @@ public class MainWindow extends javax.swing.JFrame {
         selectedFuncList = new ArrayList<>();
         allFuncList = new ArrayList<>();
         funcList = new ArrayList<>();
-        allFileList = new HashMap();
-        
+        allFileList = new HashMap();        
     }
 
     /**
@@ -151,9 +152,15 @@ public class MainWindow extends javax.swing.JFrame {
                     if(file.isDirectory()){
                     
                     } else {
-                        this.fileName = file.getName();                        
+                        
+                        this.allFuncList.clear();
+                        this.allFileList.clear();
+                        
+                        //this.fileName = file.getName();
+                        this.fileName = file.getAbsolutePath();
+                        this.filePath = file.getPath();
                         this.allFuncList = getFunctionList(file.getAbsolutePath());
-                        this.allFileList.put(fileName, allFuncList);
+                        this.allFileList.put(fileName, allFuncList);                        
                         
                         renderCheckBoxList(allFileList);
                         
@@ -183,16 +190,19 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void renderCheckBoxList(HashMap list){
-        javax.swing.GroupLayout funcListPanelLayout = new javax.swing.GroupLayout(funcListPanel);
         for(int i=0;i<list.size();i++){
             String fileName;
             if(allFuncList!=null && allFuncList.size()>0){
+                this.checkboxList.clear();
+                this.checkboxList.repaint();
+                        
                 funcList.clear();
+                
                 for(ArrayList func : allFuncList){
                     if(func.size()>0){
-                        String funcName = (String)func.get(0);
+                        String funcName = (String)func.get(0) + "." + (String)func.get(1);
                         funcName = funcName.replaceAll("\"", "");
-                        String param = (String)func.get(2);
+                        String param = (String)func.get(3);
                         param = param.replaceAll("\"", "");
                         JCheckBox cb =new JCheckBox("Function: " + funcName + " Parameter:" + param);
                         if(param.contains("null") || param.isEmpty()){
@@ -204,15 +214,16 @@ public class MainWindow extends javax.swing.JFrame {
                         }
                     }
                 }
+                this.checkboxList.repaint();
+                this.funcListPanel.repaint();
                 runButton.setEnabled(true);
             }
         }
-        
     }
     
     
     private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
         ListModel currentList = checkboxList.getModel();
         this.selectedFuncList.clear();
         for (int i = 0; i < currentList.getSize(); i++) {
@@ -223,11 +234,12 @@ public class MainWindow extends javax.swing.JFrame {
         }
 
         for (ArrayList func : this.selectedFuncList) {
-            String[] line = func.get(1).toString().replaceAll("\"","").split(":");
-            String[] param = func.get(2).toString().replaceAll("\"","").split("\\|");
-            DOHTestCase tc = new DOHTestCase(this.fileName, func.get(0).toString(), Integer.parseInt(line[0]), Integer.parseInt(line[1]), param);
-            
+            String[] line = func.get(2).toString().replaceAll("\"","").split(":");
+            String[] param = func.get(3).toString().replaceAll("\"","").split("\\|");
+            String funcName = func.get(0).toString() + func.get(1).toString();
+            DOHTestCase tc = new DOHTestCase(this.fileName, funcName, Integer.parseInt(line[0]), Integer.parseInt(line[1]), param);            
         }
+
 
     }//GEN-LAST:event_runButtonActionPerformed
 

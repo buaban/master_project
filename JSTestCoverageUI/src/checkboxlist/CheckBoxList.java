@@ -55,6 +55,10 @@ public class CheckBoxList extends JList
         newList[newList.length - 1] = checkBox;
         this.setListData(newList);
     }
+    
+    public void clear(){
+        this.setListData(new JCheckBox[0]);
+    }
 
    protected class CellRenderer implements ListCellRenderer
    {
@@ -71,6 +75,8 @@ public class CheckBoxList extends JList
         return checkbox;
       }
    }
+   
+   
    
    
 }
