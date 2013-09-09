@@ -1,7 +1,7 @@
 define(["doh", "sample/commonUtils"],
 
 function(doh, commonUtils){
-	doh.register("sample.test.commonUtils", [
+	doh.register("commonUtils", [
 	{
 		name: "test breakWords",
 		runTest: function(t){

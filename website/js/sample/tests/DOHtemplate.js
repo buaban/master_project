@@ -1,7 +1,7 @@
 define(["doh", "[MODULE_PATH]"],
 function(doh, [MODULE_LOADER]){
 
-	doh.register("[TEST_PATH].[MODULE_LOADER]", [
+	doh.register("[MODULE_LOADER]", [
 	{
 		name: "[ITERATION]",
 		runTest: function(t){

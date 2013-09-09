@@ -11,6 +11,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Set;
 import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
@@ -29,12 +31,14 @@ public class MainWindow extends javax.swing.JFrame {
 
     private static boolean DEVMODE = true;
     private CheckBoxList checkboxList;
-    private ArrayList<ArrayList<String>> selectedFuncList;
-    private ArrayList<ArrayList<String>> allFuncList;
-    private ArrayList<ArrayList<String>> funcList;
+    private ArrayList<ArrayList<String>> selectedFuncList;    
+    //private ArrayList<ArrayList<String>> allFuncList;
+    private ArrayList<ArrayList<String>> testAbleFuncList;
     private String fileName;
     private String filePath;
+    //private ArrayList<ArrayList<ArrayList<String>>> allFileList;
     private HashMap allFileList;
+    
     private static String ROOT_FOLDER = "D:\\Boxes\\Dropbox\\GIT\\master_project\\website";
 
     public MainWindow() {
@@ -42,9 +46,11 @@ public class MainWindow extends javax.swing.JFrame {
         checkboxList = new CheckBoxList();
         jScrollPane2.setViewportView(checkboxList);
         selectedFuncList = new ArrayList<>();
-        allFuncList = new ArrayList<>();
-        funcList = new ArrayList<>();
-        allFileList = new HashMap();        
+        //allFileList = new ArrayList<>();
+        allFileList = new HashMap();
+        testAbleFuncList = new ArrayList<>();
+                
+        
     }
 
     /**
@@ -67,6 +73,8 @@ public class MainWindow extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         fileChooser.setSelectedFile(new java.io.File("D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\input"));
+        fileChooser.setMinimumSize(new java.awt.Dimension(425, 250));
+        fileChooser.setPreferredSize(new java.awt.Dimension(582, 400));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,16 +160,24 @@ public class MainWindow extends javax.swing.JFrame {
                     if(file.isDirectory()){
                     
                     } else {
+                        // Clear result from last browsing
+                        //this.allFuncList.clear();
+                        //ArrayList<ArrayList<String>> allFuncList = new ArrayList();
+                        //this.allFileList.clear();
                         
-                        this.allFuncList.clear();
-                        this.allFileList.clear();
+                        // Instrument and get list of functions in that file   
+                        // allFuncList [index => funcName,lines,params]
+                        ArrayList<ArrayList<String>> allFuncList = generateFunctionList(file.getAbsolutePath(), DEVMODE);
+                                                
+                        // fileFuncList [index => filePath,allFuncList]
+                        //ArrayList fileFuncList = new ArrayList();
+                        //fileFuncList.add(filePath);
+                        //fileFuncList.add(allFuncList);
                         
-                        //this.fileName = file.getName();
-                        this.fileName = file.getAbsolutePath();
-                        this.filePath = file.getPath();
-                        this.allFuncList = getFunctionList(file.getAbsolutePath());
-                        this.allFileList.put(fileName, allFuncList);                        
+                        // allFileList [index => fileFuncList]
+                        this.allFileList.put(file.getAbsolutePath(), allFuncList);
                         
+                        // [fileName: {objName:funcName:lines:param}]
                         renderCheckBoxList(allFileList);
                         
                         
@@ -177,10 +193,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_openFileActionPerformed
 
-    private ArrayList getFunctionList(String file){
+    private ArrayList<ArrayList<String>> generateFunctionList(String filePath, Boolean DEVMODE){
         
         try {
-            JSCoverage jscov = new JSCoverage(file, DEVMODE);
+            JSCoverage jscov = new JSCoverage(filePath, DEVMODE);
             return jscov.getFunctionList();
         } catch(Exception e){
             e.toString();
@@ -188,18 +204,21 @@ public class MainWindow extends javax.swing.JFrame {
         }
         
     }
-    
+  
     private void renderCheckBoxList(HashMap list){
-        for(int i=0;i<list.size();i++){
-            String fileName;
+        Set<String> filePathList = list.keySet();
+        
+        for(String filePath : filePathList){
+                       
+            ArrayList<ArrayList<String>> allFuncList = (ArrayList<ArrayList<String>>) list.get(filePath);
+            
             if(allFuncList!=null && allFuncList.size()>0){
                 this.checkboxList.clear();
                 this.checkboxList.repaint();
-                        
-                funcList.clear();
                 
                 for(ArrayList func : allFuncList){
                     if(func.size()>0){
+                        func.add(filePath);
                         String funcName = (String)func.get(0) + "." + (String)func.get(1);
                         funcName = funcName.replaceAll("\"", "");
                         String param = (String)func.get(3);
@@ -210,7 +229,7 @@ public class MainWindow extends javax.swing.JFrame {
                             //cb.setDisabledSelectedIcon(null);
                         } else {
                             this.checkboxList.addCheckbox(cb);
-                            this.funcList.add(func);
+                            this.testAbleFuncList.add(func);
                         }
                     }
                 }
@@ -229,7 +248,7 @@ public class MainWindow extends javax.swing.JFrame {
         for (int i = 0; i < currentList.getSize(); i++) {
             JCheckBox cb = (JCheckBox) currentList.getElementAt(i);
             if(cb.isSelected()){
-                this.selectedFuncList.add(funcList.get(i));
+                this.selectedFuncList.add(testAbleFuncList.get(i));
             }
         }
 
@@ -237,7 +256,10 @@ public class MainWindow extends javax.swing.JFrame {
             String[] line = func.get(2).toString().replaceAll("\"","").split(":");
             String[] param = func.get(3).toString().replaceAll("\"","").split("\\|");
             String funcName = func.get(0).toString() + func.get(1).toString();
-            DOHTestCase tc = new DOHTestCase(this.fileName, funcName, Integer.parseInt(line[0]), Integer.parseInt(line[1]), param);            
+            String filePath = func.get(4).toString();
+            DOHTestCase tc = new DOHTestCase(filePath, funcName, Integer.parseInt(line[0]), Integer.parseInt(line[1]), param);            
+            
+        
         }
 
 

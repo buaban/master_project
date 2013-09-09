@@ -1752,7 +1752,7 @@ scope {
 }
 @after {
 
-    if($functionExpression::funcName!=null){
+    if(!$functionExpression.isEmpty()){
     	//System.out.println("Line: " + $start.getLine() +" Function: " + $functionExpression::funcName  + " formalParams: "+$formalParameterList::paramList);
     	$params = $formalParameterList::paramList;    	
     }
@@ -1796,7 +1796,11 @@ scope {
 }
 	: sourceElement (sourceElement)*
 	{
-		$functionExpressionBodyWithoutBraces::typesList = determineParam($functionExpression::paramList,$text,$functionExpression::funcName);
+		try {
+			$functionExpressionBodyWithoutBraces::typesList = determineParam($functionExpression::paramList,$text,$functionExpression::funcName);
+		} catch(Exception e){
+		
+		}
 	}
 	-> {$functionExpression::funcName!=null}? cover_func(src={$program::name}, code={$text}, class={$functionExpressionBodyWithoutBraces::objName}, name={$functionExpression::funcName}, line={$functionExpression::funcLine},params={$functionExpressionBodyWithoutBraces::typesList})
 	-> cover_func(src={$program::name}, code={$text}, class={$functionExpressionBodyWithoutBraces::objName}, name={$functionDeclaration::funcName}, line={$functionDeclaration::funcLine}, params={$functionExpressionBodyWithoutBraces::typesList})
@@ -1809,13 +1813,17 @@ scope {
 }
 @init {
 	if($objectDeclaration.isEmpty()){
-		$functionDeclarationBodyWithoutBraces::objName = $objectDeclaration::objectName;
-	} else {
 		$functionDeclarationBodyWithoutBraces::objName = "";
+	} else {
+		$functionDeclarationBodyWithoutBraces::objName = $objectDeclaration::objectName;
 	}
 }
 @after {
-	$functionDeclarationBodyWithoutBraces::typesList = determineParam($functionExpression::paramList,$text,$functionExpression::funcName);
+		try {
+			$functionDeclarationBodyWithoutBraces::typesList = determineParam($functionExpression::paramList,$text,$functionExpression::funcName);
+		} catch(Exception e){
+			e;
+		}
 }
 	: sourceElement sourceElement*
 	-> cover_func(src={$program::name}, code={$text}, class={$functionDeclarationBodyWithoutBraces::objName}, name={$functionDeclaration::funcName}, line={$functionDeclaration::funcLine},params={$functionDeclarationBodyWithoutBraces::typesList})
