@@ -15,7 +15,7 @@ import java.util.List;
  * @author pannawat.janthong
  */
 public class DOHTestCase {
-    public DOHTestCase(String filePath,String funcName, int lineStart, int lineEnd, String[] param){
+    public DOHTestCase(String modulePath,String funcName, int lineStart, int lineEnd, String[] param){
         ArrayList<String> testScript = new ArrayList<String>();
         
         //System.out.println(filePath + " || " + funcName + " || " + lineStart + " || " + lineEnd + " || " + param);
@@ -24,16 +24,17 @@ public class DOHTestCase {
             List<String> lines;
             Path p = FileSystems.getDefault().getPath("src\\doh_template","DOHTemplate.js");
             lines = Files.readAllLines(p.toAbsolutePath(), Charset.defaultCharset());
-            File f = new File(filePath);
+            //File f = new File(filePath);
             
-            String fileName = f.getName();
-            String parentName = f.getParentFile().getName();
-            String moduleName = fileName.replace(".js", "");
+            //String fileName = f.getName();
+            //String parentName = f.getParentFile().getName();
+            //String moduleName = fileName.replace(".js", "");
+            
             int lineNum = lines.size();
             for(int i = 0; i<lineNum; i++) {
                 String line = lines.get(i);
-                line = line.replace("[MODULE_PATH]", parentName+"/"+moduleName);
-                line = line.replace("[MODULE_LOADER]", moduleName);
+                line = line.replace("[MODULE_PATH]", modulePath);
+                line = line.replace("[MODULE_LOADER]", modulePath);
                 line = line.replace("[FUNCTION_NAME]", funcName);                
                 lines.set(i, line);
             }

@@ -162,31 +162,42 @@ public class JSCoverage {
     	
     	
 	}
-	
-	
+		
 	private void createFunctionList(String fileName){
 		List<String> lines = null;		
 		ArrayList<ArrayList<String>> funcList = new ArrayList<ArrayList<String>>();
-		
+		String moduleName = "";
 		try {
     		lines = Files.readAllLines(Paths.get(fileName), Charset.defaultCharset());
-    		for(String line : lines){
+    		for(String line : lines){  
+    			if(!IsCommentLine(line) && line.contains("dojo.provide") && !line.contains("_yuitest")){
+    				moduleName = line.substring(line.indexOf("(\"")+2, line.lastIndexOf("\")"));
+    			} 
     			if(line.contains("_yuitest_coverfunc(")){
-    				line = line.substring(line.indexOf("("), line.lastIndexOf(")"));
+    				line = line.substring(line.indexOf("(")+1, line.lastIndexOf(")"));
     				String[] tmp = line.split(",");
     				ArrayList<String> func = new ArrayList<String>();
+    				func.add(moduleName);
     				func.add(tmp[1].trim());
     				func.add(tmp[2].trim());
     				func.add(tmp[3].trim());
     				func.add(tmp[4].trim());
     				funcList.add(func);
-    			}
+    			} 
     		}
 		} catch(Exception e){
 			
 		}
 		
 		this.functionList =  funcList;
+	}
+	
+	private boolean IsCommentLine(String line){		
+		if(line.trim().startsWith("/*") || line.trim().startsWith("//") ){
+			return true;			
+		}
+		
+		return false;
 	}
 	
 	private boolean IsPathDirectory(String input) {
@@ -217,7 +228,7 @@ public class JSCoverage {
 	    		Files.copy(Paths.get(input), oriFile);
 	    	}
 	    	
-	    	// 3 Send temp file to instrumenter and replace result to the input	        	
+	    	// 3 Send temp file to instrumenter then replace original file	        	
 	        FileInstrumenter.instrument(tempPath.toString(), inputPath.toString());
 	        
 	        // 4 Delete the temp file

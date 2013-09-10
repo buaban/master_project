@@ -219,9 +219,9 @@ public class MainWindow extends javax.swing.JFrame {
                 for(ArrayList func : allFuncList){
                     if(func.size()>0){
                         func.add(filePath);
-                        String funcName = (String)func.get(0) + "." + (String)func.get(1);
+                        String funcName = (String)func.get(1) + "." + (String)func.get(2);
                         funcName = funcName.replaceAll("\"", "");
-                        String param = (String)func.get(3);
+                        String param = (String)func.get(4);
                         param = param.replaceAll("\"", "");
                         JCheckBox cb =new JCheckBox("Function: " + funcName + " Parameter:" + param);
                         if(param.contains("null") || param.isEmpty()){
@@ -253,11 +253,11 @@ public class MainWindow extends javax.swing.JFrame {
         }
 
         for (ArrayList func : this.selectedFuncList) {
-            String[] line = func.get(2).toString().replaceAll("\"","").split(":");
-            String[] param = func.get(3).toString().replaceAll("\"","").split("\\|");
-            String funcName = func.get(0).toString() + func.get(1).toString();
-            String filePath = func.get(4).toString();
-            DOHTestCase tc = new DOHTestCase(filePath, funcName, Integer.parseInt(line[0]), Integer.parseInt(line[1]), param);            
+            String[] line = func.get(3).toString().replaceAll("\"","").split(":");
+            String[] param = func.get(4).toString().replaceAll("\"","").split("\\|");
+            String funcName = func.get(1).toString() + func.get(2).toString();
+            String modulePath = func.get(0).toString();
+            DOHTestCase tc = new DOHTestCase(modulePath, funcName, Integer.parseInt(line[0]), Integer.parseInt(line[1]), param);            
             
         
         }
