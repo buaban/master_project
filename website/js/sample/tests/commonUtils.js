@@ -1,25 +1,40 @@
-define(["doh", "sample/commonUtils"],
+define(["doh", "sample.commonUtils"],
+function(doh, sample.commonUtils){
 
-function(doh, commonUtils){
-	doh.register("commonUtils", [
-	{
-		name: "test breakWords",
-		runTest: function(t){
-			//var res = testJS.addCommas("this is a test. because of test is my job. yes, it is.");
-			var y = 5;
-			var str = commonUtils.breakWords("This is a test. This is not real, truth.",2,"-");
-			
-			doh.assertEqual("Th-is is a te-st. Th-is is no-t re-al, tr-ut-h.", str);
-			
-		}
-	},
-	{	
-		name: "test addCommas",
-		runTest: function(t){
-			var str = commonUtils.addCommas("This is a test. This is not real, truth.");				
-			doh.assertEqual("This is a test. This is not real, truth", str);				
-		}		
+	doh.register("sample.commonUtils", [
+{
+	name: "[ITERATION]",
+	runTest: function(t){
+		var res = sample.commonUtils.breakWords("SsVX",885309,"PnEC");			
 	}
-	
+}
+,
+{
+	name: "[ITERATION]",
+	runTest: function(t){
+		var res = sample.commonUtils.breakWords("nKBzDP",2410,"CDt");			
+	}
+}
+,
+{
+	name: "[ITERATION]",
+	runTest: function(t){
+		var res = sample.commonUtils.breakWords("DrpDePixY",78320945,"QskUt");			
+	}
+}
+,
+{
+	name: "[ITERATION]",
+	runTest: function(t){
+		var res = sample.commonUtils.breakWords("bw",81307,"Qu");			
+	}
+}
+,
+{
+	name: "[ITERATION]",
+	runTest: function(t){
+		var res = sample.commonUtils.breakWords("PJzK",357403343,"fZktxUrbe");			
+	}
+}
 	]);
-});	
+});

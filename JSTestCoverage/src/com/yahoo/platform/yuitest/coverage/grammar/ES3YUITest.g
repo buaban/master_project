@@ -1843,6 +1843,7 @@ scope {
   String name;
   String currentClass;
   int anonymousFunctionCount;
+  String moduleName;
   }
   @init {
   $program::executableLines = new java.util.LinkedList();
@@ -1861,14 +1862,19 @@ here and therefor remove the ambiguity between these to production.
 This will result in the same behaviour that is described in the specification under 12.4 on the expressionStatement rule.
 */
 
+moduleName
+	:	'dojo.provide(' Identifier ')' SEMIC?
+	|	'goog.provide(' Identifier ')' SEMIC?
+	;
 
 objectDeclaration
 scope{
     String objectName;
 }
 	: memberExpression {$objectDeclaration::objectName=$memberExpression.text; } assignmentOperator objectLiteral		
-//	: 'abcdefghijklmn'
 	;
+
+
 
 	
 sourceElement

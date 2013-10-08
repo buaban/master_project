@@ -19,68 +19,85 @@ import com.yahoo.platform.yuitest.coverage.FileInstrumenter;
 
 public class JSCoverage {
 	ArrayList<ArrayList<String>> functionList;
+	String input;
+	Boolean devMode = false;
+	String insMode;
+	String filePath;
 	
 	public JSCoverage(String input){
-		Boolean isDirectory = false;
-		String outputLocation;
-		isDirectory = IsPathDirectory(input);
-		functionList = new ArrayList<ArrayList<String>>();
-		
-		/*   Instrument files       */
-		try {
-			if (isDirectory){			
-				outputLocation = input;
-	            DirectoryInstrumenter.instrument(input, outputLocation);
-	        } else {  	
-	        	Path inputPath = Paths.get(input);
-	        	// 1 Create original folder to store original source code
-	        	Path oriFolder = Paths.get(inputPath.getParent().toString()+"\\original");
-	        	if(!Files.exists(oriFolder)){
-	        		Files.createDirectory(oriFolder);
-	        	}	
-	        	
-	        	// 2 instrument file and move original src to original folder
-	        	instrumentFile(input);
-	        	
-	        	// 3 Add number of code lines of each function to _yuitest_coverfunc in instrumented code 
-	        	addNumberOfLines(input);
-	        	
-	        	// 4 Create Functions List
-	        	createFunctionList(input);
-	        	
-	        }
-		} catch (Exception e) {
-            e.printStackTrace();
-            // Return a special error code used specifically by the web front-end.
-            System.exit(1);        
-        }		
-		
+		this.input = input;
+		this.startJSCoverage();
+	}
+
+	
+	public JSCoverage(String input, String instrumentMode){
+		this.input = input;
+		this.devMode = devMode;
+		this.startJSCoverage();
 	}
 	
+	public JSCoverage(String input, String instrumentMode, boolean devMode){
+		this.input = input;
+		this.devMode = devMode;
+		this.insMode = instrumentMode; // replace , new-folder 
+		this.startJSCoverage();
+	}
 	
-	public JSCoverage(String input, boolean devMode){
+	private void startJSCoverage(){
 		Boolean isDirectory = false;
-		String outputLocation;
-		isDirectory = IsPathDirectory(input);
+		String outputLocation = "";
+		String outputFileName = "";
+		String outputFolder = "";
+		isDirectory = IsPathDirectory(this.input);
 		functionList = new ArrayList<ArrayList<String>>();
-		outputLocation = UUID.randomUUID().toString()+".js";
 		
 		
 		/*   Instrument files       */
 		try {
 			if (isDirectory){			
-				outputLocation = input;
-	            DirectoryInstrumenter.instrument(input, outputLocation);
+				outputLocation = this.input;
+	            DirectoryInstrumenter.instrument(this.input, outputLocation);
 	        } else {  	
-	        	Path inputPath = Paths.get(input);
-	        	// 1 Create original folder to store original source code
-	        	Path oriFolder = Paths.get(inputPath.getParent().toString()+"\\original");
-	        	if(!Files.exists(oriFolder)){
-	        		Files.createDirectory(oriFolder);
-	        	}	
-	        	outputLocation = Paths.get(inputPath.getParent().toString()).toString()+"\\"+outputLocation;
-	        	// 2 instrument file and move original src to original folder
-	        	instrumentFile(input, outputLocation);
+	        	Path inputPath = Paths.get(this.input);
+	        	
+	        	
+	        	if(this.insMode.compareToIgnoreCase("replace")==0){
+	    			outputFileName = inputPath.getFileName().toString();
+	    			outputFolder = inputPath.getParent().toString();
+	    			
+	    			// 1 Create original folder to store original source code
+		        	Path oriFolder = Paths.get(inputPath.getParent().toString()+"\\original");
+		        	if(!Files.exists(oriFolder)){
+		        		Files.createDirectory(oriFolder);
+		        	}
+		        	
+			    	// 2 Check if file is already exists in oriFolder, then copy file to original folder
+			    	Path oriFile = Paths.get(oriFolder.toString() + "\\" + outputFileName);
+			    	if(!Files.exists(oriFile)){
+			    		Files.copy(inputPath, oriFile);
+			    	}
+			    	
+			    	outputLocation = outputFolder.toString() + "\\" + outputFileName.toString(); 
+		        	
+	    		} else if(this.insMode.compareToIgnoreCase("new-folder")==0){
+	    			outputFileName = inputPath.getFileName().toString();
+	    			outputFolder = inputPath.getParent().toString()+ "\\instruments-code";
+	    			
+	    			// 1 Create instrument-code folder to store instrumented source code
+		        	Path instFolder = Paths.get(outputFolder);
+		        	if(!Files.exists(instFolder)){
+		        		Files.createDirectory(instFolder);
+		        	}
+		        	outputLocation = outputFolder.toString() + "\\" + outputFileName.toString();
+	    		}
+	    		
+	    		if(devMode){
+	    			outputLocation = inputPath.getParent().toString()+ "\\" + UUID.randomUUID().toString()+".js";	
+	    		}
+	    		
+	    		this.filePath = outputLocation;
+	        		
+	        	instrumentFile(this.input, outputLocation);
 	        	
 	        	// 3 Add number of code lines of each function to _yuitest_coverfunc in instrumented code 
 	        	addNumberOfLines(outputLocation);
@@ -94,10 +111,9 @@ public class JSCoverage {
             // Return a special error code used specifically by the web front-end.
             System.exit(1);        
         }		
+	
 		
 	}
-	
-	
 	
 	
 	
@@ -105,6 +121,9 @@ public class JSCoverage {
 		return this.functionList;
 	}
 	
+	public String getTestCaseFilePath(){
+		return filePath;		
+	} 
 	
 	private void addNumberOfLines(String fileName){
 		List<String> lines = null;
@@ -117,7 +136,7 @@ public class JSCoverage {
     			String line = lines.get(i);
     			String lastCoverLine = "";
     			String firstCoverLine = "";
-    			if(line.contains("_yuitest_coverfunc(")){
+    			if(line.contains("_yuitest_coverfunc(") && !line.contains("\"(anonymous") ){
     				int j = i+1;
     				firstCoverLine = "";
     				for(;j<lineNum;j++){
@@ -131,7 +150,7 @@ public class JSCoverage {
     						}
     						
     						lastCoverLine = txt.split(",")[1].trim();
-    					} else if(subLine.contains("_yuitest_coverfunc(")){
+    					} else if(subLine.contains("_yuitest_coverfunc(") && !subLine.contains("\"(anonymous")){
     						break;
     					}
     				}
@@ -173,14 +192,23 @@ public class JSCoverage {
     			if(!IsCommentLine(line) && line.contains("dojo.provide") && !line.contains("_yuitest")){
     				moduleName = line.substring(line.indexOf("(\"")+2, line.lastIndexOf("\")"));
     			} 
-    			if(line.contains("_yuitest_coverfunc(")){
+    			if(line.contains("_yuitest_coverfunc(") && !line.contains("\"(anonymous") ){
     				line = line.substring(line.indexOf("(")+1, line.lastIndexOf(")"));
     				String[] tmp = line.split(",");
     				ArrayList<String> func = new ArrayList<String>();
+    				// tested file
+    				func.add(this.input);
+    				// instrumented file
+    				func.add(fileName);
+    				// module name
     				func.add(moduleName);
+    				// object name
     				func.add(tmp[1].trim());
+    				// function name
     				func.add(tmp[2].trim());
+    				// lines
     				func.add(tmp[3].trim());
+    				// parameters
     				func.add(tmp[4].trim());
     				funcList.add(func);
     			} 
@@ -245,14 +273,7 @@ public class JSCoverage {
     	try {
     		// 1 Create temp file    		
 	    	Files.copy(inputPath, tempPath);
-	    	
-	    	// 2 Copy file to original folder
-	    	Path oriFolder = Paths.get(inputPath.getParent().toString()+"\\original");
-	    	Path oriFile = Paths.get(oriFolder.toString() + "\\" + Paths.get(input).getFileName());
-	    	if(!Files.exists(oriFile)){
-	    		Files.copy(Paths.get(input), oriFile);
-	    	}
-	    	
+	    		    	
 	    	// 3 Send temp file to instrumenter and replace result to the input	        	
 	        FileInstrumenter.instrument(tempPath.toString(), outputLocation);
 	        
