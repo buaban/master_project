@@ -171,7 +171,7 @@ public class DOHTestCase {
     
     public void execute(){
         try {
-            String runner = "http://localhost/Explorer/Runtime/Explorer.SharedResources/javascript/dojo/src/util/doh/runner.html?";
+            String dohRunner = "http://localhost/Explorer/Runtime/Explorer.SharedResources/javascript/dojo/src/util/doh/runner.html?";
             String path = "paths=";
 
             String[] paths = {
@@ -191,7 +191,7 @@ public class DOHTestCase {
             String testModule = "&test=space/tests/commonUtils";
 
 
-            String testUrl = runner + path + testModule;
+            String testUrl = dohRunner + path + testModule;
             //testUrl = "http://localhost/Explorer/Runtime/Explorer.SharedResources/javascript/dojo/src/util/doh/runner.html?paths=sample,../js/sample&test=sample/tests/testJS";
             testUrl = URLEncoder.encode(testUrl,"UTF-8");
             

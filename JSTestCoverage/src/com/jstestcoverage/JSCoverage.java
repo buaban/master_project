@@ -99,8 +99,11 @@ public class JSCoverage {
 	        		
 	        	instrumentFile(this.input, outputLocation);
 	        	
-	        	// 3 Add number of code lines of each function to _yuitest_coverfunc in instrumented code 
+	        	// 3 Add number of code lines of each function to _jstestcoverage_func in instrumented code 
 	        	addNumberOfLines(outputLocation);
+	        	
+	        	// 3.x replace .tmp
+	        	removeTmp(outputLocation);
 	        	
 	        	// 4 Create Functions List
 	        	createFunctionList(outputLocation);
@@ -125,6 +128,33 @@ public class JSCoverage {
 		return filePath;		
 	} 
 	
+	private void removeTmp(String fileName){
+		List<String> lines = null;
+    	StringBuilder code = new StringBuilder();
+    	
+    	try {
+    		lines = Files.readAllLines(Paths.get(fileName), Charset.defaultCharset());
+    		int lineNum = lines.size();
+    		for(int i=0; i<lineNum ;i++) {
+    			String line = lines.get(i);
+    			if( (line.contains("_jstestcoverage_func(") || line.contains("_jstestcoverage_line(")) && line.contains(".tmp")   ){
+    				line = line.replace(".tmp", "");
+    				lines.set(i, line);
+    			}    			
+    		}
+			FileWriter writer = new FileWriter(fileName);
+    		for(String l: lines){
+    	    	l = l + "\r\n";
+	    		writer.write(l);
+    	    	
+	    	}	
+    		writer.close();
+    	} catch(Exception e){
+        		
+        }
+		
+	}
+	
 	private void addNumberOfLines(String fileName){
 		List<String> lines = null;
     	StringBuilder code = new StringBuilder();
@@ -136,13 +166,13 @@ public class JSCoverage {
     			String line = lines.get(i);
     			String lastCoverLine = "";
     			String firstCoverLine = "";
-    			if(line.contains("_yuitest_coverfunc(") && !line.contains("\"(anonymous") ){
+    			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){
     				int j = i+1;
     				firstCoverLine = "";
     				for(;j<lineNum;j++){
     					String subLine = lines.get(j);
     					
-    					if(subLine.contains("_yuitest_coverline(")){
+    					if(subLine.contains("_jstestcoverage_line(")){
     						String txt = subLine.substring(subLine.indexOf("("), subLine.lastIndexOf(")"));
     						
     						if(firstCoverLine==""){
@@ -150,7 +180,7 @@ public class JSCoverage {
     						}
     						
     						lastCoverLine = txt.split(",")[1].trim();
-    					} else if(subLine.contains("_yuitest_coverfunc(") && !subLine.contains("\"(anonymous")){
+    					} else if(subLine.contains("_jstestcoverage_func(") && !subLine.contains("\"(anonymous")){
     						break;
     					}
     				}
@@ -189,17 +219,17 @@ public class JSCoverage {
 		try {
     		lines = Files.readAllLines(Paths.get(fileName), Charset.defaultCharset());
     		for(String line : lines){  
-    			if(!IsCommentLine(line) && line.contains("dojo.provide") && !line.contains("_yuitest")){
+    			if(!IsCommentLine(line) && line.contains("dojo.provide") && !line.contains("_yuitest") && !line.contains("_jstestcoverage")){
     				moduleName = line.substring(line.indexOf("(\"")+2, line.lastIndexOf("\")"));
     			} 
-    			if(line.contains("_yuitest_coverfunc(") && !line.contains("\"(anonymous") ){
+    			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){
     				line = line.substring(line.indexOf("(")+1, line.lastIndexOf(")"));
     				String[] tmp = line.split(",");
     				ArrayList<String> func = new ArrayList<String>();
     				// tested file
     				func.add(this.input);
     				// instrumented file
-    				func.add(fileName);
+    				func.add(fileName.replace(".tmp",""));
     				// module name
     				func.add(moduleName);
     				// object name

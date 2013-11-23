@@ -8,11 +8,17 @@ import checkboxlist.*;
 import com.jstestcoverage.JSCoverage;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Set;
+import java.util.Date;
+import java.util.List;
 import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
@@ -29,7 +35,7 @@ public class MainWindow extends javax.swing.JFrame {
      * Creates new form MainWindow
      */
 
-    private static boolean DEVMODE = true;
+    private static boolean DEVMODE = false;
     private static String INSMODE = "replace";
     private CheckBoxList checkboxList;
     private ArrayList<ArrayList<String>> selectedFuncList;    
@@ -50,8 +56,8 @@ public class MainWindow extends javax.swing.JFrame {
         //allFileList = new ArrayList<>();
         allFileList = new HashMap();
         testAbleFuncList = new ArrayList<>();
-                
-        
+        Date now = new Date();        
+        testId.setText(now.toString());
     }
 
     /**
@@ -64,10 +70,14 @@ public class MainWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         fileChooser = new javax.swing.JFileChooser();
+        topPanel = new javax.swing.JPanel();
+        newTest = new javax.swing.JButton();
+        runButton = new javax.swing.JButton();
+        testId = new javax.swing.JTextField();
         funcListPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        runButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        statusPanel = new javax.swing.JPanel();
+        statusLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         openFile = new javax.swing.JMenuItem();
@@ -79,18 +89,12 @@ public class MainWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout funcListPanelLayout = new javax.swing.GroupLayout(funcListPanel);
-        funcListPanel.setLayout(funcListPanelLayout);
-        funcListPanelLayout.setHorizontalGroup(
-            funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(funcListPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        funcListPanelLayout.setVerticalGroup(
-            funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
-        );
+        newTest.setText("New test");
+        newTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newTestActionPerformed(evt);
+            }
+        });
 
         runButton.setText("Run Test");
         runButton.setEnabled(false);
@@ -100,7 +104,59 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Exit");
+        testId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testIdActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
+        topPanel.setLayout(topPanelLayout);
+        topPanelLayout.setHorizontalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addComponent(testId, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(newTest)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                .addComponent(runButton)
+                .addContainerGap())
+        );
+        topPanelLayout.setVerticalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(newTest)
+                .addComponent(testId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(runButton))
+        );
+
+        javax.swing.GroupLayout funcListPanelLayout = new javax.swing.GroupLayout(funcListPanel);
+        funcListPanel.setLayout(funcListPanelLayout);
+        funcListPanelLayout.setHorizontalGroup(
+            funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(funcListPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+        funcListPanelLayout.setVerticalGroup(
+            funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout statusPanelLayout = new javax.swing.GroupLayout(statusPanel);
+        statusPanel.setLayout(statusPanelLayout);
+        statusPanelLayout.setHorizontalGroup(
+            statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(statusPanelLayout.createSequentialGroup()
+                .addComponent(statusLabel)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        statusPanelLayout.setVerticalGroup(
+            statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(statusPanelLayout.createSequentialGroup()
+                .addComponent(statusLabel)
+                .addGap(0, 11, Short.MAX_VALUE))
+        );
 
         jMenu1.setText("File");
 
@@ -124,25 +180,21 @@ public class MainWindow extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(funcListPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(runButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(funcListPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(topPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(statusPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(runButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addComponent(funcListPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(topPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(funcListPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(statusPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -176,6 +228,7 @@ public class MainWindow extends javax.swing.JFrame {
                         //fileFuncList.add(allFuncList);
                         
                         // allFileList [index => fileFuncList]
+                        addTestId(allFuncList.get(0).get(1).toString(),testId.getText());
                         this.allFileList.put(file.getAbsolutePath(), allFuncList);
                         
                         // [fileName: {objName:funcName:lines:param}]
@@ -194,6 +247,39 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_openFileActionPerformed
 
+    private void addTestId(String filePath, String id){
+        List<String> lines = null;
+    	StringBuilder code = new StringBuilder();
+    	
+    	try {
+            lines = Files.readAllLines(Paths.get(filePath), Charset.defaultCharset());
+            int lineNum = lines.size();
+            for(int i = 0; i<lineNum; i++) {
+                String line = lines.get(i);                
+                if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){
+                    line = line.replace("_jstestcoverage_func(","_jstestcoverage_func('"+ id + "',");
+                }
+                if(line.contains("_jstestcoverage_line(") && !line.contains("\"(anonymous") ){
+                    line = line.replace("_jstestcoverage_line(","_jstestcoverage_line('"+ id + "',");
+                }
+                if(line.contains("_jstestcoverage_") && !line.trim().startsWith("_jstestcoverage")){                    
+                    line = line.replace("_jstestcoverage", "\r\n_jstestcoverage");
+                }
+                
+                lines.set(i, line);
+            }
+            
+            FileWriter writer = new FileWriter(filePath);
+            for(String l: lines){
+                l = l + "\r\n";
+                writer.write(l);
+            }	
+            writer.close();
+        } catch(Exception e){
+            e.getMessage();
+    	}
+    }
+    
     private ArrayList<ArrayList<String>> generateFunctionList(String filePath, String mode, Boolean devMode){
         
         try {
@@ -283,6 +369,14 @@ public class MainWindow extends javax.swing.JFrame {
 
     }//GEN-LAST:event_runButtonActionPerformed
 
+    private void testIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_testIdActionPerformed
+
+    private void newTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newTestActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newTestActionPerformed
+
     private void runTest(ArrayList<String> selectedFuncList){
         
     }
@@ -325,12 +419,16 @@ public class MainWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser fileChooser;
     private javax.swing.JPanel funcListPanel;
-    private javax.swing.JButton jButton2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton newTest;
     private javax.swing.JMenuItem openFile;
     private javax.swing.JButton runButton;
+    private javax.swing.JLabel statusLabel;
+    private javax.swing.JPanel statusPanel;
+    private javax.swing.JTextField testId;
+    private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
 }

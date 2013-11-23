@@ -1,4 +1,4 @@
-// $ANTLR 3.x D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g 2013-09-04 21:58:18
+// $ANTLR 3.x D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g 2013-11-23 16:34:33
 
 /*
  * YUI Test Coverage
@@ -36,10 +36,12 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class ES3YUITestParser extends Parser {
 	public static final String[] tokenNames = new String[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ABSTRACT", "ADD", "ADDASS", "AND", "ANDASS", "ARGS", "ARRAY", "ASSIGN", "BLOCK", "BOOLEAN", "BREAK", "BSLASH", "BYFIELD", "BYINDEX", "BYTE", "BackslashSequence", "CALL", "CASE", "CATCH", "CEXPR", "CHAR", "CLASS", "COLON", "COMMA", "CONST", "CONTINUE", "CR", "CharacterEscapeSequence", "DEBUGGER", "DEC", "DEFAULT", "DELETE", "DIV", "DIVASS", "DO", "DOT", "DOUBLE", "DQUOTE", "DecimalDigit", "DecimalIntegerLiteral", "DecimalLiteral", "ELSE", "ENUM", "EOL", "EQ", "EXPORT", "EXPR", "EXTENDS", "EscapeSequence", "ExponentPart", "FALSE", "FF", "FINAL", "FINALLY", "FLOAT", "FOR", "FORITER", "FORSTEP", "FUNCTION", "GOTO", "GT", "GTE", "HexDigit", "HexEscapeSequence", "HexIntegerLiteral", "IF", "IMPLEMENTS", "IMPORT", "IN", "INC", "INSTANCEOF", "INT", "INTERFACE", "INV", "ITEM", "Identifier", "IdentifierNameASCIIStart", "IdentifierPart", "IdentifierStartASCII", "LABELLED", "LAND", "LBRACE", "LBRACK", "LF", "LONG", "LOR", "LPAREN", "LS", "LT", "LTE", "LineTerminator", "MOD", "MODASS", "MUL", "MULASS", "MultiLineComment", "NAMEDVALUE", "NATIVE", "NBSP", "NEG", "NEQ", "NEW", "NOT", "NSAME", "NULL", "OBJECT", "OR", "ORASS", "OctalDigit", "OctalEscapeSequence", "OctalIntegerLiteral", "PACKAGE", "PAREXPR", "PDEC", "PINC", "POS", "PRIVATE", "PROTECTED", "PS", "PUBLIC", "QUE", "RBRACE", "RBRACK", "RETURN", "RPAREN", "RegularExpressionChar", "RegularExpressionFirstChar", "RegularExpressionLiteral", "SAME", "SEMIC", "SHL", "SHLASS", "SHORT", "SHR", "SHRASS", "SHU", "SHUASS", "SP", "SQUOTE", "STATIC", "SUB", "SUBASS", "SUPER", "SWITCH", "SYNCHRONIZED", "SingleLineComment", "StringLiteral", "TAB", "THIS", "THROW", "THROWS", "TRANSIENT", "TRUE", "TRY", "TYPEOF", "USP", "UnicodeEscapeSequence", "VAR", "VOID", "VOLATILE", "VT", "WHILE", "WITH", "WhiteSpace", "XOR", "XORASS", "ZeroToThree"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ABSTRACT", "ADD", "ADDASS", "AND", "ANDASS", "ARGS", "ARRAY", "ASSIGN", "BLOCK", "BOOLEAN", "BREAK", "BSLASH", "BYFIELD", "BYINDEX", "BYTE", "BackslashSequence", "CALL", "CASE", "CATCH", "CEXPR", "CHAR", "CLASS", "COLON", "COMMA", "CONST", "CONTINUE", "CR", "CharacterEscapeSequence", "DEBUGGER", "DEC", "DEFAULT", "DELETE", "DIV", "DIVASS", "DO", "DOT", "DOUBLE", "DQUOTE", "DecimalDigit", "DecimalIntegerLiteral", "DecimalLiteral", "ELSE", "ENUM", "EOL", "EQ", "EXPORT", "EXPR", "EXTENDS", "EscapeSequence", "ExponentPart", "FALSE", "FF", "FINAL", "FINALLY", "FLOAT", "FOR", "FORITER", "FORSTEP", "FUNCTION", "GOTO", "GT", "GTE", "HexDigit", "HexEscapeSequence", "HexIntegerLiteral", "IF", "IMPLEMENTS", "IMPORT", "IN", "INC", "INSTANCEOF", "INT", "INTERFACE", "INV", "ITEM", "Identifier", "IdentifierNameASCIIStart", "IdentifierPart", "IdentifierStartASCII", "LABELLED", "LAND", "LBRACE", "LBRACK", "LF", "LONG", "LOR", "LPAREN", "LS", "LT", "LTE", "LineTerminator", "MOD", "MODASS", "MUL", "MULASS", "MultiLineComment", "NAMEDVALUE", "NATIVE", "NBSP", "NEG", "NEQ", "NEW", "NOT", "NSAME", "NULL", "OBJECT", "OR", "ORASS", "OctalDigit", "OctalEscapeSequence", "OctalIntegerLiteral", "PACKAGE", "PAREXPR", "PDEC", "PINC", "POS", "PRIVATE", "PROTECTED", "PS", "PUBLIC", "QUE", "RBRACE", "RBRACK", "RETURN", "RPAREN", "RegularExpressionChar", "RegularExpressionFirstChar", "RegularExpressionLiteral", "SAME", "SEMIC", "SHL", "SHLASS", "SHORT", "SHR", "SHRASS", "SHU", "SHUASS", "SP", "SQUOTE", "STATIC", "SUB", "SUBASS", "SUPER", "SWITCH", "SYNCHRONIZED", "SingleLineComment", "StringLiteral", "TAB", "THIS", "THROW", "THROWS", "TRANSIENT", "TRUE", "TRY", "TYPEOF", "USP", "UnicodeEscapeSequence", "VAR", "VOID", "VOLATILE", "VT", "WHILE", "WITH", "WhiteSpace", "XOR", "XORASS", "ZeroToThree", "'dojo.provide('", "'goog.provide('"
 	};
 
 	public static final int EOF=-1;
+	public static final int T__171=171;
+	public static final int T__172=172;
 	public static final int ABSTRACT=4;
 	public static final int ADD=5;
 	public static final int ADDASS=6;
@@ -221,7 +223,7 @@ public class ES3YUITestParser extends Parser {
 	}
 	public ES3YUITestParser(TokenStream input, RecognizerSharedState state) {
 		super(input, state);
-		this.state.ruleMemo = new HashMap[350+1];
+		this.state.ruleMemo = new HashMap[354+1];
 		 
 
 	}
@@ -8286,7 +8288,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 					try {
 						functionDeclarationBodyWithoutBraces_stack.peek().typesList = determineParam(functionExpression_stack.peek().paramList,input.toString(retval.start,input.LT(-1)),functionExpression_stack.peek().funcName);
 					} catch(Exception e){
-					
+
 					}
 			}
 		}
@@ -8312,6 +8314,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		String name;
 		String currentClass;
 		int anonymousFunctionCount;
+		String moduleName;
 	}
 	protected Stack<program_scope> program_stack = new Stack<program_scope>();
 
@@ -8340,13 +8343,13 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 89) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1854:2: ( ( ( sourceElement )* ) -> cover_file(src=$program::namecode=$textlines=toObjectLiteral($program::executableLines, true)funcs=toObjectLiteral($program::functions, false)lineCount=$program::executableLines.size()funcCount=$program::functions.size()))
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1854:4: ( ( sourceElement )* )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:2: ( ( ( sourceElement )* ) -> cover_file(src=$program::namecode=$textlines=toObjectLiteral($program::executableLines, true)funcs=toObjectLiteral($program::functions, false)lineCount=$program::executableLines.size()funcCount=$program::functions.size()))
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:4: ( ( sourceElement )* )
 			{
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1854:4: ( ( sourceElement )* )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1854:5: ( sourceElement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:4: ( ( sourceElement )* )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:5: ( sourceElement )*
 			{
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1854:5: ( sourceElement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:5: ( sourceElement )*
 			loop83:
 			do {
 				int alt83=2;
@@ -8357,7 +8360,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt83) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1854:5: sourceElement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:5: sourceElement
 					{
 					pushFollow(FOLLOW_sourceElement_in_program6078);
 					sourceElement();
@@ -8376,7 +8379,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 			if ( state.backtracking==0 ) {java.util.Collections.sort(program_stack.peek().executableLines);}
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1855:2: -> cover_file(src=$program::namecode=$textlines=toObjectLiteral($program::executableLines, true)funcs=toObjectLiteral($program::functions, false)lineCount=$program::executableLines.size()funcCount=$program::functions.size())
+			  // 1856:2: -> cover_file(src=$program::namecode=$textlines=toObjectLiteral($program::executableLines, true)funcs=toObjectLiteral($program::functions, false)lineCount=$program::executableLines.size()funcCount=$program::functions.size())
 			  {
 			  	retval.st = templateLib.getInstanceOf("cover_file",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("lines", toObjectLiteral(program_stack.peek().executableLines, true)).put("funcs", toObjectLiteral(program_stack.peek().functions, false)).put("lineCount", program_stack.peek().executableLines.size()).put("funcCount", program_stack.peek().functions.size()));
 			  }
@@ -8409,6 +8412,106 @@ public static class STAttrMap extends HashMap<String, Object> {
 	// $ANTLR end "program"
 
 
+	public static class moduleName_return extends ParserRuleReturnScope {
+		public StringTemplate st;
+		public Object getTemplate() { return st; }
+		public String toString() { return st==null?null:st.toString(); }
+	};
+
+
+	// $ANTLR start "moduleName"
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1865:1: moduleName : ( 'dojo.provide(' Identifier ')' ( SEMIC )? | 'goog.provide(' Identifier ')' ( SEMIC )? );
+	public final ES3YUITestParser.moduleName_return moduleName() throws RecognitionException {
+		ES3YUITestParser.moduleName_return retval = new ES3YUITestParser.moduleName_return();
+		retval.start = input.LT(1);
+		int moduleName_StartIndex = input.index();
+
+		try {
+			if ( state.backtracking>0 && alreadyParsedRule(input, 90) ) { return retval; }
+
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1866:2: ( 'dojo.provide(' Identifier ')' ( SEMIC )? | 'goog.provide(' Identifier ')' ( SEMIC )? )
+			int alt86=2;
+			int LA86_0 = input.LA(1);
+			if ( (LA86_0==171) ) {
+				alt86=1;
+			}
+			else if ( (LA86_0==172) ) {
+				alt86=2;
+			}
+			else {
+				if (state.backtracking>0) {state.failed=true; return retval;}
+				NoViableAltException nvae =
+					new NoViableAltException("", 86, 0, input);
+				throw nvae;
+			}
+			switch (alt86) {
+				case 1 :
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1866:4: 'dojo.provide(' Identifier ')' ( SEMIC )?
+					{
+					match(input,171,FOLLOW_171_in_moduleName6135); if (state.failed) return retval;
+					match(input,Identifier,FOLLOW_Identifier_in_moduleName6137); if (state.failed) return retval;
+					match(input,RPAREN,FOLLOW_RPAREN_in_moduleName6139); if (state.failed) return retval;
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1866:35: ( SEMIC )?
+					int alt84=2;
+					int LA84_0 = input.LA(1);
+					if ( (LA84_0==SEMIC) ) {
+						alt84=1;
+					}
+					switch (alt84) {
+						case 1 :
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1866:35: SEMIC
+							{
+							match(input,SEMIC,FOLLOW_SEMIC_in_moduleName6141); if (state.failed) return retval;
+							}
+							break;
+
+					}
+
+					}
+					break;
+				case 2 :
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1867:4: 'goog.provide(' Identifier ')' ( SEMIC )?
+					{
+					match(input,172,FOLLOW_172_in_moduleName6147); if (state.failed) return retval;
+					match(input,Identifier,FOLLOW_Identifier_in_moduleName6149); if (state.failed) return retval;
+					match(input,RPAREN,FOLLOW_RPAREN_in_moduleName6151); if (state.failed) return retval;
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1867:35: ( SEMIC )?
+					int alt85=2;
+					int LA85_0 = input.LA(1);
+					if ( (LA85_0==SEMIC) ) {
+						alt85=1;
+					}
+					switch (alt85) {
+						case 1 :
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1867:35: SEMIC
+							{
+							match(input,SEMIC,FOLLOW_SEMIC_in_moduleName6153); if (state.failed) return retval;
+							}
+							break;
+
+					}
+
+					}
+					break;
+
+			}
+			retval.stop = input.LT(-1);
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+			if ( state.backtracking>0 ) { memoize(input, 90, moduleName_StartIndex); }
+
+		}
+		return retval;
+	}
+	// $ANTLR end "moduleName"
+
+
 	protected static class objectDeclaration_scope {
 		String objectName;
 	}
@@ -8422,7 +8525,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "objectDeclaration"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1865:1: objectDeclaration : memberExpression assignmentOperator objectLiteral ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1870:1: objectDeclaration : memberExpression assignmentOperator objectLiteral ;
 	public final ES3YUITestParser.objectDeclaration_return objectDeclaration() throws RecognitionException {
 		objectDeclaration_stack.push(new objectDeclaration_scope());
 		ES3YUITestParser.objectDeclaration_return retval = new ES3YUITestParser.objectDeclaration_return();
@@ -8432,21 +8535,21 @@ public static class STAttrMap extends HashMap<String, Object> {
 		ParserRuleReturnScope memberExpression13 =null;
 
 		try {
-			if ( state.backtracking>0 && alreadyParsedRule(input, 90) ) { return retval; }
+			if ( state.backtracking>0 && alreadyParsedRule(input, 91) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1869:2: ( memberExpression assignmentOperator objectLiteral )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1869:4: memberExpression assignmentOperator objectLiteral
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1874:2: ( memberExpression assignmentOperator objectLiteral )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1874:4: memberExpression assignmentOperator objectLiteral
 			{
-			pushFollow(FOLLOW_memberExpression_in_objectDeclaration6139);
+			pushFollow(FOLLOW_memberExpression_in_objectDeclaration6168);
 			memberExpression13=memberExpression();
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) {objectDeclaration_stack.peek().objectName =(memberExpression13!=null?input.toString(memberExpression13.start,memberExpression13.stop):null); }
-			pushFollow(FOLLOW_assignmentOperator_in_objectDeclaration6143);
+			pushFollow(FOLLOW_assignmentOperator_in_objectDeclaration6172);
 			assignmentOperator();
 			state._fsp--;
 			if (state.failed) return retval;
-			pushFollow(FOLLOW_objectLiteral_in_objectDeclaration6145);
+			pushFollow(FOLLOW_objectLiteral_in_objectDeclaration6174);
 			objectLiteral();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -8461,7 +8564,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		}
 		finally {
 			// do for sure before leaving
-			if ( state.backtracking>0 ) { memoize(input, 90, objectDeclaration_StartIndex); }
+			if ( state.backtracking>0 ) { memoize(input, 91, objectDeclaration_StartIndex); }
 
 			objectDeclaration_stack.pop();
 		}
@@ -8478,25 +8581,25 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "sourceElement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1874:1: sourceElement options {k=1; } : ({...}? functionDeclaration | statement );
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1880:1: sourceElement options {k=1; } : ({...}? functionDeclaration | statement );
 	public final ES3YUITestParser.sourceElement_return sourceElement() throws RecognitionException {
 		ES3YUITestParser.sourceElement_return retval = new ES3YUITestParser.sourceElement_return();
 		retval.start = input.LT(1);
 		int sourceElement_StartIndex = input.index();
 
 		try {
-			if ( state.backtracking>0 && alreadyParsedRule(input, 91) ) { return retval; }
+			if ( state.backtracking>0 && alreadyParsedRule(input, 92) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1879:2: ({...}? functionDeclaration | statement )
-			int alt84=2;
-			int LA84_0 = input.LA(1);
-			if ( (LA84_0==FUNCTION) ) {
-				int LA84_1 = input.LA(2);
-				if ( (((synpred259_ES3YUITest()&&synpred259_ES3YUITest())&&( input.LA(1) == FUNCTION ))) ) {
-					alt84=1;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1885:2: ({...}? functionDeclaration | statement )
+			int alt87=2;
+			int LA87_0 = input.LA(1);
+			if ( (LA87_0==FUNCTION) ) {
+				int LA87_1 = input.LA(2);
+				if ( (((( input.LA(1) == FUNCTION )&&( input.LA(1) == FUNCTION ))&&synpred262_ES3YUITest())) ) {
+					alt87=1;
 				}
 				else if ( (true) ) {
-					alt84=2;
+					alt87=2;
 				}
 				else {
 					if (state.backtracking>0) {state.failed=true; return retval;}
@@ -8504,40 +8607,40 @@ public static class STAttrMap extends HashMap<String, Object> {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 84, 1, input);
+							new NoViableAltException("", 87, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
 					}
 				}
 			}
-			else if ( (LA84_0==ADD||LA84_0==BREAK||LA84_0==CONTINUE||LA84_0==DEC||LA84_0==DELETE||LA84_0==DO||LA84_0==DecimalLiteral||LA84_0==FALSE||LA84_0==FOR||(LA84_0 >= HexIntegerLiteral && LA84_0 <= IF)||LA84_0==INC||LA84_0==INV||LA84_0==Identifier||(LA84_0 >= LBRACE && LA84_0 <= LBRACK)||LA84_0==LPAREN||(LA84_0 >= NEW && LA84_0 <= NOT)||LA84_0==NULL||LA84_0==OctalIntegerLiteral||LA84_0==RETURN||LA84_0==RegularExpressionLiteral||LA84_0==SEMIC||LA84_0==SUB||LA84_0==SWITCH||LA84_0==StringLiteral||(LA84_0 >= THIS && LA84_0 <= THROW)||(LA84_0 >= TRUE && LA84_0 <= TYPEOF)||(LA84_0 >= VAR && LA84_0 <= VOID)||(LA84_0 >= WHILE && LA84_0 <= WITH)) ) {
-				alt84=2;
+			else if ( (LA87_0==ADD||LA87_0==BREAK||LA87_0==CONTINUE||LA87_0==DEC||LA87_0==DELETE||LA87_0==DO||LA87_0==DecimalLiteral||LA87_0==FALSE||LA87_0==FOR||(LA87_0 >= HexIntegerLiteral && LA87_0 <= IF)||LA87_0==INC||LA87_0==INV||LA87_0==Identifier||(LA87_0 >= LBRACE && LA87_0 <= LBRACK)||LA87_0==LPAREN||(LA87_0 >= NEW && LA87_0 <= NOT)||LA87_0==NULL||LA87_0==OctalIntegerLiteral||LA87_0==RETURN||LA87_0==RegularExpressionLiteral||LA87_0==SEMIC||LA87_0==SUB||LA87_0==SWITCH||LA87_0==StringLiteral||(LA87_0 >= THIS && LA87_0 <= THROW)||(LA87_0 >= TRUE && LA87_0 <= TYPEOF)||(LA87_0 >= VAR && LA87_0 <= VOID)||(LA87_0 >= WHILE && LA87_0 <= WITH)) ) {
+				alt87=2;
 			}
 			else {
 				if (state.backtracking>0) {state.failed=true; return retval;}
 				NoViableAltException nvae =
-					new NoViableAltException("", 84, 0, input);
+					new NoViableAltException("", 87, 0, input);
 				throw nvae;
 			}
-			switch (alt84) {
+			switch (alt87) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1879:4: {...}? functionDeclaration
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1885:4: {...}? functionDeclaration
 					{
 					if ( !(( input.LA(1) == FUNCTION )) ) {
 						if (state.backtracking>0) {state.failed=true; return retval;}
 						throw new FailedPredicateException(input, "sourceElement", " input.LA(1) == FUNCTION ");
 					}
-					pushFollow(FOLLOW_functionDeclaration_in_sourceElement6176);
+					pushFollow(FOLLOW_functionDeclaration_in_sourceElement6206);
 					functionDeclaration();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1880:4: statement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1886:4: statement
 					{
-					pushFollow(FOLLOW_statement_in_sourceElement6181);
+					pushFollow(FOLLOW_statement_in_sourceElement6211);
 					statement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -8554,7 +8657,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		}
 		finally {
 			// do for sure before leaving
-			if ( state.backtracking>0 ) { memoize(input, 91, sourceElement_StartIndex); }
+			if ( state.backtracking>0 ) { memoize(input, 92, sourceElement_StartIndex); }
 
 		}
 		return retval;
@@ -8585,21 +8688,21 @@ public static class STAttrMap extends HashMap<String, Object> {
 		state._fsp--;
 		if (state.failed) return ;
 		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:945:26: ( COMMA ( arrayItem )? )*
-		loop87:
+		loop90:
 		do {
-			int alt87=2;
-			int LA87_0 = input.LA(1);
-			if ( (LA87_0==COMMA) ) {
-				alt87=1;
+			int alt90=2;
+			int LA90_0 = input.LA(1);
+			if ( (LA90_0==COMMA) ) {
+				alt90=1;
 			}
 
-			switch (alt87) {
+			switch (alt90) {
 			case 1 :
 				// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:945:28: COMMA ( arrayItem )?
 				{
 				match(input,COMMA,FOLLOW_COMMA_in_synpred123_ES3YUITest3194); if (state.failed) return ;
 				// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:945:34: ( arrayItem )?
-				int alt86=2;
+				int alt89=2;
 				switch ( input.LA(1) ) {
 					case ADD:
 					case DEC:
@@ -8626,27 +8729,27 @@ public static class STAttrMap extends HashMap<String, Object> {
 					case TYPEOF:
 					case VOID:
 						{
-						alt86=1;
+						alt89=1;
 						}
 						break;
 					case EOF:
 						{
-						int LA86_2 = input.LA(2);
+						int LA89_2 = input.LA(2);
 						if ( (((( input.LA(1) == COMMA )&&( input.LA(1) == COMMA ))&&synpred121_ES3YUITest())) ) {
-							alt86=1;
+							alt89=1;
 						}
 						}
 						break;
 					case COMMA:
 						{
-						int LA86_3 = input.LA(2);
+						int LA89_3 = input.LA(2);
 						if ( (((( input.LA(1) == COMMA )&&( input.LA(1) == COMMA ))&&synpred121_ES3YUITest())) ) {
-							alt86=1;
+							alt89=1;
 						}
 						}
 						break;
 				}
-				switch (alt86) {
+				switch (alt89) {
 					case 1 :
 						// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:945:34: arrayItem
 						{
@@ -8663,7 +8766,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 				break;
 
 			default :
-				break loop87;
+				break loop90;
 			}
 		} while (true);
 
@@ -8720,12 +8823,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 		state._fsp--;
 		if (state.failed) return ;
 		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1204:30: ({...}? assignmentOperator assignmentExpression )?
-		int alt91=2;
-		int LA91_0 = input.LA(1);
-		if ( (LA91_0==ADDASS||LA91_0==ANDASS||LA91_0==ASSIGN||LA91_0==DIVASS||LA91_0==MODASS||LA91_0==MULASS||LA91_0==ORASS||LA91_0==SHLASS||LA91_0==SHRASS||LA91_0==SHUASS||LA91_0==SUBASS||LA91_0==XORASS) ) {
-			alt91=1;
+		int alt94=2;
+		int LA94_0 = input.LA(1);
+		if ( (LA94_0==ADDASS||LA94_0==ANDASS||LA94_0==ASSIGN||LA94_0==DIVASS||LA94_0==MODASS||LA94_0==MULASS||LA94_0==ORASS||LA94_0==SHLASS||LA94_0==SHRASS||LA94_0==SHUASS||LA94_0==SUBASS||LA94_0==XORASS) ) {
+			alt94=1;
 		}
-		switch (alt91) {
+		switch (alt94) {
 			case 1 :
 				// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1204:32: {...}? assignmentOperator assignmentExpression
 				{
@@ -8851,23 +8954,23 @@ public static class STAttrMap extends HashMap<String, Object> {
 	}
 	// $ANTLR end synpred227_ES3YUITest
 
-	// $ANTLR start synpred259_ES3YUITest
-	public final void synpred259_ES3YUITest_fragment() throws RecognitionException {
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1879:4: ({...}? functionDeclaration )
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1879:4: {...}? functionDeclaration
+	// $ANTLR start synpred262_ES3YUITest
+	public final void synpred262_ES3YUITest_fragment() throws RecognitionException {
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1885:4: ({...}? functionDeclaration )
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1885:4: {...}? functionDeclaration
 		{
 		if ( !(( input.LA(1) == FUNCTION )) ) {
 			if (state.backtracking>0) {state.failed=true; return ;}
-			throw new FailedPredicateException(input, "synpred259_ES3YUITest", " input.LA(1) == FUNCTION ");
+			throw new FailedPredicateException(input, "synpred262_ES3YUITest", " input.LA(1) == FUNCTION ");
 		}
-		pushFollow(FOLLOW_functionDeclaration_in_synpred259_ES3YUITest6176);
+		pushFollow(FOLLOW_functionDeclaration_in_synpred262_ES3YUITest6206);
 		functionDeclaration();
 		state._fsp--;
 		if (state.failed) return ;
 		}
 
 	}
-	// $ANTLR end synpred259_ES3YUITest
+	// $ANTLR end synpred262_ES3YUITest
 
 	// Delegated rules
 
@@ -8876,20 +8979,6 @@ public static class STAttrMap extends HashMap<String, Object> {
 		int start = input.mark();
 		try {
 			synpred220_ES3YUITest_fragment(); // can never throw exception
-		} catch (RecognitionException re) {
-			System.err.println("impossible: "+re);
-		}
-		boolean success = !state.failed;
-		input.rewind(start);
-		state.backtracking--;
-		state.failed=false;
-		return success;
-	}
-	public final boolean synpred259_ES3YUITest() {
-		state.backtracking++;
-		int start = input.mark();
-		try {
-			synpred259_ES3YUITest_fragment(); // can never throw exception
 		} catch (RecognitionException re) {
 			System.err.println("impossible: "+re);
 		}
@@ -9002,6 +9091,20 @@ public static class STAttrMap extends HashMap<String, Object> {
 		int start = input.mark();
 		try {
 			synpred121_ES3YUITest_fragment(); // can never throw exception
+		} catch (RecognitionException re) {
+			System.err.println("impossible: "+re);
+		}
+		boolean success = !state.failed;
+		input.rewind(start);
+		state.backtracking--;
+		state.failed=false;
+		return success;
+	}
+	public final boolean synpred262_ES3YUITest() {
+		state.backtracking++;
+		int start = input.mark();
+		try {
+			synpred262_ES3YUITest_fragment(); // can never throw exception
 		} catch (RecognitionException re) {
 			System.err.println("impossible: "+re);
 		}
@@ -9363,11 +9466,19 @@ public static class STAttrMap extends HashMap<String, Object> {
 	public static final BitSet FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6011 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
 	public static final BitSet FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6013 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
 	public static final BitSet FOLLOW_sourceElement_in_program6078 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_memberExpression_in_objectDeclaration6139 = new BitSet(new long[]{0x0000002000000940L,0x0000800500000000L,0x0000020000021480L});
-	public static final BitSet FOLLOW_assignmentOperator_in_objectDeclaration6143 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_objectLiteral_in_objectDeclaration6145 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionDeclaration_in_sourceElement6176 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statement_in_sourceElement6181 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_171_in_moduleName6135 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_Identifier_in_moduleName6137 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_moduleName6139 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_SEMIC_in_moduleName6141 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_172_in_moduleName6147 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_Identifier_in_moduleName6149 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_moduleName6151 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_SEMIC_in_moduleName6153 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_memberExpression_in_objectDeclaration6168 = new BitSet(new long[]{0x0000002000000940L,0x0000800500000000L,0x0000020000021480L});
+	public static final BitSet FOLLOW_assignmentOperator_in_objectDeclaration6172 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_objectLiteral_in_objectDeclaration6174 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionDeclaration_in_sourceElement6206 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_statement_in_sourceElement6211 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arrayItem_in_synpred121_ES3YUITest3196 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arrayItem_in_synpred123_ES3YUITest3190 = new BitSet(new long[]{0x0000000008000002L});
 	public static final BitSet FOLLOW_COMMA_in_synpred123_ES3YUITest3194 = new BitSet(new long[]{0x4040100A08000020L,0x000416000460A210L,0x0000000451410008L});
@@ -9385,5 +9496,5 @@ public static class STAttrMap extends HashMap<String, Object> {
 	public static final BitSet FOLLOW_expressionStatement_in_synpred213_ES3YUITest4539 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_labelledStatement_in_synpred220_ES3YUITest4574 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_elseStatement_in_synpred227_ES3YUITest4751 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionDeclaration_in_synpred259_ES3YUITest6176 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionDeclaration_in_synpred262_ES3YUITest6206 = new BitSet(new long[]{0x0000000000000002L});
 }
