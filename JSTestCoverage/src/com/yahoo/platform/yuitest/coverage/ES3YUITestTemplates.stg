@@ -1,16 +1,19 @@
 group ES3YUITestTemplates;
 
-cover_line(src,code,line) ::= <<
-_jstestcoverage_line("<src>", <line>); 
+cover_line(src,code,funcName,line) ::= <<
+_jstestcoverage_line("<src>","<funcName>", <line>); 
 <code>
 >>
 
 cover_func(src,code,object,name,line,params) ::= <<
-_jstestcoverage_func("<src>","<object>", "<name>", <line>, "<params>");
+_jstestcoverage_func("<src>",object."<object>", name."<name>", line.<line>, param."<params>");
 <code>
 >>
 
- 
+end_func(name) ::= <<
+//_jstestcoverage_end_func("<name>");
+>>
+
 
 ignore(code) ::= <<
 <code>

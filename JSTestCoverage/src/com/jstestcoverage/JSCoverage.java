@@ -100,7 +100,7 @@ public class JSCoverage {
 	        	instrumentFile(this.input, outputLocation);
 	        	
 	        	// 3 Add number of code lines of each function to _jstestcoverage_func in instrumented code 
-	        	addNumberOfLines(outputLocation);
+	        	//addNumberOfLines(outputLocation);
 	        	
 	        	// 3.x replace .tmp
 	        	removeTmp(outputLocation);
@@ -164,6 +164,7 @@ public class JSCoverage {
     		int lineNum = lines.size();
     		for(int i = 0; i<lineNum; i++) {
     			String line = lines.get(i);
+    			String currentFunc = "";
     			String lastCoverLine = "";
     			String firstCoverLine = "";
     			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){

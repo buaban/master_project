@@ -43,15 +43,15 @@ The code in this file has been modified from the original for the purposes
 of this project.
 */
 
-grammar ES3YUITest ;
+grammar ES3YUITest;
 
 options
 {
-	output = template;
+	memoize = true;
 	rewrite = true;
 	language = Java ;	
 	backtrack = true;
-	memoize = true;
+	output = template;	
 }
 
 tokens
@@ -1284,6 +1284,7 @@ options
 }
 scope {
    boolean isBlock;
+   String currentFunc;
 }
 @init{
     boolean instrument = false;
@@ -1293,7 +1294,15 @@ scope {
 		
 	}	else {
     	//System.out.print($start.getLine()+","+ $program::stopLine+"|");
-	}	
+	}
+	
+	if($functionDeclaration.isEmpty() && $functionExpression.isEmpty()){
+		$statement::currentFunc = "";
+	} else if(!$functionDeclaration.isEmpty()){
+		$statement::currentFunc = $functionDeclaration::funcName;
+	} else if(!$functionExpression.isEmpty()){
+		$statement::currentFunc = $functionExpression::funcName;
+	}		
 	
 }
 @after {	
@@ -1304,12 +1313,13 @@ scope {
         }
         
         
+        
 	if (verbose){
 		System.err.println("\n[INFO] Instrumenting statement on line " + $start.getLine());
 	}
 }
 	: ({ $statement::isBlock = input.LA(1) == LBRACE }? block | statementTail ) 
-	  -> {instrument && !$statement::isBlock}? cover_line(src={$program::name}, code={$text},line={$start.getLine()}) 
+	  -> {instrument && !$statement::isBlock}? cover_line(src={$program::name}, code={$text}, funcName={$statement::currentFunc},line={$start.getLine()}) 
 	  -> ignore(code={$text}) 
 	;
 	
@@ -1684,7 +1694,7 @@ scope {
 }
 
 	: FUNCTION name=Identifier {$functionDeclaration::funcName=$Identifier.text;} formalParameterList {$functionDeclaration::paramList = $formalParameterList.params;} functionDeclarationBody 
-	  -> {instrument}? cover_line(src={$program::name}, code={$text}, line={$start.getLine()})
+	  -> {instrument}? cover_line(src={$program::name}, code={$text}, funcName={$functionDeclaration::funcName}, line={$start.getLine()})
 	  -> ignore(code={$text})
 	;
 
@@ -1697,7 +1707,7 @@ scope{
 }
 @init {
     $functionExpression::funcLine=$start.getLine();
-
+	
     /*
      * The function expression might have an identifier, and if so, use that as
      * the name.
@@ -1738,7 +1748,7 @@ scope{
 	//$functionExpression::paramList = $formalParameterList.params;
     //System.out.println($functionExpression::paramList);	
 }
-	: FUNCTION Identifier? formalParameterList {$functionExpression::paramList = $formalParameterList.params;} functionExpressionBody 
+	: FUNCTION Identifier? formalParameterList {$functionExpression::paramList = $formalParameterList.params;} functionExpressionBody	
 	;
 
 formalParameterList returns [String params]
@@ -1802,12 +1812,12 @@ scope {
 		
 		}
 	}
-	-> {$functionExpression::funcName!=null}? cover_func(src={$program::name}, code={$text}, class={$functionExpressionBodyWithoutBraces::objName}, name={$functionExpression::funcName}, line={$functionExpression::funcLine},params={$functionExpressionBodyWithoutBraces::typesList})
-	-> cover_func(src={$program::name}, code={$text}, class={$functionExpressionBodyWithoutBraces::objName}, name={$functionDeclaration::funcName}, line={$functionDeclaration::funcLine}, params={$functionExpressionBodyWithoutBraces::typesList})
+	-> {$functionExpression::funcName!=null}? cover_func(src={$program::name}, code={$text}, object={$functionExpressionBodyWithoutBraces::objName}, name={$functionExpression::funcName}, line={$functionExpression::funcLine},params={$functionExpressionBodyWithoutBraces::typesList})
+	-> cover_func(src={$program::name}, code={$text}, object={$functionExpressionBodyWithoutBraces::objName}, name={$functionDeclaration::funcName}, line={$functionDeclaration::funcLine}, params={$functionExpressionBodyWithoutBraces::typesList})
 	;
 
 functionDeclarationBodyWithoutBraces
-scope {
+scope { 
 	String typesList;
 	String objName;
 }
@@ -1822,11 +1832,11 @@ scope {
 		try {
 			$functionDeclarationBodyWithoutBraces::typesList = determineParam($functionExpression::paramList,$text,$functionExpression::funcName);
 		} catch(Exception e){
-			e;
+
 		}
 }
 	: sourceElement sourceElement*
-	-> cover_func(src={$program::name}, code={$text}, class={$functionDeclarationBodyWithoutBraces::objName}, name={$functionDeclaration::funcName}, line={$functionDeclaration::funcLine},params={$functionDeclarationBodyWithoutBraces::typesList})
+	-> cover_func(src={$program::name}, code={$text}, object={$functionDeclarationBodyWithoutBraces::objName}, name={$functionDeclaration::funcName}, line={$functionDeclaration::funcLine},params={$functionDeclarationBodyWithoutBraces::typesList})
 	;
 
 
@@ -1834,7 +1844,12 @@ scope {
 // $>
 	
 // $<	Program (14)
-
+/*
+moduleName
+	:	'dojo.provide(' Identifier ')' SEMIC?
+	|	'goog.provide(' Identifier ')' SEMIC?
+	;
+*/
 program
 scope {
   java.util.List<Integer> executableLines;
@@ -1843,7 +1858,7 @@ scope {
   String name;
   String currentClass;
   int anonymousFunctionCount;
-  String moduleName;
+  //String moduleName;
   }
   @init {
   $program::executableLines = new java.util.LinkedList();
@@ -1853,7 +1868,7 @@ scope {
   $program::anonymousFunctionCount = 0;
 }
 	: (sourceElement*) {java.util.Collections.sort($program::executableLines);}
-	-> cover_file(src={$program::name}, code = {$text}, lines = {toObjectLiteral($program::executableLines, true)}, funcs={toObjectLiteral($program::functions, false)}, lineCount={$program::executableLines.size()}, funcCount={$program::functions.size()})
+	//-> cover_file(src={$program::name}, code = {$text}, lines = {toObjectLiteral($program::executableLines, true)}, funcs={toObjectLiteral($program::functions, false)}, lineCount={$program::executableLines.size()}, funcCount={$program::functions.size()})
 	;
 
 /*
@@ -1862,16 +1877,12 @@ here and therefor remove the ambiguity between these to production.
 This will result in the same behaviour that is described in the specification under 12.4 on the expressionStatement rule.
 */
 
-moduleName
-	:	'dojo.provide(' Identifier ')' SEMIC?
-	|	'goog.provide(' Identifier ')' SEMIC?
-	;
 
 objectDeclaration
 scope{
     String objectName;
 }
-	: memberExpression {$objectDeclaration::objectName=$memberExpression.text; } assignmentOperator objectLiteral		
+	: memberExpression {$objectDeclaration::objectName=$memberExpression.text; } assignmentOperator objectLiteral {System.out.println($memberExpression.text);}
 	;
 
 

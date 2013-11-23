@@ -1,4 +1,4 @@
-// $ANTLR 3.x D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g 2013-11-23 16:34:33
+// $ANTLR 3.x D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g 2013-11-23 23:04:47
 
 /*
  * YUI Test Coverage
@@ -36,12 +36,10 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class ES3YUITestParser extends Parser {
 	public static final String[] tokenNames = new String[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ABSTRACT", "ADD", "ADDASS", "AND", "ANDASS", "ARGS", "ARRAY", "ASSIGN", "BLOCK", "BOOLEAN", "BREAK", "BSLASH", "BYFIELD", "BYINDEX", "BYTE", "BackslashSequence", "CALL", "CASE", "CATCH", "CEXPR", "CHAR", "CLASS", "COLON", "COMMA", "CONST", "CONTINUE", "CR", "CharacterEscapeSequence", "DEBUGGER", "DEC", "DEFAULT", "DELETE", "DIV", "DIVASS", "DO", "DOT", "DOUBLE", "DQUOTE", "DecimalDigit", "DecimalIntegerLiteral", "DecimalLiteral", "ELSE", "ENUM", "EOL", "EQ", "EXPORT", "EXPR", "EXTENDS", "EscapeSequence", "ExponentPart", "FALSE", "FF", "FINAL", "FINALLY", "FLOAT", "FOR", "FORITER", "FORSTEP", "FUNCTION", "GOTO", "GT", "GTE", "HexDigit", "HexEscapeSequence", "HexIntegerLiteral", "IF", "IMPLEMENTS", "IMPORT", "IN", "INC", "INSTANCEOF", "INT", "INTERFACE", "INV", "ITEM", "Identifier", "IdentifierNameASCIIStart", "IdentifierPart", "IdentifierStartASCII", "LABELLED", "LAND", "LBRACE", "LBRACK", "LF", "LONG", "LOR", "LPAREN", "LS", "LT", "LTE", "LineTerminator", "MOD", "MODASS", "MUL", "MULASS", "MultiLineComment", "NAMEDVALUE", "NATIVE", "NBSP", "NEG", "NEQ", "NEW", "NOT", "NSAME", "NULL", "OBJECT", "OR", "ORASS", "OctalDigit", "OctalEscapeSequence", "OctalIntegerLiteral", "PACKAGE", "PAREXPR", "PDEC", "PINC", "POS", "PRIVATE", "PROTECTED", "PS", "PUBLIC", "QUE", "RBRACE", "RBRACK", "RETURN", "RPAREN", "RegularExpressionChar", "RegularExpressionFirstChar", "RegularExpressionLiteral", "SAME", "SEMIC", "SHL", "SHLASS", "SHORT", "SHR", "SHRASS", "SHU", "SHUASS", "SP", "SQUOTE", "STATIC", "SUB", "SUBASS", "SUPER", "SWITCH", "SYNCHRONIZED", "SingleLineComment", "StringLiteral", "TAB", "THIS", "THROW", "THROWS", "TRANSIENT", "TRUE", "TRY", "TYPEOF", "USP", "UnicodeEscapeSequence", "VAR", "VOID", "VOLATILE", "VT", "WHILE", "WITH", "WhiteSpace", "XOR", "XORASS", "ZeroToThree", "'dojo.provide('", "'goog.provide('"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ABSTRACT", "ADD", "ADDASS", "AND", "ANDASS", "ARGS", "ARRAY", "ASSIGN", "BLOCK", "BOOLEAN", "BREAK", "BSLASH", "BYFIELD", "BYINDEX", "BYTE", "BackslashSequence", "CALL", "CASE", "CATCH", "CEXPR", "CHAR", "CLASS", "COLON", "COMMA", "CONST", "CONTINUE", "CR", "CharacterEscapeSequence", "DEBUGGER", "DEC", "DEFAULT", "DELETE", "DIV", "DIVASS", "DO", "DOT", "DOUBLE", "DQUOTE", "DecimalDigit", "DecimalIntegerLiteral", "DecimalLiteral", "ELSE", "ENUM", "EOL", "EQ", "EXPORT", "EXPR", "EXTENDS", "EscapeSequence", "ExponentPart", "FALSE", "FF", "FINAL", "FINALLY", "FLOAT", "FOR", "FORITER", "FORSTEP", "FUNCTION", "GOTO", "GT", "GTE", "HexDigit", "HexEscapeSequence", "HexIntegerLiteral", "IF", "IMPLEMENTS", "IMPORT", "IN", "INC", "INSTANCEOF", "INT", "INTERFACE", "INV", "ITEM", "Identifier", "IdentifierNameASCIIStart", "IdentifierPart", "IdentifierStartASCII", "LABELLED", "LAND", "LBRACE", "LBRACK", "LF", "LONG", "LOR", "LPAREN", "LS", "LT", "LTE", "LineTerminator", "MOD", "MODASS", "MUL", "MULASS", "MultiLineComment", "NAMEDVALUE", "NATIVE", "NBSP", "NEG", "NEQ", "NEW", "NOT", "NSAME", "NULL", "OBJECT", "OR", "ORASS", "OctalDigit", "OctalEscapeSequence", "OctalIntegerLiteral", "PACKAGE", "PAREXPR", "PDEC", "PINC", "POS", "PRIVATE", "PROTECTED", "PS", "PUBLIC", "QUE", "RBRACE", "RBRACK", "RETURN", "RPAREN", "RegularExpressionChar", "RegularExpressionFirstChar", "RegularExpressionLiteral", "SAME", "SEMIC", "SHL", "SHLASS", "SHORT", "SHR", "SHRASS", "SHU", "SHUASS", "SP", "SQUOTE", "STATIC", "SUB", "SUBASS", "SUPER", "SWITCH", "SYNCHRONIZED", "SingleLineComment", "StringLiteral", "TAB", "THIS", "THROW", "THROWS", "TRANSIENT", "TRUE", "TRY", "TYPEOF", "USP", "UnicodeEscapeSequence", "VAR", "VOID", "VOLATILE", "VT", "WHILE", "WITH", "WhiteSpace", "XOR", "XORASS", "ZeroToThree"
 	};
 
 	public static final int EOF=-1;
-	public static final int T__171=171;
-	public static final int T__172=172;
 	public static final int ABSTRACT=4;
 	public static final int ADD=5;
 	public static final int ADDASS=6;
@@ -223,7 +221,7 @@ public class ES3YUITestParser extends Parser {
 	}
 	public ES3YUITestParser(TokenStream input, RecognizerSharedState state) {
 		super(input, state);
-		this.state.ruleMemo = new HashMap[354+1];
+		this.state.ruleMemo = new HashMap[350+1];
 		 
 
 	}
@@ -4833,6 +4831,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 	protected static class statement_scope {
 		boolean isBlock;
+		String currentFunc;
 	}
 	protected Stack<statement_scope> statement_stack = new Stack<statement_scope>();
 
@@ -4844,7 +4843,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "statement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1280:1: statement options {k=1; } : ({...}? block | statementTail ) -> {instrument && !$statement::isBlock}? cover_line(src=$program::namecode=$textline=$start.getLine()) -> ignore(code=$text);
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1280:1: statement options {k=1; } : ({...}? block | statementTail ) -> {instrument && !$statement::isBlock}? cover_line(src=$program::namecode=$textfuncName=$statement::currentFuncline=$start.getLine()) -> ignore(code=$text);
 	public final ES3YUITestParser.statement_return statement() throws RecognitionException {
 		statement_stack.push(new statement_scope());
 		ES3YUITestParser.statement_return retval = new ES3YUITestParser.statement_return();
@@ -4859,16 +4858,24 @@ public static class STAttrMap extends HashMap<String, Object> {
 				
 			}	else {
 		    	//System.out.print(((Token)retval.start).getLine()+","+ program_stack.peek().stopLine+"|");
-			}	
+			}
+			
+			if(functionDeclaration_stack.isEmpty() && functionExpression_stack.isEmpty()){
+				statement_stack.peek().currentFunc = "";
+			} else if(!functionDeclaration_stack.isEmpty()){
+				statement_stack.peek().currentFunc = functionDeclaration_stack.peek().funcName;
+			} else if(!functionExpression_stack.isEmpty()){
+				statement_stack.peek().currentFunc = functionExpression_stack.peek().funcName;
+			}		
 			
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 51) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1311:2: ( ({...}? block | statementTail ) -> {instrument && !$statement::isBlock}? cover_line(src=$program::namecode=$textline=$start.getLine()) -> ignore(code=$text))
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1311:4: ({...}? block | statementTail )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1321:2: ( ({...}? block | statementTail ) -> {instrument && !$statement::isBlock}? cover_line(src=$program::namecode=$textfuncName=$statement::currentFuncline=$start.getLine()) -> ignore(code=$text))
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1321:4: ({...}? block | statementTail )
 			{
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1311:4: ({...}? block | statementTail )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1321:4: ({...}? block | statementTail )
 			int alt48=2;
 			int LA48_0 = input.LA(1);
 			if ( (LA48_0==LBRACE) ) {
@@ -4903,7 +4910,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt48) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1311:5: {...}? block
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1321:5: {...}? block
 					{
 					if ( !(( statement_stack.peek().isBlock = input.LA(1) == LBRACE )) ) {
 						if (state.backtracking>0) {state.failed=true; return retval;}
@@ -4916,7 +4923,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1311:62: statementTail
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1321:62: statementTail
 					{
 					pushFollow(FOLLOW_statementTail_in_statement4472);
 					statementTail();
@@ -4929,12 +4936,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1312:4: -> {instrument && !$statement::isBlock}? cover_line(src=$program::namecode=$textline=$start.getLine())
+			  // 1322:4: -> {instrument && !$statement::isBlock}? cover_line(src=$program::namecode=$textfuncName=$statement::currentFuncline=$start.getLine())
 			  if (instrument && !statement_stack.peek().isBlock) {
-			  	retval.st = templateLib.getInstanceOf("cover_line",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("line", ((Token)retval.start).getLine()));
+			  	retval.st = templateLib.getInstanceOf("cover_line",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("funcName", statement_stack.peek().currentFunc).put("line", ((Token)retval.start).getLine()));
 			  }
 
-			  else // 1313:4: -> ignore(code=$text)
+			  else // 1323:4: -> ignore(code=$text)
 			  {
 			  	retval.st = templateLib.getInstanceOf("ignore",new STAttrMap().put("code", input.toString(retval.start,input.LT(-1))));
 			  }
@@ -4957,6 +4964,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 						program_stack.peek().stopLine = ((Token)retval.start).getLine();	
 						program_stack.peek().executableLines.add(((Token)retval.start).getLine());
 			        }
+			        
 			        
 			        
 				if (verbose){
@@ -4987,7 +4995,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "statementTail"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1316:1: statementTail : ( variableStatement | objectDeclaration | emptyStatement | expressionStatement | ifStatement | iterationStatement | continueStatement | breakStatement | returnStatement | withStatement | labelledStatement | switchStatement | throwStatement | tryStatement );
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1326:1: statementTail : ( variableStatement | objectDeclaration | emptyStatement | expressionStatement | ifStatement | iterationStatement | continueStatement | breakStatement | returnStatement | withStatement | labelledStatement | switchStatement | throwStatement | tryStatement );
 	public final ES3YUITestParser.statementTail_return statementTail() throws RecognitionException {
 		ES3YUITestParser.statementTail_return retval = new ES3YUITestParser.statementTail_return();
 		retval.start = input.LT(1);
@@ -4996,7 +5004,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 52) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1317:2: ( variableStatement | objectDeclaration | emptyStatement | expressionStatement | ifStatement | iterationStatement | continueStatement | breakStatement | returnStatement | withStatement | labelledStatement | switchStatement | throwStatement | tryStatement )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1327:2: ( variableStatement | objectDeclaration | emptyStatement | expressionStatement | ifStatement | iterationStatement | continueStatement | breakStatement | returnStatement | withStatement | labelledStatement | switchStatement | throwStatement | tryStatement )
 			int alt49=14;
 			switch ( input.LA(1) ) {
 			case VAR:
@@ -5359,126 +5367,126 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt49) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1317:4: variableStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1327:4: variableStatement
 					{
-					pushFollow(FOLLOW_variableStatement_in_statementTail4524);
+					pushFollow(FOLLOW_variableStatement_in_statementTail4529);
 					variableStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1318:4: objectDeclaration
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1328:4: objectDeclaration
 					{
-					pushFollow(FOLLOW_objectDeclaration_in_statementTail4529);
+					pushFollow(FOLLOW_objectDeclaration_in_statementTail4534);
 					objectDeclaration();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 3 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1319:4: emptyStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1329:4: emptyStatement
 					{
-					pushFollow(FOLLOW_emptyStatement_in_statementTail4534);
+					pushFollow(FOLLOW_emptyStatement_in_statementTail4539);
 					emptyStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 4 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1320:4: expressionStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1330:4: expressionStatement
 					{
-					pushFollow(FOLLOW_expressionStatement_in_statementTail4539);
+					pushFollow(FOLLOW_expressionStatement_in_statementTail4544);
 					expressionStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 5 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1321:4: ifStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1331:4: ifStatement
 					{
-					pushFollow(FOLLOW_ifStatement_in_statementTail4544);
+					pushFollow(FOLLOW_ifStatement_in_statementTail4549);
 					ifStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 6 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1322:4: iterationStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1332:4: iterationStatement
 					{
-					pushFollow(FOLLOW_iterationStatement_in_statementTail4549);
+					pushFollow(FOLLOW_iterationStatement_in_statementTail4554);
 					iterationStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 7 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1323:4: continueStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1333:4: continueStatement
 					{
-					pushFollow(FOLLOW_continueStatement_in_statementTail4554);
+					pushFollow(FOLLOW_continueStatement_in_statementTail4559);
 					continueStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 8 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1324:4: breakStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1334:4: breakStatement
 					{
-					pushFollow(FOLLOW_breakStatement_in_statementTail4559);
+					pushFollow(FOLLOW_breakStatement_in_statementTail4564);
 					breakStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 9 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1325:4: returnStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1335:4: returnStatement
 					{
-					pushFollow(FOLLOW_returnStatement_in_statementTail4564);
+					pushFollow(FOLLOW_returnStatement_in_statementTail4569);
 					returnStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 10 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1326:4: withStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1336:4: withStatement
 					{
-					pushFollow(FOLLOW_withStatement_in_statementTail4569);
+					pushFollow(FOLLOW_withStatement_in_statementTail4574);
 					withStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 11 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1327:4: labelledStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1337:4: labelledStatement
 					{
-					pushFollow(FOLLOW_labelledStatement_in_statementTail4574);
+					pushFollow(FOLLOW_labelledStatement_in_statementTail4579);
 					labelledStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 12 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1328:4: switchStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1338:4: switchStatement
 					{
-					pushFollow(FOLLOW_switchStatement_in_statementTail4579);
+					pushFollow(FOLLOW_switchStatement_in_statementTail4584);
 					switchStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 13 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1329:4: throwStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1339:4: throwStatement
 					{
-					pushFollow(FOLLOW_throwStatement_in_statementTail4584);
+					pushFollow(FOLLOW_throwStatement_in_statementTail4589);
 					throwStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 14 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1330:4: tryStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1340:4: tryStatement
 					{
-					pushFollow(FOLLOW_tryStatement_in_statementTail4589);
+					pushFollow(FOLLOW_tryStatement_in_statementTail4594);
 					tryStatement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -5511,7 +5519,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "block"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1335:1: block : lb= LBRACE ( statement )* RBRACE ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1345:1: block : lb= LBRACE ( statement )* RBRACE ;
 	public final ES3YUITestParser.block_return block() throws RecognitionException {
 		ES3YUITestParser.block_return retval = new ES3YUITestParser.block_return();
 		retval.start = input.LT(1);
@@ -5522,11 +5530,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 53) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1336:2: (lb= LBRACE ( statement )* RBRACE )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1336:4: lb= LBRACE ( statement )* RBRACE
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1346:2: (lb= LBRACE ( statement )* RBRACE )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1346:4: lb= LBRACE ( statement )* RBRACE
 			{
-			lb=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_block4604); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1336:14: ( statement )*
+			lb=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_block4609); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1346:14: ( statement )*
 			loop50:
 			do {
 				int alt50=2;
@@ -5537,9 +5545,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt50) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1336:14: statement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1346:14: statement
 					{
-					pushFollow(FOLLOW_statement_in_block4606);
+					pushFollow(FOLLOW_statement_in_block4611);
 					statement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -5551,7 +5559,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 				}
 			} while (true);
 
-			match(input,RBRACE,FOLLOW_RBRACE_in_block4609); if (state.failed) return retval;
+			match(input,RBRACE,FOLLOW_RBRACE_in_block4614); if (state.failed) return retval;
 			}
 
 			retval.stop = input.LT(-1);
@@ -5579,7 +5587,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "variableStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1344:1: variableStatement : VAR variableDeclaration ( COMMA variableDeclaration )* semic ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1354:1: variableStatement : VAR variableDeclaration ( COMMA variableDeclaration )* semic ;
 	public final ES3YUITestParser.variableStatement_return variableStatement() throws RecognitionException {
 		ES3YUITestParser.variableStatement_return retval = new ES3YUITestParser.variableStatement_return();
 		retval.start = input.LT(1);
@@ -5588,15 +5596,15 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 54) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1345:2: ( VAR variableDeclaration ( COMMA variableDeclaration )* semic )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1345:4: VAR variableDeclaration ( COMMA variableDeclaration )* semic
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1355:2: ( VAR variableDeclaration ( COMMA variableDeclaration )* semic )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1355:4: VAR variableDeclaration ( COMMA variableDeclaration )* semic
 			{
-			match(input,VAR,FOLLOW_VAR_in_variableStatement4627); if (state.failed) return retval;
-			pushFollow(FOLLOW_variableDeclaration_in_variableStatement4629);
+			match(input,VAR,FOLLOW_VAR_in_variableStatement4632); if (state.failed) return retval;
+			pushFollow(FOLLOW_variableDeclaration_in_variableStatement4634);
 			variableDeclaration();
 			state._fsp--;
 			if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1345:28: ( COMMA variableDeclaration )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1355:28: ( COMMA variableDeclaration )*
 			loop51:
 			do {
 				int alt51=2;
@@ -5607,10 +5615,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt51) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1345:30: COMMA variableDeclaration
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1355:30: COMMA variableDeclaration
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_variableStatement4633); if (state.failed) return retval;
-					pushFollow(FOLLOW_variableDeclaration_in_variableStatement4635);
+					match(input,COMMA,FOLLOW_COMMA_in_variableStatement4638); if (state.failed) return retval;
+					pushFollow(FOLLOW_variableDeclaration_in_variableStatement4640);
 					variableDeclaration();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -5622,7 +5630,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 				}
 			} while (true);
 
-			pushFollow(FOLLOW_semic_in_variableStatement4640);
+			pushFollow(FOLLOW_semic_in_variableStatement4645);
 			semic();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -5653,7 +5661,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "variableDeclaration"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1349:1: variableDeclaration : Identifier ( ASSIGN assignmentExpression )? ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1359:1: variableDeclaration : Identifier ( ASSIGN assignmentExpression )? ;
 	public final ES3YUITestParser.variableDeclaration_return variableDeclaration() throws RecognitionException {
 		ES3YUITestParser.variableDeclaration_return retval = new ES3YUITestParser.variableDeclaration_return();
 		retval.start = input.LT(1);
@@ -5662,11 +5670,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 55) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1350:2: ( Identifier ( ASSIGN assignmentExpression )? )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1350:4: Identifier ( ASSIGN assignmentExpression )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1360:2: ( Identifier ( ASSIGN assignmentExpression )? )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1360:4: Identifier ( ASSIGN assignmentExpression )?
 			{
-			match(input,Identifier,FOLLOW_Identifier_in_variableDeclaration4653); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1350:15: ( ASSIGN assignmentExpression )?
+			match(input,Identifier,FOLLOW_Identifier_in_variableDeclaration4658); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1360:15: ( ASSIGN assignmentExpression )?
 			int alt52=2;
 			int LA52_0 = input.LA(1);
 			if ( (LA52_0==ASSIGN) ) {
@@ -5674,10 +5682,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt52) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1350:17: ASSIGN assignmentExpression
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1360:17: ASSIGN assignmentExpression
 					{
-					match(input,ASSIGN,FOLLOW_ASSIGN_in_variableDeclaration4657); if (state.failed) return retval;
-					pushFollow(FOLLOW_assignmentExpression_in_variableDeclaration4659);
+					match(input,ASSIGN,FOLLOW_ASSIGN_in_variableDeclaration4662); if (state.failed) return retval;
+					pushFollow(FOLLOW_assignmentExpression_in_variableDeclaration4664);
 					assignmentExpression();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -5713,7 +5721,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "variableDeclarationNoIn"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1353:1: variableDeclarationNoIn : Identifier ( ASSIGN assignmentExpressionNoIn )? ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1363:1: variableDeclarationNoIn : Identifier ( ASSIGN assignmentExpressionNoIn )? ;
 	public final ES3YUITestParser.variableDeclarationNoIn_return variableDeclarationNoIn() throws RecognitionException {
 		ES3YUITestParser.variableDeclarationNoIn_return retval = new ES3YUITestParser.variableDeclarationNoIn_return();
 		retval.start = input.LT(1);
@@ -5722,11 +5730,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 56) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1354:2: ( Identifier ( ASSIGN assignmentExpressionNoIn )? )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1354:4: Identifier ( ASSIGN assignmentExpressionNoIn )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1364:2: ( Identifier ( ASSIGN assignmentExpressionNoIn )? )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1364:4: Identifier ( ASSIGN assignmentExpressionNoIn )?
 			{
-			match(input,Identifier,FOLLOW_Identifier_in_variableDeclarationNoIn4674); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1354:15: ( ASSIGN assignmentExpressionNoIn )?
+			match(input,Identifier,FOLLOW_Identifier_in_variableDeclarationNoIn4679); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1364:15: ( ASSIGN assignmentExpressionNoIn )?
 			int alt53=2;
 			int LA53_0 = input.LA(1);
 			if ( (LA53_0==ASSIGN) ) {
@@ -5734,10 +5742,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt53) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1354:17: ASSIGN assignmentExpressionNoIn
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1364:17: ASSIGN assignmentExpressionNoIn
 					{
-					match(input,ASSIGN,FOLLOW_ASSIGN_in_variableDeclarationNoIn4678); if (state.failed) return retval;
-					pushFollow(FOLLOW_assignmentExpressionNoIn_in_variableDeclarationNoIn4680);
+					match(input,ASSIGN,FOLLOW_ASSIGN_in_variableDeclarationNoIn4683); if (state.failed) return retval;
+					pushFollow(FOLLOW_assignmentExpressionNoIn_in_variableDeclarationNoIn4685);
 					assignmentExpressionNoIn();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -5773,7 +5781,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "emptyStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1361:1: emptyStatement : SEMIC ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1371:1: emptyStatement : SEMIC ;
 	public final ES3YUITestParser.emptyStatement_return emptyStatement() throws RecognitionException {
 		ES3YUITestParser.emptyStatement_return retval = new ES3YUITestParser.emptyStatement_return();
 		retval.start = input.LT(1);
@@ -5782,10 +5790,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 57) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1362:2: ( SEMIC )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1362:4: SEMIC
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1372:2: ( SEMIC )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1372:4: SEMIC
 			{
-			match(input,SEMIC,FOLLOW_SEMIC_in_emptyStatement4699); if (state.failed) return retval;
+			match(input,SEMIC,FOLLOW_SEMIC_in_emptyStatement4704); if (state.failed) return retval;
 			}
 
 			retval.stop = input.LT(-1);
@@ -5813,7 +5821,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "expressionStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1375:1: expressionStatement : expression semic ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1385:1: expressionStatement : expression semic ;
 	public final ES3YUITestParser.expressionStatement_return expressionStatement() throws RecognitionException {
 		ES3YUITestParser.expressionStatement_return retval = new ES3YUITestParser.expressionStatement_return();
 		retval.start = input.LT(1);
@@ -5822,14 +5830,14 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 58) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1376:2: ( expression semic )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1376:4: expression semic
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1386:2: ( expression semic )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1386:4: expression semic
 			{
-			pushFollow(FOLLOW_expression_in_expressionStatement4717);
+			pushFollow(FOLLOW_expression_in_expressionStatement4722);
 			expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			pushFollow(FOLLOW_semic_in_expressionStatement4719);
+			pushFollow(FOLLOW_semic_in_expressionStatement4724);
 			semic();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -5860,7 +5868,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "ifStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1384:1: ifStatement : IF LPAREN expression RPAREN statement ({...}? elseStatement )? -> template(p=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)body=wrapInBraces($statement.start, $statement.stop, input)elseClause=\r\n\t $elseStatement.stop != null ? input.toString($statement.stop.getTokenIndex()+1, $elseStatement.stop.getTokenIndex() ) : null) \"<p><body><elseClause>\";
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1394:1: ifStatement : IF LPAREN expression RPAREN statement ({...}? elseStatement )? -> template(p=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)body=wrapInBraces($statement.start, $statement.stop, input)elseClause=\r\n\t $elseStatement.stop != null ? input.toString($statement.stop.getTokenIndex()+1, $elseStatement.stop.getTokenIndex() ) : null) \"<p><body><elseClause>\";
 	public final ES3YUITestParser.ifStatement_return ifStatement() throws RecognitionException {
 		ES3YUITestParser.ifStatement_return retval = new ES3YUITestParser.ifStatement_return();
 		retval.start = input.LT(1);
@@ -5872,21 +5880,21 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 59) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1386:2: ( IF LPAREN expression RPAREN statement ({...}? elseStatement )? -> template(p=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)body=wrapInBraces($statement.start, $statement.stop, input)elseClause=\r\n\t $elseStatement.stop != null ? input.toString($statement.stop.getTokenIndex()+1, $elseStatement.stop.getTokenIndex() ) : null) \"<p><body><elseClause>\")
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1386:4: IF LPAREN expression RPAREN statement ({...}? elseStatement )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1396:2: ( IF LPAREN expression RPAREN statement ({...}? elseStatement )? -> template(p=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)body=wrapInBraces($statement.start, $statement.stop, input)elseClause=\r\n\t $elseStatement.stop != null ? input.toString($statement.stop.getTokenIndex()+1, $elseStatement.stop.getTokenIndex() ) : null) \"<p><body><elseClause>\")
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1396:4: IF LPAREN expression RPAREN statement ({...}? elseStatement )?
 			{
-			match(input,IF,FOLLOW_IF_in_ifStatement4737); if (state.failed) return retval;
-			match(input,LPAREN,FOLLOW_LPAREN_in_ifStatement4739); if (state.failed) return retval;
-			pushFollow(FOLLOW_expression_in_ifStatement4741);
+			match(input,IF,FOLLOW_IF_in_ifStatement4742); if (state.failed) return retval;
+			match(input,LPAREN,FOLLOW_LPAREN_in_ifStatement4744); if (state.failed) return retval;
+			pushFollow(FOLLOW_expression_in_ifStatement4746);
 			expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			match(input,RPAREN,FOLLOW_RPAREN_in_ifStatement4743); if (state.failed) return retval;
-			pushFollow(FOLLOW_statement_in_ifStatement4745);
+			match(input,RPAREN,FOLLOW_RPAREN_in_ifStatement4748); if (state.failed) return retval;
+			pushFollow(FOLLOW_statement_in_ifStatement4750);
 			statement1=statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1386:42: ({...}? elseStatement )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1396:42: ({...}? elseStatement )?
 			int alt54=2;
 			int LA54_0 = input.LA(1);
 			if ( (LA54_0==ELSE) ) {
@@ -5897,13 +5905,13 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt54) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1386:44: {...}? elseStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1396:44: {...}? elseStatement
 					{
 					if ( !(( input.LA(1) == ELSE )) ) {
 						if (state.backtracking>0) {state.failed=true; return retval;}
 						throw new FailedPredicateException(input, "ifStatement", " input.LA(1) == ELSE ");
 					}
-					pushFollow(FOLLOW_elseStatement_in_ifStatement4751);
+					pushFollow(FOLLOW_elseStatement_in_ifStatement4756);
 					elseStatement2=elseStatement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -5914,7 +5922,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1388:2: -> template(p=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)body=wrapInBraces($statement.start, $statement.stop, input)elseClause=\r\n\t $elseStatement.stop != null ? input.toString($statement.stop.getTokenIndex()+1, $elseStatement.stop.getTokenIndex() ) : null) \"<p><body><elseClause>\"
+			  // 1398:2: -> template(p=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)body=wrapInBraces($statement.start, $statement.stop, input)elseClause=\r\n\t $elseStatement.stop != null ? input.toString($statement.stop.getTokenIndex()+1, $elseStatement.stop.getTokenIndex() ) : null) \"<p><body><elseClause>\"
 			  {
 			  	retval.st = new StringTemplate(templateLib, "<p><body><elseClause>",new STAttrMap().put("p", input.toString(((Token)retval.start).getTokenIndex(), (statement1!=null?((Token)statement1.start):null).getTokenIndex() - 1)).put("body", wrapInBraces((statement1!=null?((Token)statement1.start):null), (statement1!=null?((Token)statement1.stop):null), input)).put("elseClause", 
 			  	             (elseStatement2!=null?((Token)elseStatement2.stop):null) != null ? input.toString((statement1!=null?((Token)statement1.stop):null).getTokenIndex()+1, (elseStatement2!=null?((Token)elseStatement2.stop):null).getTokenIndex() ) : null));
@@ -5955,7 +5963,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "elseStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1394:1: elseStatement : ELSE statement -> template(prefix=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<prefix><stmt>\";
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1404:1: elseStatement : ELSE statement -> template(prefix=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<prefix><stmt>\";
 	public final ES3YUITestParser.elseStatement_return elseStatement() throws RecognitionException {
 		ES3YUITestParser.elseStatement_return retval = new ES3YUITestParser.elseStatement_return();
 		retval.start = input.LT(1);
@@ -5966,17 +5974,17 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 60) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1395:2: ( ELSE statement -> template(prefix=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<prefix><stmt>\")
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1395:4: ELSE statement
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1405:2: ( ELSE statement -> template(prefix=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<prefix><stmt>\")
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1405:4: ELSE statement
 			{
-			match(input,ELSE,FOLLOW_ELSE_in_elseStatement4823); if (state.failed) return retval;
-			pushFollow(FOLLOW_statement_in_elseStatement4825);
+			match(input,ELSE,FOLLOW_ELSE_in_elseStatement4828); if (state.failed) return retval;
+			pushFollow(FOLLOW_statement_in_elseStatement4830);
 			statement3=statement();
 			state._fsp--;
 			if (state.failed) return retval;
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1396:2: -> template(prefix=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<prefix><stmt>\"
+			  // 1406:2: -> template(prefix=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<prefix><stmt>\"
 			  {
 			  	retval.st = new StringTemplate(templateLib, "<prefix><stmt>",new STAttrMap().put("prefix", input.toString(((Token)retval.start).getTokenIndex(), (statement3!=null?((Token)statement3.start):null).getTokenIndex() - 1)).put("stmt", wrapInBraces((statement3!=null?((Token)statement3.start):null), (statement3!=null?((Token)statement3.stop):null), input)));
 			  }
@@ -6016,7 +6024,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "iterationStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1403:1: iterationStatement : ( doStatement | whileStatement | forStatement );
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1413:1: iterationStatement : ( doStatement | whileStatement | forStatement );
 	public final ES3YUITestParser.iterationStatement_return iterationStatement() throws RecognitionException {
 		ES3YUITestParser.iterationStatement_return retval = new ES3YUITestParser.iterationStatement_return();
 		retval.start = input.LT(1);
@@ -6025,7 +6033,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 61) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1404:2: ( doStatement | whileStatement | forStatement )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1414:2: ( doStatement | whileStatement | forStatement )
 			int alt55=3;
 			switch ( input.LA(1) ) {
 			case DO:
@@ -6051,27 +6059,27 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt55) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1404:4: doStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1414:4: doStatement
 					{
-					pushFollow(FOLLOW_doStatement_in_iterationStatement4862);
+					pushFollow(FOLLOW_doStatement_in_iterationStatement4867);
 					doStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1405:4: whileStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1415:4: whileStatement
 					{
-					pushFollow(FOLLOW_whileStatement_in_iterationStatement4867);
+					pushFollow(FOLLOW_whileStatement_in_iterationStatement4872);
 					whileStatement();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 3 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1406:4: forStatement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1416:4: forStatement
 					{
-					pushFollow(FOLLOW_forStatement_in_iterationStatement4872);
+					pushFollow(FOLLOW_forStatement_in_iterationStatement4877);
 					forStatement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -6104,7 +6112,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "doStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1409:1: doStatement : DO statement WHILE LPAREN expression RPAREN semic -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)post=input.toString($WHILE, $RPAREN)end=$semic.text) \"<pre><stmt><post><end>\";
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1419:1: doStatement : DO statement WHILE LPAREN expression RPAREN semic -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)post=input.toString($WHILE, $RPAREN)end=$semic.text) \"<pre><stmt><post><end>\";
 	public final ES3YUITestParser.doStatement_return doStatement() throws RecognitionException {
 		ES3YUITestParser.doStatement_return retval = new ES3YUITestParser.doStatement_return();
 		retval.start = input.LT(1);
@@ -6118,28 +6126,28 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 62) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1410:2: ( DO statement WHILE LPAREN expression RPAREN semic -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)post=input.toString($WHILE, $RPAREN)end=$semic.text) \"<pre><stmt><post><end>\")
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1410:4: DO statement WHILE LPAREN expression RPAREN semic
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1420:2: ( DO statement WHILE LPAREN expression RPAREN semic -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)post=input.toString($WHILE, $RPAREN)end=$semic.text) \"<pre><stmt><post><end>\")
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1420:4: DO statement WHILE LPAREN expression RPAREN semic
 			{
-			match(input,DO,FOLLOW_DO_in_doStatement4884); if (state.failed) return retval;
-			pushFollow(FOLLOW_statement_in_doStatement4886);
+			match(input,DO,FOLLOW_DO_in_doStatement4889); if (state.failed) return retval;
+			pushFollow(FOLLOW_statement_in_doStatement4891);
 			statement4=statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			WHILE5=(Token)match(input,WHILE,FOLLOW_WHILE_in_doStatement4888); if (state.failed) return retval;
-			match(input,LPAREN,FOLLOW_LPAREN_in_doStatement4890); if (state.failed) return retval;
-			pushFollow(FOLLOW_expression_in_doStatement4892);
+			WHILE5=(Token)match(input,WHILE,FOLLOW_WHILE_in_doStatement4893); if (state.failed) return retval;
+			match(input,LPAREN,FOLLOW_LPAREN_in_doStatement4895); if (state.failed) return retval;
+			pushFollow(FOLLOW_expression_in_doStatement4897);
 			expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			RPAREN6=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_doStatement4894); if (state.failed) return retval;
-			pushFollow(FOLLOW_semic_in_doStatement4896);
+			RPAREN6=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_doStatement4899); if (state.failed) return retval;
+			pushFollow(FOLLOW_semic_in_doStatement4901);
 			semic7=semic();
 			state._fsp--;
 			if (state.failed) return retval;
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1411:2: -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)post=input.toString($WHILE, $RPAREN)end=$semic.text) \"<pre><stmt><post><end>\"
+			  // 1421:2: -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)post=input.toString($WHILE, $RPAREN)end=$semic.text) \"<pre><stmt><post><end>\"
 			  {
 			  	retval.st = new StringTemplate(templateLib, "<pre><stmt><post><end>",new STAttrMap().put("pre", input.toString(((Token)retval.start).getTokenIndex(), (statement4!=null?((Token)statement4.start):null).getTokenIndex() - 1)).put("stmt", wrapInBraces((statement4!=null?((Token)statement4.start):null), (statement4!=null?((Token)statement4.stop):null), input)).put("post", input.toString(WHILE5, RPAREN6)).put("end", (semic7!=null?input.toString(semic7.start,semic7.stop):null)));
 			  }
@@ -6179,7 +6187,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "whileStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1417:1: whileStatement : WHILE LPAREN expression RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\";
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1427:1: whileStatement : WHILE LPAREN expression RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\";
 	public final ES3YUITestParser.whileStatement_return whileStatement() throws RecognitionException {
 		ES3YUITestParser.whileStatement_return retval = new ES3YUITestParser.whileStatement_return();
 		retval.start = input.LT(1);
@@ -6190,23 +6198,23 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 63) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1418:2: ( WHILE LPAREN expression RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\")
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1418:4: WHILE LPAREN expression RPAREN statement
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1428:2: ( WHILE LPAREN expression RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\")
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1428:4: WHILE LPAREN expression RPAREN statement
 			{
-			match(input,WHILE,FOLLOW_WHILE_in_whileStatement4982); if (state.failed) return retval;
-			match(input,LPAREN,FOLLOW_LPAREN_in_whileStatement4984); if (state.failed) return retval;
-			pushFollow(FOLLOW_expression_in_whileStatement4986);
+			match(input,WHILE,FOLLOW_WHILE_in_whileStatement4987); if (state.failed) return retval;
+			match(input,LPAREN,FOLLOW_LPAREN_in_whileStatement4989); if (state.failed) return retval;
+			pushFollow(FOLLOW_expression_in_whileStatement4991);
 			expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			match(input,RPAREN,FOLLOW_RPAREN_in_whileStatement4988); if (state.failed) return retval;
-			pushFollow(FOLLOW_statement_in_whileStatement4990);
+			match(input,RPAREN,FOLLOW_RPAREN_in_whileStatement4993); if (state.failed) return retval;
+			pushFollow(FOLLOW_statement_in_whileStatement4995);
 			statement8=statement();
 			state._fsp--;
 			if (state.failed) return retval;
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1419:2: -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\"
+			  // 1429:2: -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\"
 			  {
 			  	retval.st = new StringTemplate(templateLib, "<pre><stmt>",new STAttrMap().put("pre", input.toString(((Token)retval.start).getTokenIndex(), (statement8!=null?((Token)statement8.start):null).getTokenIndex() - 1)).put("stmt", wrapInBraces((statement8!=null?((Token)statement8.start):null), (statement8!=null?((Token)statement8.stop):null), input)));
 			  }
@@ -6246,7 +6254,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "forStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1465:1: forStatement : FOR LPAREN forControl RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\";
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1475:1: forStatement : FOR LPAREN forControl RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\";
 	public final ES3YUITestParser.forStatement_return forStatement() throws RecognitionException {
 		ES3YUITestParser.forStatement_return retval = new ES3YUITestParser.forStatement_return();
 		retval.start = input.LT(1);
@@ -6257,23 +6265,23 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 64) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1466:2: ( FOR LPAREN forControl RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\")
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1466:4: FOR LPAREN forControl RPAREN statement
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1476:2: ( FOR LPAREN forControl RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\")
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1476:4: FOR LPAREN forControl RPAREN statement
 			{
-			match(input,FOR,FOLLOW_FOR_in_forStatement5051); if (state.failed) return retval;
-			match(input,LPAREN,FOLLOW_LPAREN_in_forStatement5053); if (state.failed) return retval;
-			pushFollow(FOLLOW_forControl_in_forStatement5055);
+			match(input,FOR,FOLLOW_FOR_in_forStatement5056); if (state.failed) return retval;
+			match(input,LPAREN,FOLLOW_LPAREN_in_forStatement5058); if (state.failed) return retval;
+			pushFollow(FOLLOW_forControl_in_forStatement5060);
 			forControl();
 			state._fsp--;
 			if (state.failed) return retval;
-			match(input,RPAREN,FOLLOW_RPAREN_in_forStatement5057); if (state.failed) return retval;
-			pushFollow(FOLLOW_statement_in_forStatement5059);
+			match(input,RPAREN,FOLLOW_RPAREN_in_forStatement5062); if (state.failed) return retval;
+			pushFollow(FOLLOW_statement_in_forStatement5064);
 			statement9=statement();
 			state._fsp--;
 			if (state.failed) return retval;
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1467:2: -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\"
+			  // 1477:2: -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\"
 			  {
 			  	retval.st = new StringTemplate(templateLib, "<pre><stmt>",new STAttrMap().put("pre", input.toString(((Token)retval.start).getTokenIndex(), (statement9!=null?((Token)statement9.start):null).getTokenIndex() - 1)).put("stmt", wrapInBraces((statement9!=null?((Token)statement9.start):null), (statement9!=null?((Token)statement9.stop):null), input)));
 			  }
@@ -6313,7 +6321,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "forControl"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1472:1: forControl : ( forControlVar | forControlExpression | forControlSemic );
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1482:1: forControl : ( forControlVar | forControlExpression | forControlSemic );
 	public final ES3YUITestParser.forControl_return forControl() throws RecognitionException {
 		ES3YUITestParser.forControl_return retval = new ES3YUITestParser.forControl_return();
 		retval.start = input.LT(1);
@@ -6322,7 +6330,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 65) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1473:2: ( forControlVar | forControlExpression | forControlSemic )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1483:2: ( forControlVar | forControlExpression | forControlSemic )
 			int alt56=3;
 			switch ( input.LA(1) ) {
 			case VAR:
@@ -6371,27 +6379,27 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt56) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1473:4: forControlVar
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1483:4: forControlVar
 					{
-					pushFollow(FOLLOW_forControlVar_in_forControl5118);
+					pushFollow(FOLLOW_forControlVar_in_forControl5123);
 					forControlVar();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1474:4: forControlExpression
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1484:4: forControlExpression
 					{
-					pushFollow(FOLLOW_forControlExpression_in_forControl5123);
+					pushFollow(FOLLOW_forControlExpression_in_forControl5128);
 					forControlExpression();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 3 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1475:4: forControlSemic
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1485:4: forControlSemic
 					{
-					pushFollow(FOLLOW_forControlSemic_in_forControl5128);
+					pushFollow(FOLLOW_forControlSemic_in_forControl5133);
 					forControlSemic();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -6424,7 +6432,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "forControlVar"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1478:1: forControlVar : VAR variableDeclarationNoIn ( ( IN expression ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? ) ) ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1488:1: forControlVar : VAR variableDeclarationNoIn ( ( IN expression ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? ) ) ;
 	public final ES3YUITestParser.forControlVar_return forControlVar() throws RecognitionException {
 		ES3YUITestParser.forControlVar_return retval = new ES3YUITestParser.forControlVar_return();
 		retval.start = input.LT(1);
@@ -6436,15 +6444,15 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 66) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1479:2: ( VAR variableDeclarationNoIn ( ( IN expression ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? ) ) )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1479:4: VAR variableDeclarationNoIn ( ( IN expression ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? ) )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1489:2: ( VAR variableDeclarationNoIn ( ( IN expression ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? ) ) )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1489:4: VAR variableDeclarationNoIn ( ( IN expression ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? ) )
 			{
-			match(input,VAR,FOLLOW_VAR_in_forControlVar5139); if (state.failed) return retval;
-			pushFollow(FOLLOW_variableDeclarationNoIn_in_forControlVar5141);
+			match(input,VAR,FOLLOW_VAR_in_forControlVar5144); if (state.failed) return retval;
+			pushFollow(FOLLOW_variableDeclarationNoIn_in_forControlVar5146);
 			variableDeclarationNoIn();
 			state._fsp--;
 			if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1480:2: ( ( IN expression ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? ) )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1490:2: ( ( IN expression ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? ) )
 			int alt60=2;
 			int LA60_0 = input.LA(1);
 			if ( (LA60_0==IN) ) {
@@ -6461,13 +6469,13 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt60) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1481:3: ( IN expression )
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1491:3: ( IN expression )
 					{
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1481:3: ( IN expression )
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1482:4: IN expression
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1491:3: ( IN expression )
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1492:4: IN expression
 					{
-					match(input,IN,FOLLOW_IN_in_forControlVar5153); if (state.failed) return retval;
-					pushFollow(FOLLOW_expression_in_forControlVar5155);
+					match(input,IN,FOLLOW_IN_in_forControlVar5158); if (state.failed) return retval;
+					pushFollow(FOLLOW_expression_in_forControlVar5160);
 					expression();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -6476,12 +6484,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1486:3: ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? )
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1496:3: ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? )
 					{
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1486:3: ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? )
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1487:4: ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )?
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1496:3: ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? )
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1497:4: ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )?
 					{
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1487:4: ( COMMA variableDeclarationNoIn )*
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1497:4: ( COMMA variableDeclarationNoIn )*
 					loop57:
 					do {
 						int alt57=2;
@@ -6492,10 +6500,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 						switch (alt57) {
 						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1487:6: COMMA variableDeclarationNoIn
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1497:6: COMMA variableDeclarationNoIn
 							{
-							match(input,COMMA,FOLLOW_COMMA_in_forControlVar5178); if (state.failed) return retval;
-							pushFollow(FOLLOW_variableDeclarationNoIn_in_forControlVar5180);
+							match(input,COMMA,FOLLOW_COMMA_in_forControlVar5183); if (state.failed) return retval;
+							pushFollow(FOLLOW_variableDeclarationNoIn_in_forControlVar5185);
 							variableDeclarationNoIn();
 							state._fsp--;
 							if (state.failed) return retval;
@@ -6507,8 +6515,8 @@ public static class STAttrMap extends HashMap<String, Object> {
 						}
 					} while (true);
 
-					match(input,SEMIC,FOLLOW_SEMIC_in_forControlVar5185); if (state.failed) return retval;
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1487:48: (ex1= expression )?
+					match(input,SEMIC,FOLLOW_SEMIC_in_forControlVar5190); if (state.failed) return retval;
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1497:48: (ex1= expression )?
 					int alt58=2;
 					int LA58_0 = input.LA(1);
 					if ( (LA58_0==ADD||LA58_0==DEC||LA58_0==DELETE||LA58_0==DecimalLiteral||LA58_0==FALSE||LA58_0==FUNCTION||LA58_0==HexIntegerLiteral||LA58_0==INC||LA58_0==INV||LA58_0==Identifier||(LA58_0 >= LBRACE && LA58_0 <= LBRACK)||LA58_0==LPAREN||(LA58_0 >= NEW && LA58_0 <= NOT)||LA58_0==NULL||LA58_0==OctalIntegerLiteral||LA58_0==RegularExpressionLiteral||LA58_0==SUB||LA58_0==StringLiteral||LA58_0==THIS||LA58_0==TRUE||LA58_0==TYPEOF||LA58_0==VOID) ) {
@@ -6516,9 +6524,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					switch (alt58) {
 						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1487:48: ex1= expression
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1497:48: ex1= expression
 							{
-							pushFollow(FOLLOW_expression_in_forControlVar5189);
+							pushFollow(FOLLOW_expression_in_forControlVar5194);
 							ex1=expression();
 							state._fsp--;
 							if (state.failed) return retval;
@@ -6527,8 +6535,8 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 					}
 
-					match(input,SEMIC,FOLLOW_SEMIC_in_forControlVar5192); if (state.failed) return retval;
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1487:70: (ex2= expression )?
+					match(input,SEMIC,FOLLOW_SEMIC_in_forControlVar5197); if (state.failed) return retval;
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1497:70: (ex2= expression )?
 					int alt59=2;
 					int LA59_0 = input.LA(1);
 					if ( (LA59_0==ADD||LA59_0==DEC||LA59_0==DELETE||LA59_0==DecimalLiteral||LA59_0==FALSE||LA59_0==FUNCTION||LA59_0==HexIntegerLiteral||LA59_0==INC||LA59_0==INV||LA59_0==Identifier||(LA59_0 >= LBRACE && LA59_0 <= LBRACK)||LA59_0==LPAREN||(LA59_0 >= NEW && LA59_0 <= NOT)||LA59_0==NULL||LA59_0==OctalIntegerLiteral||LA59_0==RegularExpressionLiteral||LA59_0==SUB||LA59_0==StringLiteral||LA59_0==THIS||LA59_0==TRUE||LA59_0==TYPEOF||LA59_0==VOID) ) {
@@ -6536,9 +6544,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					switch (alt59) {
 						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1487:70: ex2= expression
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1497:70: ex2= expression
 							{
-							pushFollow(FOLLOW_expression_in_forControlVar5196);
+							pushFollow(FOLLOW_expression_in_forControlVar5201);
 							ex2=expression();
 							state._fsp--;
 							if (state.failed) return retval;
@@ -6581,7 +6589,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "forControlExpression"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1493:1: forControlExpression : ex1= expressionNoIn ({...}? ( IN ex2= expression ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? ) ) ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1503:1: forControlExpression : ex1= expressionNoIn ({...}? ( IN ex2= expression ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? ) ) ;
 	public final ES3YUITestParser.forControlExpression_return forControlExpression() throws RecognitionException {
 		ES3YUITestParser.forControlExpression_return retval = new ES3YUITestParser.forControlExpression_return();
 		retval.start = input.LT(1);
@@ -6597,14 +6605,14 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 67) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1498:2: (ex1= expressionNoIn ({...}? ( IN ex2= expression ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? ) ) )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1498:4: ex1= expressionNoIn ({...}? ( IN ex2= expression ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? ) )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1508:2: (ex1= expressionNoIn ({...}? ( IN ex2= expression ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? ) ) )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1508:4: ex1= expressionNoIn ({...}? ( IN ex2= expression ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? ) )
 			{
-			pushFollow(FOLLOW_expressionNoIn_in_forControlExpression5226);
+			pushFollow(FOLLOW_expressionNoIn_in_forControlExpression5231);
 			ex1=expressionNoIn();
 			state._fsp--;
 			if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1499:2: ({...}? ( IN ex2= expression ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? ) )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1509:2: ({...}? ( IN ex2= expression ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? ) )
 			int alt63=2;
 			int LA63_0 = input.LA(1);
 			if ( (LA63_0==IN) ) {
@@ -6621,17 +6629,17 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt63) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1500:3: {...}? ( IN ex2= expression )
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1510:3: {...}? ( IN ex2= expression )
 					{
 					if ( !(( isLeftHandSideIn(ex1, isLhs) )) ) {
 						if (state.backtracking>0) {state.failed=true; return retval;}
 						throw new FailedPredicateException(input, "forControlExpression", " isLeftHandSideIn(ex1, isLhs) ");
 					}
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1500:37: ( IN ex2= expression )
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1501:4: IN ex2= expression
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1510:37: ( IN ex2= expression )
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1511:4: IN ex2= expression
 					{
-					match(input,IN,FOLLOW_IN_in_forControlExpression5241); if (state.failed) return retval;
-					pushFollow(FOLLOW_expression_in_forControlExpression5245);
+					match(input,IN,FOLLOW_IN_in_forControlExpression5246); if (state.failed) return retval;
+					pushFollow(FOLLOW_expression_in_forControlExpression5250);
 					ex2=expression();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -6640,13 +6648,13 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1505:3: ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? )
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1515:3: ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? )
 					{
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1505:3: ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? )
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1506:4: SEMIC (ex2= expression )? SEMIC (ex3= expression )?
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1515:3: ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? )
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1516:4: SEMIC (ex2= expression )? SEMIC (ex3= expression )?
 					{
-					match(input,SEMIC,FOLLOW_SEMIC_in_forControlExpression5266); if (state.failed) return retval;
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1506:13: (ex2= expression )?
+					match(input,SEMIC,FOLLOW_SEMIC_in_forControlExpression5271); if (state.failed) return retval;
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1516:13: (ex2= expression )?
 					int alt61=2;
 					int LA61_0 = input.LA(1);
 					if ( (LA61_0==ADD||LA61_0==DEC||LA61_0==DELETE||LA61_0==DecimalLiteral||LA61_0==FALSE||LA61_0==FUNCTION||LA61_0==HexIntegerLiteral||LA61_0==INC||LA61_0==INV||LA61_0==Identifier||(LA61_0 >= LBRACE && LA61_0 <= LBRACK)||LA61_0==LPAREN||(LA61_0 >= NEW && LA61_0 <= NOT)||LA61_0==NULL||LA61_0==OctalIntegerLiteral||LA61_0==RegularExpressionLiteral||LA61_0==SUB||LA61_0==StringLiteral||LA61_0==THIS||LA61_0==TRUE||LA61_0==TYPEOF||LA61_0==VOID) ) {
@@ -6654,9 +6662,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					switch (alt61) {
 						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1506:13: ex2= expression
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1516:13: ex2= expression
 							{
-							pushFollow(FOLLOW_expression_in_forControlExpression5270);
+							pushFollow(FOLLOW_expression_in_forControlExpression5275);
 							ex2=expression();
 							state._fsp--;
 							if (state.failed) return retval;
@@ -6665,8 +6673,8 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 					}
 
-					match(input,SEMIC,FOLLOW_SEMIC_in_forControlExpression5273); if (state.failed) return retval;
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1506:35: (ex3= expression )?
+					match(input,SEMIC,FOLLOW_SEMIC_in_forControlExpression5278); if (state.failed) return retval;
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1516:35: (ex3= expression )?
 					int alt62=2;
 					int LA62_0 = input.LA(1);
 					if ( (LA62_0==ADD||LA62_0==DEC||LA62_0==DELETE||LA62_0==DecimalLiteral||LA62_0==FALSE||LA62_0==FUNCTION||LA62_0==HexIntegerLiteral||LA62_0==INC||LA62_0==INV||LA62_0==Identifier||(LA62_0 >= LBRACE && LA62_0 <= LBRACK)||LA62_0==LPAREN||(LA62_0 >= NEW && LA62_0 <= NOT)||LA62_0==NULL||LA62_0==OctalIntegerLiteral||LA62_0==RegularExpressionLiteral||LA62_0==SUB||LA62_0==StringLiteral||LA62_0==THIS||LA62_0==TRUE||LA62_0==TYPEOF||LA62_0==VOID) ) {
@@ -6674,9 +6682,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					switch (alt62) {
 						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1506:35: ex3= expression
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1516:35: ex3= expression
 							{
-							pushFollow(FOLLOW_expression_in_forControlExpression5277);
+							pushFollow(FOLLOW_expression_in_forControlExpression5282);
 							ex3=expression();
 							state._fsp--;
 							if (state.failed) return retval;
@@ -6719,7 +6727,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "forControlSemic"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1512:1: forControlSemic : SEMIC (ex1= expression )? SEMIC (ex2= expression )? ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1522:1: forControlSemic : SEMIC (ex1= expression )? SEMIC (ex2= expression )? ;
 	public final ES3YUITestParser.forControlSemic_return forControlSemic() throws RecognitionException {
 		ES3YUITestParser.forControlSemic_return retval = new ES3YUITestParser.forControlSemic_return();
 		retval.start = input.LT(1);
@@ -6731,11 +6739,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 68) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1513:2: ( SEMIC (ex1= expression )? SEMIC (ex2= expression )? )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1513:4: SEMIC (ex1= expression )? SEMIC (ex2= expression )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1523:2: ( SEMIC (ex1= expression )? SEMIC (ex2= expression )? )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1523:4: SEMIC (ex1= expression )? SEMIC (ex2= expression )?
 			{
-			match(input,SEMIC,FOLLOW_SEMIC_in_forControlSemic5300); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1513:13: (ex1= expression )?
+			match(input,SEMIC,FOLLOW_SEMIC_in_forControlSemic5305); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1523:13: (ex1= expression )?
 			int alt64=2;
 			int LA64_0 = input.LA(1);
 			if ( (LA64_0==ADD||LA64_0==DEC||LA64_0==DELETE||LA64_0==DecimalLiteral||LA64_0==FALSE||LA64_0==FUNCTION||LA64_0==HexIntegerLiteral||LA64_0==INC||LA64_0==INV||LA64_0==Identifier||(LA64_0 >= LBRACE && LA64_0 <= LBRACK)||LA64_0==LPAREN||(LA64_0 >= NEW && LA64_0 <= NOT)||LA64_0==NULL||LA64_0==OctalIntegerLiteral||LA64_0==RegularExpressionLiteral||LA64_0==SUB||LA64_0==StringLiteral||LA64_0==THIS||LA64_0==TRUE||LA64_0==TYPEOF||LA64_0==VOID) ) {
@@ -6743,9 +6751,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt64) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1513:13: ex1= expression
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1523:13: ex1= expression
 					{
-					pushFollow(FOLLOW_expression_in_forControlSemic5304);
+					pushFollow(FOLLOW_expression_in_forControlSemic5309);
 					ex1=expression();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -6754,8 +6762,8 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			}
 
-			match(input,SEMIC,FOLLOW_SEMIC_in_forControlSemic5307); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1513:35: (ex2= expression )?
+			match(input,SEMIC,FOLLOW_SEMIC_in_forControlSemic5312); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1523:35: (ex2= expression )?
 			int alt65=2;
 			int LA65_0 = input.LA(1);
 			if ( (LA65_0==ADD||LA65_0==DEC||LA65_0==DELETE||LA65_0==DecimalLiteral||LA65_0==FALSE||LA65_0==FUNCTION||LA65_0==HexIntegerLiteral||LA65_0==INC||LA65_0==INV||LA65_0==Identifier||(LA65_0 >= LBRACE && LA65_0 <= LBRACK)||LA65_0==LPAREN||(LA65_0 >= NEW && LA65_0 <= NOT)||LA65_0==NULL||LA65_0==OctalIntegerLiteral||LA65_0==RegularExpressionLiteral||LA65_0==SUB||LA65_0==StringLiteral||LA65_0==THIS||LA65_0==TRUE||LA65_0==TYPEOF||LA65_0==VOID) ) {
@@ -6763,9 +6771,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt65) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1513:35: ex2= expression
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1523:35: ex2= expression
 					{
-					pushFollow(FOLLOW_expression_in_forControlSemic5311);
+					pushFollow(FOLLOW_expression_in_forControlSemic5316);
 					ex2=expression();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -6801,7 +6809,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "continueStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1526:1: continueStatement : CONTINUE ( Identifier )? semic ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1536:1: continueStatement : CONTINUE ( Identifier )? semic ;
 	public final ES3YUITestParser.continueStatement_return continueStatement() throws RecognitionException {
 		ES3YUITestParser.continueStatement_return retval = new ES3YUITestParser.continueStatement_return();
 		retval.start = input.LT(1);
@@ -6810,12 +6818,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 69) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1527:2: ( CONTINUE ( Identifier )? semic )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1527:4: CONTINUE ( Identifier )? semic
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1537:2: ( CONTINUE ( Identifier )? semic )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1537:4: CONTINUE ( Identifier )? semic
 			{
-			match(input,CONTINUE,FOLLOW_CONTINUE_in_continueStatement5332); if (state.failed) return retval;
+			match(input,CONTINUE,FOLLOW_CONTINUE_in_continueStatement5337); if (state.failed) return retval;
 			if ( state.backtracking==0 ) { if (input.LA(1) == Identifier) promoteEOL(null); }
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1527:66: ( Identifier )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1537:66: ( Identifier )?
 			int alt66=2;
 			int LA66_0 = input.LA(1);
 			if ( (LA66_0==Identifier) ) {
@@ -6823,15 +6831,15 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt66) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1527:66: Identifier
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1537:66: Identifier
 					{
-					match(input,Identifier,FOLLOW_Identifier_in_continueStatement5336); if (state.failed) return retval;
+					match(input,Identifier,FOLLOW_Identifier_in_continueStatement5341); if (state.failed) return retval;
 					}
 					break;
 
 			}
 
-			pushFollow(FOLLOW_semic_in_continueStatement5339);
+			pushFollow(FOLLOW_semic_in_continueStatement5344);
 			semic();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -6862,7 +6870,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "breakStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1539:1: breakStatement : BREAK ( Identifier )? semic ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1549:1: breakStatement : BREAK ( Identifier )? semic ;
 	public final ES3YUITestParser.breakStatement_return breakStatement() throws RecognitionException {
 		ES3YUITestParser.breakStatement_return retval = new ES3YUITestParser.breakStatement_return();
 		retval.start = input.LT(1);
@@ -6871,12 +6879,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 70) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1540:2: ( BREAK ( Identifier )? semic )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1540:4: BREAK ( Identifier )? semic
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1550:2: ( BREAK ( Identifier )? semic )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1550:4: BREAK ( Identifier )? semic
 			{
-			match(input,BREAK,FOLLOW_BREAK_in_breakStatement5357); if (state.failed) return retval;
+			match(input,BREAK,FOLLOW_BREAK_in_breakStatement5362); if (state.failed) return retval;
 			if ( state.backtracking==0 ) { if (input.LA(1) == Identifier) promoteEOL(null); }
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1540:63: ( Identifier )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1550:63: ( Identifier )?
 			int alt67=2;
 			int LA67_0 = input.LA(1);
 			if ( (LA67_0==Identifier) ) {
@@ -6884,15 +6892,15 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt67) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1540:63: Identifier
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1550:63: Identifier
 					{
-					match(input,Identifier,FOLLOW_Identifier_in_breakStatement5361); if (state.failed) return retval;
+					match(input,Identifier,FOLLOW_Identifier_in_breakStatement5366); if (state.failed) return retval;
 					}
 					break;
 
 			}
 
-			pushFollow(FOLLOW_semic_in_breakStatement5364);
+			pushFollow(FOLLOW_semic_in_breakStatement5369);
 			semic();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -6923,7 +6931,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "returnStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1560:1: returnStatement : RETURN ( expression )? semic ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1570:1: returnStatement : RETURN ( expression )? semic ;
 	public final ES3YUITestParser.returnStatement_return returnStatement() throws RecognitionException {
 		ES3YUITestParser.returnStatement_return retval = new ES3YUITestParser.returnStatement_return();
 		retval.start = input.LT(1);
@@ -6932,12 +6940,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 71) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1561:2: ( RETURN ( expression )? semic )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1561:4: RETURN ( expression )? semic
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1571:2: ( RETURN ( expression )? semic )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1571:4: RETURN ( expression )? semic
 			{
-			match(input,RETURN,FOLLOW_RETURN_in_returnStatement5382); if (state.failed) return retval;
+			match(input,RETURN,FOLLOW_RETURN_in_returnStatement5387); if (state.failed) return retval;
 			if ( state.backtracking==0 ) { promoteEOL(null); }
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1561:33: ( expression )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1571:33: ( expression )?
 			int alt68=2;
 			int LA68_0 = input.LA(1);
 			if ( (LA68_0==ADD||LA68_0==DEC||LA68_0==DELETE||LA68_0==DecimalLiteral||LA68_0==FALSE||LA68_0==FUNCTION||LA68_0==HexIntegerLiteral||LA68_0==INC||LA68_0==INV||LA68_0==Identifier||(LA68_0 >= LBRACE && LA68_0 <= LBRACK)||LA68_0==LPAREN||(LA68_0 >= NEW && LA68_0 <= NOT)||LA68_0==NULL||LA68_0==OctalIntegerLiteral||LA68_0==RegularExpressionLiteral||LA68_0==SUB||LA68_0==StringLiteral||LA68_0==THIS||LA68_0==TRUE||LA68_0==TYPEOF||LA68_0==VOID) ) {
@@ -6945,9 +6953,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt68) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1561:33: expression
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1571:33: expression
 					{
-					pushFollow(FOLLOW_expression_in_returnStatement5386);
+					pushFollow(FOLLOW_expression_in_returnStatement5391);
 					expression();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -6956,7 +6964,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			}
 
-			pushFollow(FOLLOW_semic_in_returnStatement5389);
+			pushFollow(FOLLOW_semic_in_returnStatement5394);
 			semic();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -6987,7 +6995,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "withStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1568:1: withStatement : WITH LPAREN expression RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\";
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1578:1: withStatement : WITH LPAREN expression RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\";
 	public final ES3YUITestParser.withStatement_return withStatement() throws RecognitionException {
 		ES3YUITestParser.withStatement_return retval = new ES3YUITestParser.withStatement_return();
 		retval.start = input.LT(1);
@@ -6998,23 +7006,23 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 72) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1569:2: ( WITH LPAREN expression RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\")
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1569:4: WITH LPAREN expression RPAREN statement
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1579:2: ( WITH LPAREN expression RPAREN statement -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\")
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1579:4: WITH LPAREN expression RPAREN statement
 			{
-			match(input,WITH,FOLLOW_WITH_in_withStatement5405); if (state.failed) return retval;
-			match(input,LPAREN,FOLLOW_LPAREN_in_withStatement5407); if (state.failed) return retval;
-			pushFollow(FOLLOW_expression_in_withStatement5409);
+			match(input,WITH,FOLLOW_WITH_in_withStatement5410); if (state.failed) return retval;
+			match(input,LPAREN,FOLLOW_LPAREN_in_withStatement5412); if (state.failed) return retval;
+			pushFollow(FOLLOW_expression_in_withStatement5414);
 			expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			match(input,RPAREN,FOLLOW_RPAREN_in_withStatement5411); if (state.failed) return retval;
-			pushFollow(FOLLOW_statement_in_withStatement5413);
+			match(input,RPAREN,FOLLOW_RPAREN_in_withStatement5416); if (state.failed) return retval;
+			pushFollow(FOLLOW_statement_in_withStatement5418);
 			statement10=statement();
 			state._fsp--;
 			if (state.failed) return retval;
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1570:2: -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\"
+			  // 1580:2: -> template(pre=input.toString($start.getTokenIndex(), $statement.start.getTokenIndex() - 1)stmt=wrapInBraces($statement.start, $statement.stop, input)) \"<pre><stmt>\"
 			  {
 			  	retval.st = new StringTemplate(templateLib, "<pre><stmt>",new STAttrMap().put("pre", input.toString(((Token)retval.start).getTokenIndex(), (statement10!=null?((Token)statement10.start):null).getTokenIndex() - 1)).put("stmt", wrapInBraces((statement10!=null?((Token)statement10.start):null), (statement10!=null?((Token)statement10.stop):null), input)));
 			  }
@@ -7054,7 +7062,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "switchStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1579:1: switchStatement : SWITCH LPAREN expression RPAREN caseBlock ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1589:1: switchStatement : SWITCH LPAREN expression RPAREN caseBlock ;
 	public final ES3YUITestParser.switchStatement_return switchStatement() throws RecognitionException {
 		ES3YUITestParser.switchStatement_return retval = new ES3YUITestParser.switchStatement_return();
 		retval.start = input.LT(1);
@@ -7066,17 +7074,17 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 73) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1585:2: ( SWITCH LPAREN expression RPAREN caseBlock )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1585:4: SWITCH LPAREN expression RPAREN caseBlock
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1595:2: ( SWITCH LPAREN expression RPAREN caseBlock )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1595:4: SWITCH LPAREN expression RPAREN caseBlock
 			{
-			match(input,SWITCH,FOLLOW_SWITCH_in_switchStatement5484); if (state.failed) return retval;
-			match(input,LPAREN,FOLLOW_LPAREN_in_switchStatement5486); if (state.failed) return retval;
-			pushFollow(FOLLOW_expression_in_switchStatement5488);
+			match(input,SWITCH,FOLLOW_SWITCH_in_switchStatement5489); if (state.failed) return retval;
+			match(input,LPAREN,FOLLOW_LPAREN_in_switchStatement5491); if (state.failed) return retval;
+			pushFollow(FOLLOW_expression_in_switchStatement5493);
 			expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			match(input,RPAREN,FOLLOW_RPAREN_in_switchStatement5490); if (state.failed) return retval;
-			pushFollow(FOLLOW_caseBlock_in_switchStatement5492);
+			match(input,RPAREN,FOLLOW_RPAREN_in_switchStatement5495); if (state.failed) return retval;
+			pushFollow(FOLLOW_caseBlock_in_switchStatement5497);
 			caseBlock();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -7107,7 +7115,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "caseBlock"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1589:1: caseBlock : LBRACE ( caseClause )* ( defaultClause ( caseClause )* )? RBRACE ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1599:1: caseBlock : LBRACE ( caseClause )* ( defaultClause ( caseClause )* )? RBRACE ;
 	public final ES3YUITestParser.caseBlock_return caseBlock() throws RecognitionException {
 		ES3YUITestParser.caseBlock_return retval = new ES3YUITestParser.caseBlock_return();
 		retval.start = input.LT(1);
@@ -7116,11 +7124,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 74) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1590:2: ( LBRACE ( caseClause )* ( defaultClause ( caseClause )* )? RBRACE )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1590:4: LBRACE ( caseClause )* ( defaultClause ( caseClause )* )? RBRACE
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1600:2: ( LBRACE ( caseClause )* ( defaultClause ( caseClause )* )? RBRACE )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1600:4: LBRACE ( caseClause )* ( defaultClause ( caseClause )* )? RBRACE
 			{
-			match(input,LBRACE,FOLLOW_LBRACE_in_caseBlock5505); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1590:11: ( caseClause )*
+			match(input,LBRACE,FOLLOW_LBRACE_in_caseBlock5510); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1600:11: ( caseClause )*
 			loop69:
 			do {
 				int alt69=2;
@@ -7131,9 +7139,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt69) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1590:12: caseClause
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1600:12: caseClause
 					{
-					pushFollow(FOLLOW_caseClause_in_caseBlock5508);
+					pushFollow(FOLLOW_caseClause_in_caseBlock5513);
 					caseClause();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -7145,7 +7153,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 				}
 			} while (true);
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1590:25: ( defaultClause ( caseClause )* )?
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1600:25: ( defaultClause ( caseClause )* )?
 			int alt71=2;
 			int LA71_0 = input.LA(1);
 			if ( (LA71_0==DEFAULT) ) {
@@ -7153,13 +7161,13 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt71) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1590:26: defaultClause ( caseClause )*
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1600:26: defaultClause ( caseClause )*
 					{
-					pushFollow(FOLLOW_defaultClause_in_caseBlock5513);
+					pushFollow(FOLLOW_defaultClause_in_caseBlock5518);
 					defaultClause();
 					state._fsp--;
 					if (state.failed) return retval;
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1590:40: ( caseClause )*
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1600:40: ( caseClause )*
 					loop70:
 					do {
 						int alt70=2;
@@ -7170,9 +7178,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 						switch (alt70) {
 						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1590:41: caseClause
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1600:41: caseClause
 							{
-							pushFollow(FOLLOW_caseClause_in_caseBlock5516);
+							pushFollow(FOLLOW_caseClause_in_caseBlock5521);
 							caseClause();
 							state._fsp--;
 							if (state.failed) return retval;
@@ -7189,7 +7197,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			}
 
-			match(input,RBRACE,FOLLOW_RBRACE_in_caseBlock5522); if (state.failed) return retval;
+			match(input,RBRACE,FOLLOW_RBRACE_in_caseBlock5527); if (state.failed) return retval;
 			}
 
 			retval.stop = input.LT(-1);
@@ -7217,7 +7225,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "caseClause"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1593:1: caseClause : CASE expression COLON ( statement )* ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1603:1: caseClause : CASE expression COLON ( statement )* ;
 	public final ES3YUITestParser.caseClause_return caseClause() throws RecognitionException {
 		ES3YUITestParser.caseClause_return retval = new ES3YUITestParser.caseClause_return();
 		retval.start = input.LT(1);
@@ -7226,16 +7234,16 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 75) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1594:2: ( CASE expression COLON ( statement )* )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1594:4: CASE expression COLON ( statement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1604:2: ( CASE expression COLON ( statement )* )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1604:4: CASE expression COLON ( statement )*
 			{
-			match(input,CASE,FOLLOW_CASE_in_caseClause5533); if (state.failed) return retval;
-			pushFollow(FOLLOW_expression_in_caseClause5535);
+			match(input,CASE,FOLLOW_CASE_in_caseClause5538); if (state.failed) return retval;
+			pushFollow(FOLLOW_expression_in_caseClause5540);
 			expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			match(input,COLON,FOLLOW_COLON_in_caseClause5537); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1594:26: ( statement )*
+			match(input,COLON,FOLLOW_COLON_in_caseClause5542); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1604:26: ( statement )*
 			loop72:
 			do {
 				int alt72=2;
@@ -7246,9 +7254,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt72) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1594:26: statement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1604:26: statement
 					{
-					pushFollow(FOLLOW_statement_in_caseClause5539);
+					pushFollow(FOLLOW_statement_in_caseClause5544);
 					statement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -7287,7 +7295,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "defaultClause"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1597:1: defaultClause : DEFAULT COLON ( statement )* ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1607:1: defaultClause : DEFAULT COLON ( statement )* ;
 	public final ES3YUITestParser.defaultClause_return defaultClause() throws RecognitionException {
 		ES3YUITestParser.defaultClause_return retval = new ES3YUITestParser.defaultClause_return();
 		retval.start = input.LT(1);
@@ -7296,12 +7304,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 76) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1598:2: ( DEFAULT COLON ( statement )* )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1598:4: DEFAULT COLON ( statement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1608:2: ( DEFAULT COLON ( statement )* )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1608:4: DEFAULT COLON ( statement )*
 			{
-			match(input,DEFAULT,FOLLOW_DEFAULT_in_defaultClause5552); if (state.failed) return retval;
-			match(input,COLON,FOLLOW_COLON_in_defaultClause5554); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1598:18: ( statement )*
+			match(input,DEFAULT,FOLLOW_DEFAULT_in_defaultClause5557); if (state.failed) return retval;
+			match(input,COLON,FOLLOW_COLON_in_defaultClause5559); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1608:18: ( statement )*
 			loop73:
 			do {
 				int alt73=2;
@@ -7312,9 +7320,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt73) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1598:18: statement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1608:18: statement
 					{
-					pushFollow(FOLLOW_statement_in_defaultClause5556);
+					pushFollow(FOLLOW_statement_in_defaultClause5561);
 					statement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -7353,7 +7361,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "labelledStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1605:1: labelledStatement : Identifier COLON statement ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1615:1: labelledStatement : Identifier COLON statement ;
 	public final ES3YUITestParser.labelledStatement_return labelledStatement() throws RecognitionException {
 		ES3YUITestParser.labelledStatement_return retval = new ES3YUITestParser.labelledStatement_return();
 		retval.start = input.LT(1);
@@ -7362,12 +7370,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 77) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1606:2: ( Identifier COLON statement )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1606:4: Identifier COLON statement
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1616:2: ( Identifier COLON statement )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1616:4: Identifier COLON statement
 			{
-			match(input,Identifier,FOLLOW_Identifier_in_labelledStatement5573); if (state.failed) return retval;
-			match(input,COLON,FOLLOW_COLON_in_labelledStatement5575); if (state.failed) return retval;
-			pushFollow(FOLLOW_statement_in_labelledStatement5577);
+			match(input,Identifier,FOLLOW_Identifier_in_labelledStatement5578); if (state.failed) return retval;
+			match(input,COLON,FOLLOW_COLON_in_labelledStatement5580); if (state.failed) return retval;
+			pushFollow(FOLLOW_statement_in_labelledStatement5582);
 			statement();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -7398,7 +7406,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "throwStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1629:1: throwStatement : THROW expression semic ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1639:1: throwStatement : THROW expression semic ;
 	public final ES3YUITestParser.throwStatement_return throwStatement() throws RecognitionException {
 		ES3YUITestParser.throwStatement_return retval = new ES3YUITestParser.throwStatement_return();
 		retval.start = input.LT(1);
@@ -7407,16 +7415,16 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 78) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1630:2: ( THROW expression semic )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1630:4: THROW expression semic
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1640:2: ( THROW expression semic )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1640:4: THROW expression semic
 			{
-			match(input,THROW,FOLLOW_THROW_in_throwStatement5597); if (state.failed) return retval;
+			match(input,THROW,FOLLOW_THROW_in_throwStatement5602); if (state.failed) return retval;
 			if ( state.backtracking==0 ) { promoteEOL(null); }
-			pushFollow(FOLLOW_expression_in_throwStatement5601);
+			pushFollow(FOLLOW_expression_in_throwStatement5606);
 			expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			pushFollow(FOLLOW_semic_in_throwStatement5603);
+			pushFollow(FOLLOW_semic_in_throwStatement5608);
 			semic();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -7447,7 +7455,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "tryStatement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1637:1: tryStatement : TRY block ( catchClause ( finallyClause )? | finallyClause ) ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1647:1: tryStatement : TRY block ( catchClause ( finallyClause )? | finallyClause ) ;
 	public final ES3YUITestParser.tryStatement_return tryStatement() throws RecognitionException {
 		ES3YUITestParser.tryStatement_return retval = new ES3YUITestParser.tryStatement_return();
 		retval.start = input.LT(1);
@@ -7456,15 +7464,15 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 79) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1638:2: ( TRY block ( catchClause ( finallyClause )? | finallyClause ) )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1638:4: TRY block ( catchClause ( finallyClause )? | finallyClause )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1648:2: ( TRY block ( catchClause ( finallyClause )? | finallyClause ) )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1648:4: TRY block ( catchClause ( finallyClause )? | finallyClause )
 			{
-			match(input,TRY,FOLLOW_TRY_in_tryStatement5619); if (state.failed) return retval;
-			pushFollow(FOLLOW_block_in_tryStatement5621);
+			match(input,TRY,FOLLOW_TRY_in_tryStatement5624); if (state.failed) return retval;
+			pushFollow(FOLLOW_block_in_tryStatement5626);
 			block();
 			state._fsp--;
 			if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1638:14: ( catchClause ( finallyClause )? | finallyClause )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1648:14: ( catchClause ( finallyClause )? | finallyClause )
 			int alt75=2;
 			int LA75_0 = input.LA(1);
 			if ( (LA75_0==CATCH) ) {
@@ -7481,13 +7489,13 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt75) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1638:16: catchClause ( finallyClause )?
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1648:16: catchClause ( finallyClause )?
 					{
-					pushFollow(FOLLOW_catchClause_in_tryStatement5625);
+					pushFollow(FOLLOW_catchClause_in_tryStatement5630);
 					catchClause();
 					state._fsp--;
 					if (state.failed) return retval;
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1638:28: ( finallyClause )?
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1648:28: ( finallyClause )?
 					int alt74=2;
 					int LA74_0 = input.LA(1);
 					if ( (LA74_0==FINALLY) ) {
@@ -7495,9 +7503,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					switch (alt74) {
 						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1638:28: finallyClause
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1648:28: finallyClause
 							{
-							pushFollow(FOLLOW_finallyClause_in_tryStatement5627);
+							pushFollow(FOLLOW_finallyClause_in_tryStatement5632);
 							finallyClause();
 							state._fsp--;
 							if (state.failed) return retval;
@@ -7509,9 +7517,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1638:45: finallyClause
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1648:45: finallyClause
 					{
-					pushFollow(FOLLOW_finallyClause_in_tryStatement5632);
+					pushFollow(FOLLOW_finallyClause_in_tryStatement5637);
 					finallyClause();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -7547,7 +7555,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "catchClause"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1641:1: catchClause : CATCH LPAREN Identifier RPAREN block ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1651:1: catchClause : CATCH LPAREN Identifier RPAREN block ;
 	public final ES3YUITestParser.catchClause_return catchClause() throws RecognitionException {
 		ES3YUITestParser.catchClause_return retval = new ES3YUITestParser.catchClause_return();
 		retval.start = input.LT(1);
@@ -7556,14 +7564,14 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 80) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1642:2: ( CATCH LPAREN Identifier RPAREN block )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1642:4: CATCH LPAREN Identifier RPAREN block
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1652:2: ( CATCH LPAREN Identifier RPAREN block )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1652:4: CATCH LPAREN Identifier RPAREN block
 			{
-			match(input,CATCH,FOLLOW_CATCH_in_catchClause5646); if (state.failed) return retval;
-			match(input,LPAREN,FOLLOW_LPAREN_in_catchClause5648); if (state.failed) return retval;
-			match(input,Identifier,FOLLOW_Identifier_in_catchClause5650); if (state.failed) return retval;
-			match(input,RPAREN,FOLLOW_RPAREN_in_catchClause5652); if (state.failed) return retval;
-			pushFollow(FOLLOW_block_in_catchClause5654);
+			match(input,CATCH,FOLLOW_CATCH_in_catchClause5651); if (state.failed) return retval;
+			match(input,LPAREN,FOLLOW_LPAREN_in_catchClause5653); if (state.failed) return retval;
+			match(input,Identifier,FOLLOW_Identifier_in_catchClause5655); if (state.failed) return retval;
+			match(input,RPAREN,FOLLOW_RPAREN_in_catchClause5657); if (state.failed) return retval;
+			pushFollow(FOLLOW_block_in_catchClause5659);
 			block();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -7594,7 +7602,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "finallyClause"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1645:1: finallyClause : FINALLY block ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1655:1: finallyClause : FINALLY block ;
 	public final ES3YUITestParser.finallyClause_return finallyClause() throws RecognitionException {
 		ES3YUITestParser.finallyClause_return retval = new ES3YUITestParser.finallyClause_return();
 		retval.start = input.LT(1);
@@ -7603,11 +7611,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 81) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1646:2: ( FINALLY block )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1646:4: FINALLY block
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1656:2: ( FINALLY block )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1656:4: FINALLY block
 			{
-			match(input,FINALLY,FOLLOW_FINALLY_in_finallyClause5666); if (state.failed) return retval;
-			pushFollow(FOLLOW_block_in_finallyClause5668);
+			match(input,FINALLY,FOLLOW_FINALLY_in_finallyClause5671); if (state.failed) return retval;
+			pushFollow(FOLLOW_block_in_finallyClause5673);
 			block();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -7645,7 +7653,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "functionDeclaration"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1660:1: functionDeclaration : FUNCTION name= Identifier formalParameterList functionDeclarationBody -> {instrument}? cover_line(src=$program::namecode=$textline=$start.getLine()) -> ignore(code=$text);
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1670:1: functionDeclaration : FUNCTION name= Identifier formalParameterList functionDeclarationBody -> {instrument}? cover_line(src=$program::namecode=$textfuncName=$functionDeclaration::funcNameline=$start.getLine()) -> ignore(code=$text);
 	public final ES3YUITestParser.functionDeclaration_return functionDeclaration() throws RecognitionException {
 		functionDeclaration_stack.push(new functionDeclaration_scope());
 		ES3YUITestParser.functionDeclaration_return retval = new ES3YUITestParser.functionDeclaration_return();
@@ -7668,29 +7676,29 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 82) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1686:2: ( FUNCTION name= Identifier formalParameterList functionDeclarationBody -> {instrument}? cover_line(src=$program::namecode=$textline=$start.getLine()) -> ignore(code=$text))
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1686:4: FUNCTION name= Identifier formalParameterList functionDeclarationBody
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1696:2: ( FUNCTION name= Identifier formalParameterList functionDeclarationBody -> {instrument}? cover_line(src=$program::namecode=$textfuncName=$functionDeclaration::funcNameline=$start.getLine()) -> ignore(code=$text))
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1696:4: FUNCTION name= Identifier formalParameterList functionDeclarationBody
 			{
-			match(input,FUNCTION,FOLLOW_FUNCTION_in_functionDeclaration5704); if (state.failed) return retval;
-			name=(Token)match(input,Identifier,FOLLOW_Identifier_in_functionDeclaration5708); if (state.failed) return retval;
+			match(input,FUNCTION,FOLLOW_FUNCTION_in_functionDeclaration5709); if (state.failed) return retval;
+			name=(Token)match(input,Identifier,FOLLOW_Identifier_in_functionDeclaration5713); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {functionDeclaration_stack.peek().funcName =(name!=null?name.getText():null);}
-			pushFollow(FOLLOW_formalParameterList_in_functionDeclaration5712);
+			pushFollow(FOLLOW_formalParameterList_in_functionDeclaration5717);
 			formalParameterList11=formalParameterList();
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) {functionDeclaration_stack.peek().paramList = (formalParameterList11!=null?((ES3YUITestParser.formalParameterList_return)formalParameterList11).params:null);}
-			pushFollow(FOLLOW_functionDeclarationBody_in_functionDeclaration5716);
+			pushFollow(FOLLOW_functionDeclarationBody_in_functionDeclaration5721);
 			functionDeclarationBody();
 			state._fsp--;
 			if (state.failed) return retval;
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1687:4: -> {instrument}? cover_line(src=$program::namecode=$textline=$start.getLine())
+			  // 1697:4: -> {instrument}? cover_line(src=$program::namecode=$textfuncName=$functionDeclaration::funcNameline=$start.getLine())
 			  if (instrument) {
-			  	retval.st = templateLib.getInstanceOf("cover_line",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("line", ((Token)retval.start).getLine()));
+			  	retval.st = templateLib.getInstanceOf("cover_line",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("funcName", functionDeclaration_stack.peek().funcName).put("line", ((Token)retval.start).getLine()));
 			  }
 
-			  else // 1688:4: -> ignore(code=$text)
+			  else // 1698:4: -> ignore(code=$text)
 			  {
 			  	retval.st = templateLib.getInstanceOf("ignore",new STAttrMap().put("code", input.toString(retval.start,input.LT(-1))));
 			  }
@@ -7747,7 +7755,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "functionExpression"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1692:1: functionExpression : FUNCTION ( Identifier )? formalParameterList functionExpressionBody ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1702:1: functionExpression : FUNCTION ( Identifier )? formalParameterList functionExpressionBody ;
 	public final ES3YUITestParser.functionExpression_return functionExpression() throws RecognitionException {
 		functionExpression_stack.push(new functionExpression_scope());
 		ES3YUITestParser.functionExpression_return retval = new ES3YUITestParser.functionExpression_return();
@@ -7758,7 +7766,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 		    functionExpression_stack.peek().funcLine =((Token)retval.start).getLine();
-
+			
+			if(functionExpression_stack.peek().funcName == "" || functionExpression_stack.isEmpty()){
+				System.out.println("Test");
+			} else {
+				System.out.println(functionExpression_stack.peek().funcName);
+			}
 		    /*
 		     * The function expression might have an identifier, and if so, use that as
 		     * the name.
@@ -7798,11 +7811,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 83) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1741:2: ( FUNCTION ( Identifier )? formalParameterList functionExpressionBody )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1741:4: FUNCTION ( Identifier )? formalParameterList functionExpressionBody
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1756:2: ( FUNCTION ( Identifier )? formalParameterList functionExpressionBody )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1756:4: FUNCTION ( Identifier )? formalParameterList functionExpressionBody
 			{
-			match(input,FUNCTION,FOLLOW_FUNCTION_in_functionExpression5778); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1741:13: ( Identifier )?
+			match(input,FUNCTION,FOLLOW_FUNCTION_in_functionExpression5788); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1756:13: ( Identifier )?
 			int alt76=2;
 			int LA76_0 = input.LA(1);
 			if ( (LA76_0==Identifier) ) {
@@ -7810,20 +7823,20 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt76) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1741:13: Identifier
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1756:13: Identifier
 					{
-					match(input,Identifier,FOLLOW_Identifier_in_functionExpression5780); if (state.failed) return retval;
+					match(input,Identifier,FOLLOW_Identifier_in_functionExpression5790); if (state.failed) return retval;
 					}
 					break;
 
 			}
 
-			pushFollow(FOLLOW_formalParameterList_in_functionExpression5783);
+			pushFollow(FOLLOW_formalParameterList_in_functionExpression5793);
 			formalParameterList12=formalParameterList();
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) {functionExpression_stack.peek().paramList = (formalParameterList12!=null?((ES3YUITestParser.formalParameterList_return)formalParameterList12).params:null);}
-			pushFollow(FOLLOW_functionExpressionBody_in_functionExpression5787);
+			pushFollow(FOLLOW_functionExpressionBody_in_functionExpression5797);
 			functionExpressionBody();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -7866,7 +7879,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "formalParameterList"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1744:1: formalParameterList returns [String params] : LPAREN (name= Identifier ( COMMA name= Identifier )* )? RPAREN ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1759:1: formalParameterList returns [String params] : LPAREN (name= Identifier ( COMMA name= Identifier )* )? RPAREN ;
 	public final ES3YUITestParser.formalParameterList_return formalParameterList() throws RecognitionException {
 		formalParameterList_stack.push(new formalParameterList_scope());
 		ES3YUITestParser.formalParameterList_return retval = new ES3YUITestParser.formalParameterList_return();
@@ -7882,11 +7895,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 84) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1760:3: ( LPAREN (name= Identifier ( COMMA name= Identifier )* )? RPAREN )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1760:5: LPAREN (name= Identifier ( COMMA name= Identifier )* )? RPAREN
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1775:3: ( LPAREN (name= Identifier ( COMMA name= Identifier )* )? RPAREN )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1775:5: LPAREN (name= Identifier ( COMMA name= Identifier )* )? RPAREN
 			{
-			match(input,LPAREN,FOLLOW_LPAREN_in_formalParameterList5818); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1760:12: (name= Identifier ( COMMA name= Identifier )* )?
+			match(input,LPAREN,FOLLOW_LPAREN_in_formalParameterList5828); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1775:12: (name= Identifier ( COMMA name= Identifier )* )?
 			int alt78=2;
 			int LA78_0 = input.LA(1);
 			if ( (LA78_0==Identifier) ) {
@@ -7894,11 +7907,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt78) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1760:14: name= Identifier ( COMMA name= Identifier )*
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1775:14: name= Identifier ( COMMA name= Identifier )*
 					{
-					name=(Token)match(input,Identifier,FOLLOW_Identifier_in_formalParameterList5824); if (state.failed) return retval;
+					name=(Token)match(input,Identifier,FOLLOW_Identifier_in_formalParameterList5834); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {formalParameterList_stack.peek().paramList += name.getText();}
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1760:84: ( COMMA name= Identifier )*
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1775:84: ( COMMA name= Identifier )*
 					loop77:
 					do {
 						int alt77=2;
@@ -7909,10 +7922,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 						switch (alt77) {
 						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1760:86: COMMA name= Identifier
+							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1775:86: COMMA name= Identifier
 							{
-							match(input,COMMA,FOLLOW_COMMA_in_formalParameterList5830); if (state.failed) return retval;
-							name=(Token)match(input,Identifier,FOLLOW_Identifier_in_formalParameterList5834); if (state.failed) return retval;
+							match(input,COMMA,FOLLOW_COMMA_in_formalParameterList5840); if (state.failed) return retval;
+							name=(Token)match(input,Identifier,FOLLOW_Identifier_in_formalParameterList5844); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {formalParameterList_stack.peek().paramList += "," + name.getText();}
 							}
 							break;
@@ -7927,7 +7940,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			}
 
-			match(input,RPAREN,FOLLOW_RPAREN_in_formalParameterList5844); if (state.failed) return retval;
+			match(input,RPAREN,FOLLOW_RPAREN_in_formalParameterList5854); if (state.failed) return retval;
 			}
 
 			retval.stop = input.LT(-1);
@@ -7963,7 +7976,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "functionDeclarationBody"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1763:1: functionDeclarationBody : lb= LBRACE ( functionDeclarationBodyWithoutBraces )? RBRACE ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1778:1: functionDeclarationBody : lb= LBRACE ( functionDeclarationBodyWithoutBraces )? RBRACE ;
 	public final ES3YUITestParser.functionDeclarationBody_return functionDeclarationBody() throws RecognitionException {
 		ES3YUITestParser.functionDeclarationBody_return retval = new ES3YUITestParser.functionDeclarationBody_return();
 		retval.start = input.LT(1);
@@ -7974,11 +7987,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 85) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1764:2: (lb= LBRACE ( functionDeclarationBodyWithoutBraces )? RBRACE )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1764:4: lb= LBRACE ( functionDeclarationBodyWithoutBraces )? RBRACE
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1779:2: (lb= LBRACE ( functionDeclarationBodyWithoutBraces )? RBRACE )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1779:4: lb= LBRACE ( functionDeclarationBodyWithoutBraces )? RBRACE
 			{
-			lb=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_functionDeclarationBody5857); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1764:14: ( functionDeclarationBodyWithoutBraces )?
+			lb=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_functionDeclarationBody5867); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1779:14: ( functionDeclarationBodyWithoutBraces )?
 			int alt79=2;
 			int LA79_0 = input.LA(1);
 			if ( (LA79_0==ADD||LA79_0==BREAK||LA79_0==CONTINUE||LA79_0==DEC||LA79_0==DELETE||LA79_0==DO||LA79_0==DecimalLiteral||LA79_0==FALSE||LA79_0==FOR||LA79_0==FUNCTION||(LA79_0 >= HexIntegerLiteral && LA79_0 <= IF)||LA79_0==INC||LA79_0==INV||LA79_0==Identifier||(LA79_0 >= LBRACE && LA79_0 <= LBRACK)||LA79_0==LPAREN||(LA79_0 >= NEW && LA79_0 <= NOT)||LA79_0==NULL||LA79_0==OctalIntegerLiteral||LA79_0==RETURN||LA79_0==RegularExpressionLiteral||LA79_0==SEMIC||LA79_0==SUB||LA79_0==SWITCH||LA79_0==StringLiteral||(LA79_0 >= THIS && LA79_0 <= THROW)||(LA79_0 >= TRUE && LA79_0 <= TYPEOF)||(LA79_0 >= VAR && LA79_0 <= VOID)||(LA79_0 >= WHILE && LA79_0 <= WITH)) ) {
@@ -7986,9 +7999,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt79) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1764:14: functionDeclarationBodyWithoutBraces
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1779:14: functionDeclarationBodyWithoutBraces
 					{
-					pushFollow(FOLLOW_functionDeclarationBodyWithoutBraces_in_functionDeclarationBody5859);
+					pushFollow(FOLLOW_functionDeclarationBodyWithoutBraces_in_functionDeclarationBody5869);
 					functionDeclarationBodyWithoutBraces();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -7997,7 +8010,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			}
 
-			match(input,RBRACE,FOLLOW_RBRACE_in_functionDeclarationBody5862); if (state.failed) return retval;
+			match(input,RBRACE,FOLLOW_RBRACE_in_functionDeclarationBody5872); if (state.failed) return retval;
 			}
 
 			retval.stop = input.LT(-1);
@@ -8025,7 +8038,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "functionExpressionBody"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1767:1: functionExpressionBody : lb= LBRACE ( functionExpressionBodyWithoutBraces )? RBRACE ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1782:1: functionExpressionBody : lb= LBRACE ( functionExpressionBodyWithoutBraces )? RBRACE ;
 	public final ES3YUITestParser.functionExpressionBody_return functionExpressionBody() throws RecognitionException {
 		ES3YUITestParser.functionExpressionBody_return retval = new ES3YUITestParser.functionExpressionBody_return();
 		retval.start = input.LT(1);
@@ -8036,11 +8049,11 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 86) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1768:2: (lb= LBRACE ( functionExpressionBodyWithoutBraces )? RBRACE )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1768:4: lb= LBRACE ( functionExpressionBodyWithoutBraces )? RBRACE
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1783:2: (lb= LBRACE ( functionExpressionBodyWithoutBraces )? RBRACE )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1783:4: lb= LBRACE ( functionExpressionBodyWithoutBraces )? RBRACE
 			{
-			lb=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_functionExpressionBody5875); if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1768:14: ( functionExpressionBodyWithoutBraces )?
+			lb=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_functionExpressionBody5885); if (state.failed) return retval;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1783:14: ( functionExpressionBodyWithoutBraces )?
 			int alt80=2;
 			int LA80_0 = input.LA(1);
 			if ( (LA80_0==ADD||LA80_0==BREAK||LA80_0==CONTINUE||LA80_0==DEC||LA80_0==DELETE||LA80_0==DO||LA80_0==DecimalLiteral||LA80_0==FALSE||LA80_0==FOR||LA80_0==FUNCTION||(LA80_0 >= HexIntegerLiteral && LA80_0 <= IF)||LA80_0==INC||LA80_0==INV||LA80_0==Identifier||(LA80_0 >= LBRACE && LA80_0 <= LBRACK)||LA80_0==LPAREN||(LA80_0 >= NEW && LA80_0 <= NOT)||LA80_0==NULL||LA80_0==OctalIntegerLiteral||LA80_0==RETURN||LA80_0==RegularExpressionLiteral||LA80_0==SEMIC||LA80_0==SUB||LA80_0==SWITCH||LA80_0==StringLiteral||(LA80_0 >= THIS && LA80_0 <= THROW)||(LA80_0 >= TRUE && LA80_0 <= TYPEOF)||(LA80_0 >= VAR && LA80_0 <= VOID)||(LA80_0 >= WHILE && LA80_0 <= WITH)) ) {
@@ -8048,9 +8061,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 			switch (alt80) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1768:14: functionExpressionBodyWithoutBraces
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1783:14: functionExpressionBodyWithoutBraces
 					{
-					pushFollow(FOLLOW_functionExpressionBodyWithoutBraces_in_functionExpressionBody5877);
+					pushFollow(FOLLOW_functionExpressionBodyWithoutBraces_in_functionExpressionBody5887);
 					functionExpressionBodyWithoutBraces();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -8059,7 +8072,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			}
 
-			match(input,RBRACE,FOLLOW_RBRACE_in_functionExpressionBody5880); if (state.failed) return retval;
+			match(input,RBRACE,FOLLOW_RBRACE_in_functionExpressionBody5890); if (state.failed) return retval;
 			}
 
 			retval.stop = input.LT(-1);
@@ -8094,7 +8107,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "functionExpressionBodyWithoutBraces"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1772:1: functionExpressionBodyWithoutBraces : sourceElement ( sourceElement )* -> {$functionExpression::funcName!=null}? cover_func(src=$program::namecode=$textclass=$functionExpressionBodyWithoutBraces::objNamename=$functionExpression::funcNameline=$functionExpression::funcLineparams=$functionExpressionBodyWithoutBraces::typesList) -> cover_func(src=$program::namecode=$textclass=$functionExpressionBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionExpressionBodyWithoutBraces::typesList);
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1787:1: functionExpressionBodyWithoutBraces : sourceElement ( sourceElement )* -> {$functionExpression::funcName!=null}? cover_func(src=$program::namecode=$textobject=$functionExpressionBodyWithoutBraces::objNamename=$functionExpression::funcNameline=$functionExpression::funcLineparams=$functionExpressionBodyWithoutBraces::typesList) -> cover_func(src=$program::namecode=$textobject=$functionExpressionBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionExpressionBodyWithoutBraces::typesList);
 	public final ES3YUITestParser.functionExpressionBodyWithoutBraces_return functionExpressionBodyWithoutBraces() throws RecognitionException {
 		functionExpressionBodyWithoutBraces_stack.push(new functionExpressionBodyWithoutBraces_scope());
 		ES3YUITestParser.functionExpressionBodyWithoutBraces_return retval = new ES3YUITestParser.functionExpressionBodyWithoutBraces_return();
@@ -8111,14 +8124,14 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 87) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1797:2: ( sourceElement ( sourceElement )* -> {$functionExpression::funcName!=null}? cover_func(src=$program::namecode=$textclass=$functionExpressionBodyWithoutBraces::objNamename=$functionExpression::funcNameline=$functionExpression::funcLineparams=$functionExpressionBodyWithoutBraces::typesList) -> cover_func(src=$program::namecode=$textclass=$functionExpressionBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionExpressionBodyWithoutBraces::typesList))
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1797:4: sourceElement ( sourceElement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1812:2: ( sourceElement ( sourceElement )* -> {$functionExpression::funcName!=null}? cover_func(src=$program::namecode=$textobject=$functionExpressionBodyWithoutBraces::objNamename=$functionExpression::funcNameline=$functionExpression::funcLineparams=$functionExpressionBodyWithoutBraces::typesList) -> cover_func(src=$program::namecode=$textobject=$functionExpressionBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionExpressionBodyWithoutBraces::typesList))
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1812:4: sourceElement ( sourceElement )*
 			{
-			pushFollow(FOLLOW_sourceElement_in_functionExpressionBodyWithoutBraces5907);
+			pushFollow(FOLLOW_sourceElement_in_functionExpressionBodyWithoutBraces5917);
 			sourceElement();
 			state._fsp--;
 			if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1797:18: ( sourceElement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1812:18: ( sourceElement )*
 			loop81:
 			do {
 				int alt81=2;
@@ -8129,9 +8142,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt81) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1797:19: sourceElement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1812:19: sourceElement
 					{
-					pushFollow(FOLLOW_sourceElement_in_functionExpressionBodyWithoutBraces5910);
+					pushFollow(FOLLOW_sourceElement_in_functionExpressionBodyWithoutBraces5920);
 					sourceElement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -8152,14 +8165,14 @@ public static class STAttrMap extends HashMap<String, Object> {
 				}
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1805:2: -> {$functionExpression::funcName!=null}? cover_func(src=$program::namecode=$textclass=$functionExpressionBodyWithoutBraces::objNamename=$functionExpression::funcNameline=$functionExpression::funcLineparams=$functionExpressionBodyWithoutBraces::typesList)
+			  // 1820:2: -> {$functionExpression::funcName!=null}? cover_func(src=$program::namecode=$textobject=$functionExpressionBodyWithoutBraces::objNamename=$functionExpression::funcNameline=$functionExpression::funcLineparams=$functionExpressionBodyWithoutBraces::typesList)
 			  if (functionExpression_stack.peek().funcName!=null) {
-			  	retval.st = templateLib.getInstanceOf("cover_func",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("class", functionExpressionBodyWithoutBraces_stack.peek().objName).put("name", functionExpression_stack.peek().funcName).put("line", functionExpression_stack.peek().funcLine).put("params", functionExpressionBodyWithoutBraces_stack.peek().typesList));
+			  	retval.st = templateLib.getInstanceOf("cover_func",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("object", functionExpressionBodyWithoutBraces_stack.peek().objName).put("name", functionExpression_stack.peek().funcName).put("line", functionExpression_stack.peek().funcLine).put("params", functionExpressionBodyWithoutBraces_stack.peek().typesList));
 			  }
 
-			  else // 1806:2: -> cover_func(src=$program::namecode=$textclass=$functionExpressionBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionExpressionBodyWithoutBraces::typesList)
+			  else // 1821:2: -> cover_func(src=$program::namecode=$textobject=$functionExpressionBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionExpressionBodyWithoutBraces::typesList)
 			  {
-			  	retval.st = templateLib.getInstanceOf("cover_func",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("class", functionExpressionBodyWithoutBraces_stack.peek().objName).put("name", functionDeclaration_stack.peek().funcName).put("line", functionDeclaration_stack.peek().funcLine).put("params", functionExpressionBodyWithoutBraces_stack.peek().typesList));
+			  	retval.st = templateLib.getInstanceOf("cover_func",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("object", functionExpressionBodyWithoutBraces_stack.peek().objName).put("name", functionDeclaration_stack.peek().funcName).put("line", functionDeclaration_stack.peek().funcLine).put("params", functionExpressionBodyWithoutBraces_stack.peek().typesList));
 			  }
 
 
@@ -8216,7 +8229,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "functionDeclarationBodyWithoutBraces"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1809:1: functionDeclarationBodyWithoutBraces : sourceElement ( sourceElement )* -> cover_func(src=$program::namecode=$textclass=$functionDeclarationBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionDeclarationBodyWithoutBraces::typesList);
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1824:1: functionDeclarationBodyWithoutBraces : sourceElement ( sourceElement )* -> cover_func(src=$program::namecode=$textobject=$functionDeclarationBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionDeclarationBodyWithoutBraces::typesList);
 	public final ES3YUITestParser.functionDeclarationBodyWithoutBraces_return functionDeclarationBodyWithoutBraces() throws RecognitionException {
 		functionDeclarationBodyWithoutBraces_stack.push(new functionDeclarationBodyWithoutBraces_scope());
 		ES3YUITestParser.functionDeclarationBodyWithoutBraces_return retval = new ES3YUITestParser.functionDeclarationBodyWithoutBraces_return();
@@ -8233,14 +8246,14 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 88) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1828:2: ( sourceElement ( sourceElement )* -> cover_func(src=$program::namecode=$textclass=$functionDeclarationBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionDeclarationBodyWithoutBraces::typesList))
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1828:4: sourceElement ( sourceElement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1843:2: ( sourceElement ( sourceElement )* -> cover_func(src=$program::namecode=$textobject=$functionDeclarationBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionDeclarationBodyWithoutBraces::typesList))
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1843:4: sourceElement ( sourceElement )*
 			{
-			pushFollow(FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6011);
+			pushFollow(FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6021);
 			sourceElement();
 			state._fsp--;
 			if (state.failed) return retval;
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1828:18: ( sourceElement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1843:18: ( sourceElement )*
 			loop82:
 			do {
 				int alt82=2;
@@ -8251,9 +8264,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt82) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1828:18: sourceElement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1843:18: sourceElement
 					{
-					pushFollow(FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6013);
+					pushFollow(FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6023);
 					sourceElement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -8267,9 +8280,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 			// TEMPLATE REWRITE
 			if ( state.backtracking==0 ) {
-			  // 1829:2: -> cover_func(src=$program::namecode=$textclass=$functionDeclarationBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionDeclarationBodyWithoutBraces::typesList)
+			  // 1844:2: -> cover_func(src=$program::namecode=$textobject=$functionDeclarationBodyWithoutBraces::objNamename=$functionDeclaration::funcNameline=$functionDeclaration::funcLineparams=$functionDeclarationBodyWithoutBraces::typesList)
 			  {
-			  	retval.st = templateLib.getInstanceOf("cover_func",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("class", functionDeclarationBodyWithoutBraces_stack.peek().objName).put("name", functionDeclaration_stack.peek().funcName).put("line", functionDeclaration_stack.peek().funcLine).put("params", functionDeclarationBodyWithoutBraces_stack.peek().typesList));
+			  	retval.st = templateLib.getInstanceOf("cover_func",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("object", functionDeclarationBodyWithoutBraces_stack.peek().objName).put("name", functionDeclaration_stack.peek().funcName).put("line", functionDeclaration_stack.peek().funcLine).put("params", functionDeclarationBodyWithoutBraces_stack.peek().typesList));
 			  }
 
 
@@ -8314,7 +8327,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		String name;
 		String currentClass;
 		int anonymousFunctionCount;
-		String moduleName;
+		//String moduleName;
 	}
 	protected Stack<program_scope> program_stack = new Stack<program_scope>();
 
@@ -8326,7 +8339,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "program"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1838:1: program : ( ( sourceElement )* ) -> cover_file(src=$program::namecode=$textlines=toObjectLiteral($program::executableLines, true)funcs=toObjectLiteral($program::functions, false)lineCount=$program::executableLines.size()funcCount=$program::functions.size());
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1858:1: program : ( ( sourceElement )* ) ;
 	public final ES3YUITestParser.program_return program() throws RecognitionException {
 		program_stack.push(new program_scope());
 		ES3YUITestParser.program_return retval = new ES3YUITestParser.program_return();
@@ -8343,13 +8356,13 @@ public static class STAttrMap extends HashMap<String, Object> {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 89) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:2: ( ( ( sourceElement )* ) -> cover_file(src=$program::namecode=$textlines=toObjectLiteral($program::executableLines, true)funcs=toObjectLiteral($program::functions, false)lineCount=$program::executableLines.size()funcCount=$program::functions.size()))
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:4: ( ( sourceElement )* )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1875:2: ( ( ( sourceElement )* ) )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1875:4: ( ( sourceElement )* )
 			{
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:4: ( ( sourceElement )* )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:5: ( sourceElement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1875:4: ( ( sourceElement )* )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1875:5: ( sourceElement )*
 			{
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:5: ( sourceElement )*
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1875:5: ( sourceElement )*
 			loop83:
 			do {
 				int alt83=2;
@@ -8360,9 +8373,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 				switch (alt83) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1855:5: sourceElement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1875:5: sourceElement
 					{
-					pushFollow(FOLLOW_sourceElement_in_program6078);
+					pushFollow(FOLLOW_sourceElement_in_program6089);
 					sourceElement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -8377,21 +8390,6 @@ public static class STAttrMap extends HashMap<String, Object> {
 			}
 
 			if ( state.backtracking==0 ) {java.util.Collections.sort(program_stack.peek().executableLines);}
-			// TEMPLATE REWRITE
-			if ( state.backtracking==0 ) {
-			  // 1856:2: -> cover_file(src=$program::namecode=$textlines=toObjectLiteral($program::executableLines, true)funcs=toObjectLiteral($program::functions, false)lineCount=$program::executableLines.size()funcCount=$program::functions.size())
-			  {
-			  	retval.st = templateLib.getInstanceOf("cover_file",new STAttrMap().put("src", program_stack.peek().name).put("code", input.toString(retval.start,input.LT(-1))).put("lines", toObjectLiteral(program_stack.peek().executableLines, true)).put("funcs", toObjectLiteral(program_stack.peek().functions, false)).put("lineCount", program_stack.peek().executableLines.size()).put("funcCount", program_stack.peek().functions.size()));
-			  }
-
-
-			  ((TokenRewriteStream)input).replace(
-			    ((Token)retval.start).getTokenIndex(),
-			    input.LT(-1).getTokenIndex(),
-			    retval.st);
-
-			}
-
 			}
 
 			retval.stop = input.LT(-1);
@@ -8412,106 +8410,6 @@ public static class STAttrMap extends HashMap<String, Object> {
 	// $ANTLR end "program"
 
 
-	public static class moduleName_return extends ParserRuleReturnScope {
-		public StringTemplate st;
-		public Object getTemplate() { return st; }
-		public String toString() { return st==null?null:st.toString(); }
-	};
-
-
-	// $ANTLR start "moduleName"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1865:1: moduleName : ( 'dojo.provide(' Identifier ')' ( SEMIC )? | 'goog.provide(' Identifier ')' ( SEMIC )? );
-	public final ES3YUITestParser.moduleName_return moduleName() throws RecognitionException {
-		ES3YUITestParser.moduleName_return retval = new ES3YUITestParser.moduleName_return();
-		retval.start = input.LT(1);
-		int moduleName_StartIndex = input.index();
-
-		try {
-			if ( state.backtracking>0 && alreadyParsedRule(input, 90) ) { return retval; }
-
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1866:2: ( 'dojo.provide(' Identifier ')' ( SEMIC )? | 'goog.provide(' Identifier ')' ( SEMIC )? )
-			int alt86=2;
-			int LA86_0 = input.LA(1);
-			if ( (LA86_0==171) ) {
-				alt86=1;
-			}
-			else if ( (LA86_0==172) ) {
-				alt86=2;
-			}
-			else {
-				if (state.backtracking>0) {state.failed=true; return retval;}
-				NoViableAltException nvae =
-					new NoViableAltException("", 86, 0, input);
-				throw nvae;
-			}
-			switch (alt86) {
-				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1866:4: 'dojo.provide(' Identifier ')' ( SEMIC )?
-					{
-					match(input,171,FOLLOW_171_in_moduleName6135); if (state.failed) return retval;
-					match(input,Identifier,FOLLOW_Identifier_in_moduleName6137); if (state.failed) return retval;
-					match(input,RPAREN,FOLLOW_RPAREN_in_moduleName6139); if (state.failed) return retval;
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1866:35: ( SEMIC )?
-					int alt84=2;
-					int LA84_0 = input.LA(1);
-					if ( (LA84_0==SEMIC) ) {
-						alt84=1;
-					}
-					switch (alt84) {
-						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1866:35: SEMIC
-							{
-							match(input,SEMIC,FOLLOW_SEMIC_in_moduleName6141); if (state.failed) return retval;
-							}
-							break;
-
-					}
-
-					}
-					break;
-				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1867:4: 'goog.provide(' Identifier ')' ( SEMIC )?
-					{
-					match(input,172,FOLLOW_172_in_moduleName6147); if (state.failed) return retval;
-					match(input,Identifier,FOLLOW_Identifier_in_moduleName6149); if (state.failed) return retval;
-					match(input,RPAREN,FOLLOW_RPAREN_in_moduleName6151); if (state.failed) return retval;
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1867:35: ( SEMIC )?
-					int alt85=2;
-					int LA85_0 = input.LA(1);
-					if ( (LA85_0==SEMIC) ) {
-						alt85=1;
-					}
-					switch (alt85) {
-						case 1 :
-							// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1867:35: SEMIC
-							{
-							match(input,SEMIC,FOLLOW_SEMIC_in_moduleName6153); if (state.failed) return retval;
-							}
-							break;
-
-					}
-
-					}
-					break;
-
-			}
-			retval.stop = input.LT(-1);
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-			if ( state.backtracking>0 ) { memoize(input, 90, moduleName_StartIndex); }
-
-		}
-		return retval;
-	}
-	// $ANTLR end "moduleName"
-
-
 	protected static class objectDeclaration_scope {
 		String objectName;
 	}
@@ -8525,7 +8423,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "objectDeclaration"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1870:1: objectDeclaration : memberExpression assignmentOperator objectLiteral ;
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1886:1: objectDeclaration : memberExpression assignmentOperator objectLiteral ;
 	public final ES3YUITestParser.objectDeclaration_return objectDeclaration() throws RecognitionException {
 		objectDeclaration_stack.push(new objectDeclaration_scope());
 		ES3YUITestParser.objectDeclaration_return retval = new ES3YUITestParser.objectDeclaration_return();
@@ -8535,24 +8433,25 @@ public static class STAttrMap extends HashMap<String, Object> {
 		ParserRuleReturnScope memberExpression13 =null;
 
 		try {
-			if ( state.backtracking>0 && alreadyParsedRule(input, 91) ) { return retval; }
+			if ( state.backtracking>0 && alreadyParsedRule(input, 90) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1874:2: ( memberExpression assignmentOperator objectLiteral )
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1874:4: memberExpression assignmentOperator objectLiteral
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1890:2: ( memberExpression assignmentOperator objectLiteral )
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1890:4: memberExpression assignmentOperator objectLiteral
 			{
-			pushFollow(FOLLOW_memberExpression_in_objectDeclaration6168);
+			pushFollow(FOLLOW_memberExpression_in_objectDeclaration6113);
 			memberExpression13=memberExpression();
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) {objectDeclaration_stack.peek().objectName =(memberExpression13!=null?input.toString(memberExpression13.start,memberExpression13.stop):null); }
-			pushFollow(FOLLOW_assignmentOperator_in_objectDeclaration6172);
+			pushFollow(FOLLOW_assignmentOperator_in_objectDeclaration6117);
 			assignmentOperator();
 			state._fsp--;
 			if (state.failed) return retval;
-			pushFollow(FOLLOW_objectLiteral_in_objectDeclaration6174);
+			pushFollow(FOLLOW_objectLiteral_in_objectDeclaration6119);
 			objectLiteral();
 			state._fsp--;
 			if (state.failed) return retval;
+			if ( state.backtracking==0 ) {System.out.println((memberExpression13!=null?input.toString(memberExpression13.start,memberExpression13.stop):null));}
 			}
 
 			retval.stop = input.LT(-1);
@@ -8564,7 +8463,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		}
 		finally {
 			// do for sure before leaving
-			if ( state.backtracking>0 ) { memoize(input, 91, objectDeclaration_StartIndex); }
+			if ( state.backtracking>0 ) { memoize(input, 90, objectDeclaration_StartIndex); }
 
 			objectDeclaration_stack.pop();
 		}
@@ -8581,25 +8480,25 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 
 	// $ANTLR start "sourceElement"
-	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1880:1: sourceElement options {k=1; } : ({...}? functionDeclaration | statement );
+	// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1896:1: sourceElement options {k=1; } : ({...}? functionDeclaration | statement );
 	public final ES3YUITestParser.sourceElement_return sourceElement() throws RecognitionException {
 		ES3YUITestParser.sourceElement_return retval = new ES3YUITestParser.sourceElement_return();
 		retval.start = input.LT(1);
 		int sourceElement_StartIndex = input.index();
 
 		try {
-			if ( state.backtracking>0 && alreadyParsedRule(input, 92) ) { return retval; }
+			if ( state.backtracking>0 && alreadyParsedRule(input, 91) ) { return retval; }
 
-			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1885:2: ({...}? functionDeclaration | statement )
-			int alt87=2;
-			int LA87_0 = input.LA(1);
-			if ( (LA87_0==FUNCTION) ) {
-				int LA87_1 = input.LA(2);
-				if ( (((( input.LA(1) == FUNCTION )&&( input.LA(1) == FUNCTION ))&&synpred262_ES3YUITest())) ) {
-					alt87=1;
+			// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1901:2: ({...}? functionDeclaration | statement )
+			int alt84=2;
+			int LA84_0 = input.LA(1);
+			if ( (LA84_0==FUNCTION) ) {
+				int LA84_1 = input.LA(2);
+				if ( (((synpred259_ES3YUITest()&&synpred259_ES3YUITest())&&( input.LA(1) == FUNCTION ))) ) {
+					alt84=1;
 				}
 				else if ( (true) ) {
-					alt87=2;
+					alt84=2;
 				}
 				else {
 					if (state.backtracking>0) {state.failed=true; return retval;}
@@ -8607,40 +8506,40 @@ public static class STAttrMap extends HashMap<String, Object> {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 87, 1, input);
+							new NoViableAltException("", 84, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
 					}
 				}
 			}
-			else if ( (LA87_0==ADD||LA87_0==BREAK||LA87_0==CONTINUE||LA87_0==DEC||LA87_0==DELETE||LA87_0==DO||LA87_0==DecimalLiteral||LA87_0==FALSE||LA87_0==FOR||(LA87_0 >= HexIntegerLiteral && LA87_0 <= IF)||LA87_0==INC||LA87_0==INV||LA87_0==Identifier||(LA87_0 >= LBRACE && LA87_0 <= LBRACK)||LA87_0==LPAREN||(LA87_0 >= NEW && LA87_0 <= NOT)||LA87_0==NULL||LA87_0==OctalIntegerLiteral||LA87_0==RETURN||LA87_0==RegularExpressionLiteral||LA87_0==SEMIC||LA87_0==SUB||LA87_0==SWITCH||LA87_0==StringLiteral||(LA87_0 >= THIS && LA87_0 <= THROW)||(LA87_0 >= TRUE && LA87_0 <= TYPEOF)||(LA87_0 >= VAR && LA87_0 <= VOID)||(LA87_0 >= WHILE && LA87_0 <= WITH)) ) {
-				alt87=2;
+			else if ( (LA84_0==ADD||LA84_0==BREAK||LA84_0==CONTINUE||LA84_0==DEC||LA84_0==DELETE||LA84_0==DO||LA84_0==DecimalLiteral||LA84_0==FALSE||LA84_0==FOR||(LA84_0 >= HexIntegerLiteral && LA84_0 <= IF)||LA84_0==INC||LA84_0==INV||LA84_0==Identifier||(LA84_0 >= LBRACE && LA84_0 <= LBRACK)||LA84_0==LPAREN||(LA84_0 >= NEW && LA84_0 <= NOT)||LA84_0==NULL||LA84_0==OctalIntegerLiteral||LA84_0==RETURN||LA84_0==RegularExpressionLiteral||LA84_0==SEMIC||LA84_0==SUB||LA84_0==SWITCH||LA84_0==StringLiteral||(LA84_0 >= THIS && LA84_0 <= THROW)||(LA84_0 >= TRUE && LA84_0 <= TYPEOF)||(LA84_0 >= VAR && LA84_0 <= VOID)||(LA84_0 >= WHILE && LA84_0 <= WITH)) ) {
+				alt84=2;
 			}
 			else {
 				if (state.backtracking>0) {state.failed=true; return retval;}
 				NoViableAltException nvae =
-					new NoViableAltException("", 87, 0, input);
+					new NoViableAltException("", 84, 0, input);
 				throw nvae;
 			}
-			switch (alt87) {
+			switch (alt84) {
 				case 1 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1885:4: {...}? functionDeclaration
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1901:4: {...}? functionDeclaration
 					{
 					if ( !(( input.LA(1) == FUNCTION )) ) {
 						if (state.backtracking>0) {state.failed=true; return retval;}
 						throw new FailedPredicateException(input, "sourceElement", " input.LA(1) == FUNCTION ");
 					}
-					pushFollow(FOLLOW_functionDeclaration_in_sourceElement6206);
+					pushFollow(FOLLOW_functionDeclaration_in_sourceElement6151);
 					functionDeclaration();
 					state._fsp--;
 					if (state.failed) return retval;
 					}
 					break;
 				case 2 :
-					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1886:4: statement
+					// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1902:4: statement
 					{
-					pushFollow(FOLLOW_statement_in_sourceElement6211);
+					pushFollow(FOLLOW_statement_in_sourceElement6156);
 					statement();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -8657,7 +8556,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 		}
 		finally {
 			// do for sure before leaving
-			if ( state.backtracking>0 ) { memoize(input, 92, sourceElement_StartIndex); }
+			if ( state.backtracking>0 ) { memoize(input, 91, sourceElement_StartIndex); }
 
 		}
 		return retval;
@@ -8688,21 +8587,21 @@ public static class STAttrMap extends HashMap<String, Object> {
 		state._fsp--;
 		if (state.failed) return ;
 		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:945:26: ( COMMA ( arrayItem )? )*
-		loop90:
+		loop87:
 		do {
-			int alt90=2;
-			int LA90_0 = input.LA(1);
-			if ( (LA90_0==COMMA) ) {
-				alt90=1;
+			int alt87=2;
+			int LA87_0 = input.LA(1);
+			if ( (LA87_0==COMMA) ) {
+				alt87=1;
 			}
 
-			switch (alt90) {
+			switch (alt87) {
 			case 1 :
 				// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:945:28: COMMA ( arrayItem )?
 				{
 				match(input,COMMA,FOLLOW_COMMA_in_synpred123_ES3YUITest3194); if (state.failed) return ;
 				// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:945:34: ( arrayItem )?
-				int alt89=2;
+				int alt86=2;
 				switch ( input.LA(1) ) {
 					case ADD:
 					case DEC:
@@ -8729,27 +8628,27 @@ public static class STAttrMap extends HashMap<String, Object> {
 					case TYPEOF:
 					case VOID:
 						{
-						alt89=1;
+						alt86=1;
 						}
 						break;
 					case EOF:
 						{
-						int LA89_2 = input.LA(2);
+						int LA86_2 = input.LA(2);
 						if ( (((( input.LA(1) == COMMA )&&( input.LA(1) == COMMA ))&&synpred121_ES3YUITest())) ) {
-							alt89=1;
+							alt86=1;
 						}
 						}
 						break;
 					case COMMA:
 						{
-						int LA89_3 = input.LA(2);
+						int LA86_3 = input.LA(2);
 						if ( (((( input.LA(1) == COMMA )&&( input.LA(1) == COMMA ))&&synpred121_ES3YUITest())) ) {
-							alt89=1;
+							alt86=1;
 						}
 						}
 						break;
 				}
-				switch (alt89) {
+				switch (alt86) {
 					case 1 :
 						// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:945:34: arrayItem
 						{
@@ -8766,7 +8665,7 @@ public static class STAttrMap extends HashMap<String, Object> {
 				break;
 
 			default :
-				break loop90;
+				break loop87;
 			}
 		} while (true);
 
@@ -8823,12 +8722,12 @@ public static class STAttrMap extends HashMap<String, Object> {
 		state._fsp--;
 		if (state.failed) return ;
 		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1204:30: ({...}? assignmentOperator assignmentExpression )?
-		int alt94=2;
-		int LA94_0 = input.LA(1);
-		if ( (LA94_0==ADDASS||LA94_0==ANDASS||LA94_0==ASSIGN||LA94_0==DIVASS||LA94_0==MODASS||LA94_0==MULASS||LA94_0==ORASS||LA94_0==SHLASS||LA94_0==SHRASS||LA94_0==SHUASS||LA94_0==SUBASS||LA94_0==XORASS) ) {
-			alt94=1;
+		int alt91=2;
+		int LA91_0 = input.LA(1);
+		if ( (LA91_0==ADDASS||LA91_0==ANDASS||LA91_0==ASSIGN||LA91_0==DIVASS||LA91_0==MODASS||LA91_0==MULASS||LA91_0==ORASS||LA91_0==SHLASS||LA91_0==SHRASS||LA91_0==SHUASS||LA91_0==SUBASS||LA91_0==XORASS) ) {
+			alt91=1;
 		}
-		switch (alt94) {
+		switch (alt91) {
 			case 1 :
 				// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1204:32: {...}? assignmentOperator assignmentExpression
 				{
@@ -8878,8 +8777,8 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 	// $ANTLR start synpred209_ES3YUITest
 	public final void synpred209_ES3YUITest_fragment() throws RecognitionException {
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1311:5: ({...}? block )
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1311:5: {...}? block
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1321:5: ({...}? block )
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1321:5: {...}? block
 		{
 		if ( !(( statement_stack.peek().isBlock = input.LA(1) == LBRACE )) ) {
 			if (state.backtracking>0) {state.failed=true; return ;}
@@ -8896,10 +8795,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 	// $ANTLR start synpred211_ES3YUITest
 	public final void synpred211_ES3YUITest_fragment() throws RecognitionException {
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1318:4: ( objectDeclaration )
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1318:4: objectDeclaration
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1328:4: ( objectDeclaration )
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1328:4: objectDeclaration
 		{
-		pushFollow(FOLLOW_objectDeclaration_in_synpred211_ES3YUITest4529);
+		pushFollow(FOLLOW_objectDeclaration_in_synpred211_ES3YUITest4534);
 		objectDeclaration();
 		state._fsp--;
 		if (state.failed) return ;
@@ -8910,10 +8809,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 	// $ANTLR start synpred213_ES3YUITest
 	public final void synpred213_ES3YUITest_fragment() throws RecognitionException {
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1320:4: ( expressionStatement )
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1320:4: expressionStatement
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1330:4: ( expressionStatement )
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1330:4: expressionStatement
 		{
-		pushFollow(FOLLOW_expressionStatement_in_synpred213_ES3YUITest4539);
+		pushFollow(FOLLOW_expressionStatement_in_synpred213_ES3YUITest4544);
 		expressionStatement();
 		state._fsp--;
 		if (state.failed) return ;
@@ -8924,10 +8823,10 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 	// $ANTLR start synpred220_ES3YUITest
 	public final void synpred220_ES3YUITest_fragment() throws RecognitionException {
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1327:4: ( labelledStatement )
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1327:4: labelledStatement
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1337:4: ( labelledStatement )
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1337:4: labelledStatement
 		{
-		pushFollow(FOLLOW_labelledStatement_in_synpred220_ES3YUITest4574);
+		pushFollow(FOLLOW_labelledStatement_in_synpred220_ES3YUITest4579);
 		labelledStatement();
 		state._fsp--;
 		if (state.failed) return ;
@@ -8938,14 +8837,14 @@ public static class STAttrMap extends HashMap<String, Object> {
 
 	// $ANTLR start synpred227_ES3YUITest
 	public final void synpred227_ES3YUITest_fragment() throws RecognitionException {
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1386:44: ({...}? elseStatement )
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1386:44: {...}? elseStatement
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1396:44: ({...}? elseStatement )
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1396:44: {...}? elseStatement
 		{
 		if ( !(( input.LA(1) == ELSE )) ) {
 			if (state.backtracking>0) {state.failed=true; return ;}
 			throw new FailedPredicateException(input, "synpred227_ES3YUITest", " input.LA(1) == ELSE ");
 		}
-		pushFollow(FOLLOW_elseStatement_in_synpred227_ES3YUITest4751);
+		pushFollow(FOLLOW_elseStatement_in_synpred227_ES3YUITest4756);
 		elseStatement();
 		state._fsp--;
 		if (state.failed) return ;
@@ -8954,23 +8853,23 @@ public static class STAttrMap extends HashMap<String, Object> {
 	}
 	// $ANTLR end synpred227_ES3YUITest
 
-	// $ANTLR start synpred262_ES3YUITest
-	public final void synpred262_ES3YUITest_fragment() throws RecognitionException {
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1885:4: ({...}? functionDeclaration )
-		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1885:4: {...}? functionDeclaration
+	// $ANTLR start synpred259_ES3YUITest
+	public final void synpred259_ES3YUITest_fragment() throws RecognitionException {
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1901:4: ({...}? functionDeclaration )
+		// D:\\Boxes\\Dropbox\\GIT\\master_project\\JSTestCoverage\\src\\com\\yahoo\\platform\\yuitest\\coverage\\grammar\\ES3YUITest.g:1901:4: {...}? functionDeclaration
 		{
 		if ( !(( input.LA(1) == FUNCTION )) ) {
 			if (state.backtracking>0) {state.failed=true; return ;}
-			throw new FailedPredicateException(input, "synpred262_ES3YUITest", " input.LA(1) == FUNCTION ");
+			throw new FailedPredicateException(input, "synpred259_ES3YUITest", " input.LA(1) == FUNCTION ");
 		}
-		pushFollow(FOLLOW_functionDeclaration_in_synpred262_ES3YUITest6206);
+		pushFollow(FOLLOW_functionDeclaration_in_synpred259_ES3YUITest6151);
 		functionDeclaration();
 		state._fsp--;
 		if (state.failed) return ;
 		}
 
 	}
-	// $ANTLR end synpred262_ES3YUITest
+	// $ANTLR end synpred259_ES3YUITest
 
 	// Delegated rules
 
@@ -8979,6 +8878,20 @@ public static class STAttrMap extends HashMap<String, Object> {
 		int start = input.mark();
 		try {
 			synpred220_ES3YUITest_fragment(); // can never throw exception
+		} catch (RecognitionException re) {
+			System.err.println("impossible: "+re);
+		}
+		boolean success = !state.failed;
+		input.rewind(start);
+		state.backtracking--;
+		state.failed=false;
+		return success;
+	}
+	public final boolean synpred259_ES3YUITest() {
+		state.backtracking++;
+		int start = input.mark();
+		try {
+			synpred259_ES3YUITest_fragment(); // can never throw exception
 		} catch (RecognitionException re) {
 			System.err.println("impossible: "+re);
 		}
@@ -9091,20 +9004,6 @@ public static class STAttrMap extends HashMap<String, Object> {
 		int start = input.mark();
 		try {
 			synpred121_ES3YUITest_fragment(); // can never throw exception
-		} catch (RecognitionException re) {
-			System.err.println("impossible: "+re);
-		}
-		boolean success = !state.failed;
-		input.rewind(start);
-		state.backtracking--;
-		state.failed=false;
-		return success;
-	}
-	public final boolean synpred262_ES3YUITest() {
-		state.backtracking++;
-		int start = input.mark();
-		try {
-			synpred262_ES3YUITest_fragment(); // can never throw exception
 		} catch (RecognitionException re) {
 			System.err.println("impossible: "+re);
 		}
@@ -9310,175 +9209,167 @@ public static class STAttrMap extends HashMap<String, Object> {
 	public static final BitSet FOLLOW_MultiLineComment_in_semic4425 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_block_in_statement4468 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_statementTail_in_statement4472 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_variableStatement_in_statementTail4524 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_objectDeclaration_in_statementTail4529 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_emptyStatement_in_statementTail4534 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expressionStatement_in_statementTail4539 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ifStatement_in_statementTail4544 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_iterationStatement_in_statementTail4549 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_continueStatement_in_statementTail4554 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_breakStatement_in_statementTail4559 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_returnStatement_in_statementTail4564 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_withStatement_in_statementTail4569 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_labelledStatement_in_statementTail4574 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_switchStatement_in_statementTail4579 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_throwStatement_in_statementTail4584 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_tryStatement_in_statementTail4589 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LBRACE_in_block4604 = new BitSet(new long[]{0x4840104A20004020L,0xA00416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_block4606 = new BitSet(new long[]{0x4840104A20004020L,0xA00416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_RBRACE_in_block4609 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_VAR_in_variableStatement4627 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_variableDeclaration_in_variableStatement4629 = new BitSet(new long[]{0x0000800008000000L,0x2000000800000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_COMMA_in_variableStatement4633 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_variableDeclaration_in_variableStatement4635 = new BitSet(new long[]{0x0000800008000000L,0x2000000800000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_semic_in_variableStatement4640 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_variableDeclaration4653 = new BitSet(new long[]{0x0000000000000802L});
-	public static final BitSet FOLLOW_ASSIGN_in_variableDeclaration4657 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_assignmentExpression_in_variableDeclaration4659 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_variableDeclarationNoIn4674 = new BitSet(new long[]{0x0000000000000802L});
-	public static final BitSet FOLLOW_ASSIGN_in_variableDeclarationNoIn4678 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_assignmentExpressionNoIn_in_variableDeclarationNoIn4680 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SEMIC_in_emptyStatement4699 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expression_in_expressionStatement4717 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_semic_in_expressionStatement4719 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_IF_in_ifStatement4737 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_LPAREN_in_ifStatement4739 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_ifStatement4741 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_ifStatement4743 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_ifStatement4745 = new BitSet(new long[]{0x0000200000000002L});
-	public static final BitSet FOLLOW_elseStatement_in_ifStatement4751 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ELSE_in_elseStatement4823 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_elseStatement4825 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_doStatement_in_iterationStatement4862 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_whileStatement_in_iterationStatement4867 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forStatement_in_iterationStatement4872 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DO_in_doStatement4884 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_doStatement4886 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-	public static final BitSet FOLLOW_WHILE_in_doStatement4888 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_LPAREN_in_doStatement4890 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_doStatement4892 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_doStatement4894 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_semic_in_doStatement4896 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_WHILE_in_whileStatement4982 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_LPAREN_in_whileStatement4984 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_whileStatement4986 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_whileStatement4988 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_whileStatement4990 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_FOR_in_forStatement5051 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_LPAREN_in_forStatement5053 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000651410028L});
-	public static final BitSet FOLLOW_forControl_in_forStatement5055 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_forStatement5057 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_forStatement5059 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forControlVar_in_forControl5118 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forControlExpression_in_forControl5123 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forControlSemic_in_forControl5128 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_VAR_in_forControlVar5139 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_variableDeclarationNoIn_in_forControlVar5141 = new BitSet(new long[]{0x0000000008000000L,0x0000000000000100L,0x0000000000000020L});
-	public static final BitSet FOLLOW_IN_in_forControlVar5153 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_forControlVar5155 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_COMMA_in_forControlVar5178 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_variableDeclarationNoIn_in_forControlVar5180 = new BitSet(new long[]{0x0000000008000000L,0x0000000000000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_SEMIC_in_forControlVar5185 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410028L});
-	public static final BitSet FOLLOW_expression_in_forControlVar5189 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_SEMIC_in_forControlVar5192 = new BitSet(new long[]{0x4040100A00000022L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_forControlVar5196 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expressionNoIn_in_forControlExpression5226 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L,0x0000000000000020L});
-	public static final BitSet FOLLOW_IN_in_forControlExpression5241 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_forControlExpression5245 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SEMIC_in_forControlExpression5266 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410028L});
-	public static final BitSet FOLLOW_expression_in_forControlExpression5270 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_SEMIC_in_forControlExpression5273 = new BitSet(new long[]{0x4040100A00000022L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_forControlExpression5277 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SEMIC_in_forControlSemic5300 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410028L});
-	public static final BitSet FOLLOW_expression_in_forControlSemic5304 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_SEMIC_in_forControlSemic5307 = new BitSet(new long[]{0x4040100A00000022L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_forControlSemic5311 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONTINUE_in_continueStatement5332 = new BitSet(new long[]{0x0000800000000000L,0x2000000800008000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_Identifier_in_continueStatement5336 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_semic_in_continueStatement5339 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_BREAK_in_breakStatement5357 = new BitSet(new long[]{0x0000800000000000L,0x2000000800008000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_Identifier_in_breakStatement5361 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_semic_in_breakStatement5364 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_RETURN_in_returnStatement5382 = new BitSet(new long[]{0x4040900A00000020L,0x200416080460A210L,0x0000000451410028L});
-	public static final BitSet FOLLOW_expression_in_returnStatement5386 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_semic_in_returnStatement5389 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_WITH_in_withStatement5405 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_LPAREN_in_withStatement5407 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_withStatement5409 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_withStatement5411 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_withStatement5413 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SWITCH_in_switchStatement5484 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_LPAREN_in_switchStatement5486 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_switchStatement5488 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_switchStatement5490 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_caseBlock_in_switchStatement5492 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LBRACE_in_caseBlock5505 = new BitSet(new long[]{0x0000000400200000L,0x2000000000000000L});
-	public static final BitSet FOLLOW_caseClause_in_caseBlock5508 = new BitSet(new long[]{0x0000000400200000L,0x2000000000000000L});
-	public static final BitSet FOLLOW_defaultClause_in_caseBlock5513 = new BitSet(new long[]{0x0000000000200000L,0x2000000000000000L});
-	public static final BitSet FOLLOW_caseClause_in_caseBlock5516 = new BitSet(new long[]{0x0000000000200000L,0x2000000000000000L});
-	public static final BitSet FOLLOW_RBRACE_in_caseBlock5522 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CASE_in_caseClause5533 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_caseClause5535 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_COLON_in_caseClause5537 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_caseClause5539 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_DEFAULT_in_defaultClause5552 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_COLON_in_defaultClause5554 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_defaultClause5556 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_Identifier_in_labelledStatement5573 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_COLON_in_labelledStatement5575 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_statement_in_labelledStatement5577 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_THROW_in_throwStatement5597 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
-	public static final BitSet FOLLOW_expression_in_throwStatement5601 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_semic_in_throwStatement5603 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TRY_in_tryStatement5619 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_block_in_tryStatement5621 = new BitSet(new long[]{0x0200000000400000L});
-	public static final BitSet FOLLOW_catchClause_in_tryStatement5625 = new BitSet(new long[]{0x0200000000000002L});
-	public static final BitSet FOLLOW_finallyClause_in_tryStatement5627 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_variableStatement_in_statementTail4529 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_objectDeclaration_in_statementTail4534 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_emptyStatement_in_statementTail4539 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expressionStatement_in_statementTail4544 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ifStatement_in_statementTail4549 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_iterationStatement_in_statementTail4554 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_continueStatement_in_statementTail4559 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_breakStatement_in_statementTail4564 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_returnStatement_in_statementTail4569 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_withStatement_in_statementTail4574 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_labelledStatement_in_statementTail4579 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_switchStatement_in_statementTail4584 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_throwStatement_in_statementTail4589 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_tryStatement_in_statementTail4594 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LBRACE_in_block4609 = new BitSet(new long[]{0x4840104A20004020L,0xA00416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_block4611 = new BitSet(new long[]{0x4840104A20004020L,0xA00416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_RBRACE_in_block4614 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_VAR_in_variableStatement4632 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_variableDeclaration_in_variableStatement4634 = new BitSet(new long[]{0x0000800008000000L,0x2000000800000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_COMMA_in_variableStatement4638 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_variableDeclaration_in_variableStatement4640 = new BitSet(new long[]{0x0000800008000000L,0x2000000800000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_semic_in_variableStatement4645 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_variableDeclaration4658 = new BitSet(new long[]{0x0000000000000802L});
+	public static final BitSet FOLLOW_ASSIGN_in_variableDeclaration4662 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_assignmentExpression_in_variableDeclaration4664 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_variableDeclarationNoIn4679 = new BitSet(new long[]{0x0000000000000802L});
+	public static final BitSet FOLLOW_ASSIGN_in_variableDeclarationNoIn4683 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_assignmentExpressionNoIn_in_variableDeclarationNoIn4685 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SEMIC_in_emptyStatement4704 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expression_in_expressionStatement4722 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_semic_in_expressionStatement4724 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_IF_in_ifStatement4742 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_LPAREN_in_ifStatement4744 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_ifStatement4746 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_ifStatement4748 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_ifStatement4750 = new BitSet(new long[]{0x0000200000000002L});
+	public static final BitSet FOLLOW_elseStatement_in_ifStatement4756 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ELSE_in_elseStatement4828 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_elseStatement4830 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_doStatement_in_iterationStatement4867 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_whileStatement_in_iterationStatement4872 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forStatement_in_iterationStatement4877 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DO_in_doStatement4889 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_doStatement4891 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+	public static final BitSet FOLLOW_WHILE_in_doStatement4893 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_LPAREN_in_doStatement4895 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_doStatement4897 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_doStatement4899 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_semic_in_doStatement4901 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_WHILE_in_whileStatement4987 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_LPAREN_in_whileStatement4989 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_whileStatement4991 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_whileStatement4993 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_whileStatement4995 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_FOR_in_forStatement5056 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_LPAREN_in_forStatement5058 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000651410028L});
+	public static final BitSet FOLLOW_forControl_in_forStatement5060 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_forStatement5062 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_forStatement5064 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forControlVar_in_forControl5123 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forControlExpression_in_forControl5128 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forControlSemic_in_forControl5133 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_VAR_in_forControlVar5144 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_variableDeclarationNoIn_in_forControlVar5146 = new BitSet(new long[]{0x0000000008000000L,0x0000000000000100L,0x0000000000000020L});
+	public static final BitSet FOLLOW_IN_in_forControlVar5158 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_forControlVar5160 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_COMMA_in_forControlVar5183 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_variableDeclarationNoIn_in_forControlVar5185 = new BitSet(new long[]{0x0000000008000000L,0x0000000000000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_SEMIC_in_forControlVar5190 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410028L});
+	public static final BitSet FOLLOW_expression_in_forControlVar5194 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_SEMIC_in_forControlVar5197 = new BitSet(new long[]{0x4040100A00000022L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_forControlVar5201 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expressionNoIn_in_forControlExpression5231 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L,0x0000000000000020L});
+	public static final BitSet FOLLOW_IN_in_forControlExpression5246 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_forControlExpression5250 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SEMIC_in_forControlExpression5271 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410028L});
+	public static final BitSet FOLLOW_expression_in_forControlExpression5275 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_SEMIC_in_forControlExpression5278 = new BitSet(new long[]{0x4040100A00000022L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_forControlExpression5282 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SEMIC_in_forControlSemic5305 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410028L});
+	public static final BitSet FOLLOW_expression_in_forControlSemic5309 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_SEMIC_in_forControlSemic5312 = new BitSet(new long[]{0x4040100A00000022L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_forControlSemic5316 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONTINUE_in_continueStatement5337 = new BitSet(new long[]{0x0000800000000000L,0x2000000800008000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_Identifier_in_continueStatement5341 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_semic_in_continueStatement5344 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_BREAK_in_breakStatement5362 = new BitSet(new long[]{0x0000800000000000L,0x2000000800008000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_Identifier_in_breakStatement5366 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_semic_in_breakStatement5369 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_RETURN_in_returnStatement5387 = new BitSet(new long[]{0x4040900A00000020L,0x200416080460A210L,0x0000000451410028L});
+	public static final BitSet FOLLOW_expression_in_returnStatement5391 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_semic_in_returnStatement5394 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_WITH_in_withStatement5410 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_LPAREN_in_withStatement5412 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_withStatement5414 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_withStatement5416 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_withStatement5418 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SWITCH_in_switchStatement5489 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_LPAREN_in_switchStatement5491 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_switchStatement5493 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_switchStatement5495 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_caseBlock_in_switchStatement5497 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LBRACE_in_caseBlock5510 = new BitSet(new long[]{0x0000000400200000L,0x2000000000000000L});
+	public static final BitSet FOLLOW_caseClause_in_caseBlock5513 = new BitSet(new long[]{0x0000000400200000L,0x2000000000000000L});
+	public static final BitSet FOLLOW_defaultClause_in_caseBlock5518 = new BitSet(new long[]{0x0000000000200000L,0x2000000000000000L});
+	public static final BitSet FOLLOW_caseClause_in_caseBlock5521 = new BitSet(new long[]{0x0000000000200000L,0x2000000000000000L});
+	public static final BitSet FOLLOW_RBRACE_in_caseBlock5527 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CASE_in_caseClause5538 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_caseClause5540 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_COLON_in_caseClause5542 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_caseClause5544 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_DEFAULT_in_defaultClause5557 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_COLON_in_defaultClause5559 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_defaultClause5561 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_Identifier_in_labelledStatement5578 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_COLON_in_labelledStatement5580 = new BitSet(new long[]{0x4840104A20004020L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_statement_in_labelledStatement5582 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_THROW_in_throwStatement5602 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
+	public static final BitSet FOLLOW_expression_in_throwStatement5606 = new BitSet(new long[]{0x0000800000000000L,0x2000000800000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_semic_in_throwStatement5608 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TRY_in_tryStatement5624 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_block_in_tryStatement5626 = new BitSet(new long[]{0x0200000000400000L});
+	public static final BitSet FOLLOW_catchClause_in_tryStatement5630 = new BitSet(new long[]{0x0200000000000002L});
 	public static final BitSet FOLLOW_finallyClause_in_tryStatement5632 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CATCH_in_catchClause5646 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_LPAREN_in_catchClause5648 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_Identifier_in_catchClause5650 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_catchClause5652 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_block_in_catchClause5654 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_FINALLY_in_finallyClause5666 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_block_in_finallyClause5668 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_FUNCTION_in_functionDeclaration5704 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_Identifier_in_functionDeclaration5708 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_formalParameterList_in_functionDeclaration5712 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_functionDeclarationBody_in_functionDeclaration5716 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_FUNCTION_in_functionExpression5778 = new BitSet(new long[]{0x0000000000000000L,0x0000000004008000L});
-	public static final BitSet FOLLOW_Identifier_in_functionExpression5780 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_formalParameterList_in_functionExpression5783 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_functionExpressionBody_in_functionExpression5787 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LPAREN_in_formalParameterList5818 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_Identifier_in_formalParameterList5824 = new BitSet(new long[]{0x0000000008000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_COMMA_in_formalParameterList5830 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_finallyClause_in_tryStatement5637 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CATCH_in_catchClause5651 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_LPAREN_in_catchClause5653 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_Identifier_in_catchClause5655 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_catchClause5657 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_block_in_catchClause5659 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_FINALLY_in_finallyClause5671 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_block_in_finallyClause5673 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_FUNCTION_in_functionDeclaration5709 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_Identifier_in_functionDeclaration5713 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_formalParameterList_in_functionDeclaration5717 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_functionDeclarationBody_in_functionDeclaration5721 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_FUNCTION_in_functionExpression5788 = new BitSet(new long[]{0x0000000000000000L,0x0000000004008000L});
+	public static final BitSet FOLLOW_Identifier_in_functionExpression5790 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+	public static final BitSet FOLLOW_formalParameterList_in_functionExpression5793 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_functionExpressionBody_in_functionExpression5797 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LPAREN_in_formalParameterList5828 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L,0x0000000000000001L});
 	public static final BitSet FOLLOW_Identifier_in_formalParameterList5834 = new BitSet(new long[]{0x0000000008000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_formalParameterList5844 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LBRACE_in_functionDeclarationBody5857 = new BitSet(new long[]{0x4840104A20004020L,0xA00416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_functionDeclarationBodyWithoutBraces_in_functionDeclarationBody5859 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-	public static final BitSet FOLLOW_RBRACE_in_functionDeclarationBody5862 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LBRACE_in_functionExpressionBody5875 = new BitSet(new long[]{0x4840104A20004020L,0xA00416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_functionExpressionBodyWithoutBraces_in_functionExpressionBody5877 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-	public static final BitSet FOLLOW_RBRACE_in_functionExpressionBody5880 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_sourceElement_in_functionExpressionBodyWithoutBraces5907 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_sourceElement_in_functionExpressionBodyWithoutBraces5910 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6011 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6013 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_sourceElement_in_program6078 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
-	public static final BitSet FOLLOW_171_in_moduleName6135 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_Identifier_in_moduleName6137 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_moduleName6139 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_SEMIC_in_moduleName6141 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_172_in_moduleName6147 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_Identifier_in_moduleName6149 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_RPAREN_in_moduleName6151 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_SEMIC_in_moduleName6153 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_memberExpression_in_objectDeclaration6168 = new BitSet(new long[]{0x0000002000000940L,0x0000800500000000L,0x0000020000021480L});
-	public static final BitSet FOLLOW_assignmentOperator_in_objectDeclaration6172 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_objectLiteral_in_objectDeclaration6174 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionDeclaration_in_sourceElement6206 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statement_in_sourceElement6211 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_COMMA_in_formalParameterList5840 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_Identifier_in_formalParameterList5844 = new BitSet(new long[]{0x0000000008000000L,0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_RPAREN_in_formalParameterList5854 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LBRACE_in_functionDeclarationBody5867 = new BitSet(new long[]{0x4840104A20004020L,0xA00416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_functionDeclarationBodyWithoutBraces_in_functionDeclarationBody5869 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+	public static final BitSet FOLLOW_RBRACE_in_functionDeclarationBody5872 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LBRACE_in_functionExpressionBody5885 = new BitSet(new long[]{0x4840104A20004020L,0xA00416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_functionExpressionBodyWithoutBraces_in_functionExpressionBody5887 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+	public static final BitSet FOLLOW_RBRACE_in_functionExpressionBody5890 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_sourceElement_in_functionExpressionBodyWithoutBraces5917 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_sourceElement_in_functionExpressionBodyWithoutBraces5920 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6021 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_sourceElement_in_functionDeclarationBodyWithoutBraces6023 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_sourceElement_in_program6089 = new BitSet(new long[]{0x4840104A20004022L,0x800416000460A230L,0x0000006673490028L});
+	public static final BitSet FOLLOW_memberExpression_in_objectDeclaration6113 = new BitSet(new long[]{0x0000002000000940L,0x0000800500000000L,0x0000020000021480L});
+	public static final BitSet FOLLOW_assignmentOperator_in_objectDeclaration6117 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_objectLiteral_in_objectDeclaration6119 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionDeclaration_in_sourceElement6151 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_statement_in_sourceElement6156 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arrayItem_in_synpred121_ES3YUITest3196 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arrayItem_in_synpred123_ES3YUITest3190 = new BitSet(new long[]{0x0000000008000002L});
 	public static final BitSet FOLLOW_COMMA_in_synpred123_ES3YUITest3194 = new BitSet(new long[]{0x4040100A08000020L,0x000416000460A210L,0x0000000451410008L});
@@ -9492,9 +9383,9 @@ public static class STAttrMap extends HashMap<String, Object> {
 	public static final BitSet FOLLOW_assignmentOperator_in_synpred202_ES3YUITest4309 = new BitSet(new long[]{0x4040100A00000020L,0x000416000460A210L,0x0000000451410008L});
 	public static final BitSet FOLLOW_assignmentExpressionNoIn_in_synpred202_ES3YUITest4311 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_block_in_synpred209_ES3YUITest4468 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_objectDeclaration_in_synpred211_ES3YUITest4529 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expressionStatement_in_synpred213_ES3YUITest4539 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_labelledStatement_in_synpred220_ES3YUITest4574 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_elseStatement_in_synpred227_ES3YUITest4751 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionDeclaration_in_synpred262_ES3YUITest6206 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_objectDeclaration_in_synpred211_ES3YUITest4534 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expressionStatement_in_synpred213_ES3YUITest4544 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_labelledStatement_in_synpred220_ES3YUITest4579 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_elseStatement_in_synpred227_ES3YUITest4756 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionDeclaration_in_synpred259_ES3YUITest6151 = new BitSet(new long[]{0x0000000000000002L});
 }
