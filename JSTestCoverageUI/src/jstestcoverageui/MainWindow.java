@@ -320,7 +320,7 @@ public class MainWindow extends javax.swing.JFrame {
                         param = param.replaceAll("\"", "");
                         JCheckBox cb =new JCheckBox("Function: " + funcName + " Parameter:" + param);
                         if(funcName.contains("(anonymous") ){
-                            System.out.println();
+                      //      System.out.println();
                         }
                         if(param.contains("null") || funcName.contains("(anonymous") ){
                             cb.setEnabled(false);

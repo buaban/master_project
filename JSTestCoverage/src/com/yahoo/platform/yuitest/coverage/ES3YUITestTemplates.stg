@@ -6,7 +6,7 @@ _jstestcoverage_line("<src>","<funcName>", <line>);
 >>
 
 cover_func(src,code,object,name,line,params) ::= <<
-_jstestcoverage_func("<src>",object."<object>", name."<name>", line.<line>, param."<params>");
+_jstestcoverage_func("<src>","<object>", "<name>", <line>, "<params>");
 <code>
 >>
 

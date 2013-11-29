@@ -100,7 +100,10 @@ public class JSCoverage {
 	        	instrumentFile(this.input, outputLocation);
 	        	
 	        	// 3 Add number of code lines of each function to _jstestcoverage_func in instrumented code 
-	        	//addNumberOfLines(outputLocation);
+	        	addNumberOfLines(outputLocation);
+	        	
+	        	// 3.x add new line to _cover_line
+	        	addNewLine(outputLocation);
 	        	
 	        	// 3.x replace .tmp
 	        	removeTmp(outputLocation);
@@ -168,20 +171,37 @@ public class JSCoverage {
     			String lastCoverLine = "";
     			String firstCoverLine = "";
     			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){
+    				String funcName = "";
+    				String tmpFuncLine="";
+    				tmpFuncLine = line.substring(line.indexOf("(")+1, line.lastIndexOf(")"));    				
+    				String[] tmp = tmpFuncLine.split(",");
+    				// function name
+    				funcName = tmp[2].trim().replace("\"", "");
+    				
     				int j = i+1;
+    				int lastIndex = i+1;
     				firstCoverLine = "";
     				for(;j<lineNum;j++){
     					String subLine = lines.get(j);
     					
     					if(subLine.contains("_jstestcoverage_line(")){
-    						String txt = subLine.substring(subLine.indexOf("("), subLine.lastIndexOf(")"));
     						
-    						if(firstCoverLine==""){
-    							firstCoverLine = txt.split(",")[1].trim();
+    						String txt = subLine.substring(subLine.indexOf("("), subLine.lastIndexOf(")"));
+    						String subFuncName = "";
+    	    				txt = txt.replace("\"", "");
+    	    				String[] tmpSub = txt.split(",");
+    	    				// function name
+    	    				subFuncName = tmpSub[1].trim();
+    	    						
+    						if(firstCoverLine=="" && (funcName.equals(subFuncName))){
+    							firstCoverLine = tmpSub[2].trim();
     						}
     						
-    						lastCoverLine = txt.split(",")[1].trim();
-    					} else if(subLine.contains("_jstestcoverage_func(") && !subLine.contains("\"(anonymous")){
+    						if(funcName.equals(subFuncName)){
+    							lastCoverLine = tmpSub[2].trim();
+    							lastIndex = j;
+    						}
+    					} else if(j>i+100){
     						break;
     					}
     				}
@@ -194,7 +214,7 @@ public class JSCoverage {
     				Joiner jo = Joiner.on(",");
     				String newLine = jo.join(tmpLine);
     				lines.set(i, newLine);
-    				i = j-1;    				
+    				i = lastIndex-1;    				
     			}
     		
     	    }
@@ -211,6 +231,36 @@ public class JSCoverage {
     	}
     	
     	
+	}
+	
+	private void addNewLine(String fileName){
+		List<String> lines = null;    	
+    	
+    	try {
+    		lines = Files.readAllLines(Paths.get(fileName), Charset.defaultCharset());
+    		int lineNum = lines.size();
+    		for(int i = 0; i<lineNum; i++) {
+    			String line = lines.get(i);
+    			if(line.contains("_jstestcoverage_line(") && !line.trim().startsWith("_jstestcoverage_line")){
+    				String[] addNewLine = line.split("_jstestcoverage_line");    							    							
+					lines.set(i, addNewLine[0] + "\r\n" + "_jstestcoverage_line" + addNewLine[1]);    							
+				}		
+    		}
+    		
+    		FileWriter writer = new FileWriter(fileName);
+    		for(String l: lines){
+    	    	l = l + "\r\n";
+        		writer.write(l);
+    	    	
+        	}	
+    		writer.close();
+    		
+    	} catch(Exception e){
+    		    		
+    	}		
+    	
+    	
+		
 	}
 		
 	private void createFunctionList(String fileName){
