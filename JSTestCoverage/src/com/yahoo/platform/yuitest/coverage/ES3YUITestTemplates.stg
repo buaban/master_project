@@ -10,16 +10,28 @@ _jstestcoverage_func("<src>","<object>", "<name>", <line>, "<params>");
 <code>
 >>
 
-end_func(name) ::= <<
-//_jstestcoverage_end_func("<name>");
->>
-
 
 ignore(code) ::= <<
 <code>
 >>
 
 file_header(src,path) ::= <<
+
+var xmlhttp;
+xmlhttp=new XMLHttpRequest();
+
+function _jstestcoverage_func(testId,filePath,objName, funcName,lines, params){
+	//localhost:11112/test?action=cover_func&testId=A235BCX&iterationId=100&funcName=htmlEndoce&parameters=code%3DE%24%23%26 iio()87uo%7C%7Clength%3D0po*90jh&path=1,2,4,5,6,8
+	var qstring = "&testId=" + testId + "&funcName=" + funcName + "&parameters=" + params + "&lines=" + lines;
+	xmlhttp.open("GET","http://localhost:11112/test?action=cover_func" + qstring,true);
+	xmlhttp.send();
+}
+
+function _jstestcoverage_line(testId,filePath,funcName, line){
+
+}
+
+
 >>
 
 cover_file(src,code,lines,funcs,lineCount,funcCount) ::= <<

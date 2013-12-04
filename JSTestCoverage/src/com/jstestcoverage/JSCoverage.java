@@ -170,6 +170,7 @@ public class JSCoverage {
     			String currentFunc = "";
     			String lastCoverLine = "";
     			String firstCoverLine = "";
+    			String coverLines = "";
     			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){
     				String funcName = "";
     				String tmpFuncLine="";
@@ -194,13 +195,15 @@ public class JSCoverage {
     	    				subFuncName = tmpSub[1].trim();
     	    						
     						if(firstCoverLine=="" && (funcName.equals(subFuncName))){
-    							firstCoverLine = tmpSub[2].trim();
-    						}
-    						
-    						if(funcName.equals(subFuncName)){
+    							firstCoverLine = tmpSub[2].trim();    	
+    							coverLines = tmpSub[2].trim();
+    						} else if(funcName.equals(subFuncName)){
     							lastCoverLine = tmpSub[2].trim();
     							lastIndex = j;
+    							coverLines = coverLines + ":" + tmpSub[2].trim();
     						}
+    						
+    						
     					} else if(j>i+100){
     						break;
     					}
@@ -208,7 +211,7 @@ public class JSCoverage {
     				
     				String[] tmpLine = line.split(",");
     				String funcLength = tmpLine[3].trim();
-    				funcLength = firstCoverLine + ":" + lastCoverLine;
+    				funcLength = coverLines;
     				tmpLine[3] = "\"" + funcLength +"\"";
     				
     				Joiner jo = Joiner.on(",");
