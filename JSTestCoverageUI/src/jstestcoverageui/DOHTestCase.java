@@ -1,5 +1,6 @@
 package jstestcoverageui;
 
+import com.google.common.base.Joiner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,8 +26,10 @@ import utils.IParamGenerator;
 public class DOHTestCase {
     static int LOOP = 5;
     private String tcFile;    
+    Process chrome;
+    static String CHROMEBIN = System.getenv("CHROME_BIN");
     
-    public DOHTestCase(String testedFile, String instrumentFile, String modulePath,String objectName, String funcName, int lineStart, int lineEnd, String[] params){
+    public DOHTestCase(String testedFile, String instrumentFile, String modulePath,String objectName, String funcName, String[] params){
         ArrayList<String> testScript = new ArrayList<String>();
         ArrayList<String> paramSeriesList = new ArrayList<String>();
 
@@ -53,7 +57,7 @@ public class DOHTestCase {
         
         try {            
             Path p = FileSystems.getDefault().getPath("src\\doh_template","DOHCaseTemplate.js");
-            List<String> tcTemplate = Files.readAllLines(p.toAbsolutePath(), Charset.defaultCharset());
+            List<String> tcTemplate = Files.readAllLines(p.toAbsolutePath(), Charset.defaultCharset());            
            
             for(int l=0; l<LOOP; l++){
                 int lineNum = tcTemplate.size();
@@ -62,15 +66,24 @@ public class DOHTestCase {
                     testCaselines.add(",");
                 }
                 
+                Date now = new Date();        
+                long t = now.getTime();
                 for(int i = 0; i<lineNum; i++) {
-                    String line = tcTemplate.get(i);
-                    line = line.replace("[ITERATION]", funcName + "_" + l);
+                    String line = tcTemplate.get(i);      
+                    if(l!=0 ){
+                        line = line.replace("[SETUP]", "");
+                    }
+                    if(l != (LOOP-1)){
+                        line = line.replace("[TEARDOWN]", "");
+                    }
+                    line = line.replace("[TEST_NAME]", funcName + "_" + l);
+                    line = line.replace("[ITERATION]", ""+t+l);
                     line = line.replace("[MODULE_LOADER]", objectName);
                     line = line.replace("[FUNCTION_NAME]", funcName);                
-                    line = line.replace("[PARAMETERS]", paramSeriesList.get(l));                     
+                    line = line.replace("[PARAMETERS]", paramSeriesList.get(l)); 
+                    
                     testCaselines.add(line);
-                }                
-                
+                } 
             }
         } catch(Exception e){
             e.getMessage();
@@ -98,9 +111,7 @@ public class DOHTestCase {
         
         // Create array list of test module
         ArrayList<String> lines = new ArrayList<String>();
-        try {
-            
-            
+        try {            
             for(String line : testModulelines){
                 if(line.contains("[TEST_CASE]")){
                     for(String tcLine : testCaselines){
@@ -109,6 +120,31 @@ public class DOHTestCase {
                 } else {
                     lines.add(line);
                 }
+            }            
+
+        } catch(Exception e){
+            String message = e.getMessage();
+        }    
+        
+        
+        // Add setup and tearDown
+        try {            
+            Path setupPath = FileSystems.getDefault().getPath("src\\doh_template","SetupTemplate.js");
+            List<String> setupTemp = Files.readAllLines(setupPath.toAbsolutePath(), Charset.defaultCharset());
+            
+            Path tearDownPath = FileSystems.getDefault().getPath("src\\doh_template","TearDownTemplate.js");
+            List<String> tearDownTemp = Files.readAllLines(tearDownPath.toAbsolutePath(), Charset.defaultCharset());
+            Joiner j;
+            j = Joiner.on("\n");
+            String setup = j.join(setupTemp);
+            String tearDown = j.join(tearDownTemp);
+            
+            for(int i = 0; i<lines.size(); i++) {
+                if(lines.get(i).contains("[SETUP]")){
+                    lines.set(i, setup);
+                } else if(lines.get(i).contains("[TEARDOWN]")){
+                    lines.set(i, tearDown);
+                }                
             }            
 
         } catch(Exception e){
@@ -180,7 +216,6 @@ public class DOHTestCase {
                 "shared,../../../src/shared"
             };
             
-            
             for(String p : paths){
                 path = path + p + ";";
             }
@@ -198,13 +233,17 @@ public class DOHTestCase {
             String runnerUrl = "http://localhost/Explorer/Runtime/Explorer.SharedResources/javascript/dojo/src/util/doh/jstest-coverage-runner.html";
             runnerUrl = runnerUrl + "?testUrl=" + testUrl;
             
-            java.awt.Desktop.getDesktop().browse(new URI(runnerUrl));
+            //java.awt.Desktop.getDesktop().browse(new URI(runnerUrl));
             
-        } catch (URISyntaxException ex) {
+            chrome = Runtime.getRuntime().exec(CHROMEBIN + " --new-window " + runnerUrl);
+            
+        } catch (Exception ex) {
             Logger.getLogger(DOHTestCase.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(DOHTestCase.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
+    }
+    
+    public void close(){
+        this.chrome.destroy();
     }
     
     

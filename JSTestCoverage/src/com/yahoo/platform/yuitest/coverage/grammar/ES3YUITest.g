@@ -1882,7 +1882,7 @@ objectDeclaration
 scope{
     String objectName;
 }
-	: memberExpression {$objectDeclaration::objectName=$memberExpression.text; } assignmentOperator objectLiteral {System.out.println($memberExpression.text);}
+	: memberExpression {$objectDeclaration::objectName=$memberExpression.text; } assignmentOperator objectLiteral
 	;
 
 

@@ -42,6 +42,9 @@ public class generateByRandom implements IParamGenerator {
     }
     
     private String generateInteger(int length){
+        if(length == 0){
+            return "0";
+        }
         String numStr = RandomStringUtils.randomNumeric(length);
         Integer number = Integer.parseInt(numStr);
         return number.toString();

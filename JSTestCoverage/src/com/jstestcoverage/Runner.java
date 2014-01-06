@@ -24,7 +24,7 @@ public class Runner {
                 obj = obj.replaceAll("\"", "");
                 String lines = (String)func.get(5);
                 lines = lines.replaceAll("\"", "");
-                System.out.println("Object: "+ obj  + " | Function: " + funcName + " | Lines: " + lines + " | Parameter:" + param);                
+                //System.out.println("Object: "+ obj  + " | Function: " + funcName + " | Lines: " + lines + " | Parameter:" + param);                
             }
         }
 	}

@@ -5,7 +5,10 @@
 package jstestcoverageui;
 
 import checkboxlist.*;
+import utils.HTTPGet;
 import com.jstestcoverage.JSCoverage;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -19,10 +22,13 @@ import java.util.Hashtable;
 import java.util.Set;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.ListModel;
+import javax.swing.Timer;
 import org.jdesktop.layout.GroupLayout;
 
 /**
@@ -45,9 +51,14 @@ public class MainWindow extends javax.swing.JFrame {
     private String filePath;
     //private ArrayList<ArrayList<ArrayList<String>>> allFileList;
     private HashMap allFileList;
+    private static String SERVER = "http://localhost/jstestcoverage-server/test";
     
     private static String ROOT_FOLDER = "D:\\Boxes\\Dropbox\\GIT\\master_project\\website";
-
+    private static double PCTCOVER = 50.0;
+    private boolean stop = false;
+    
+    Timer timer;
+        
     public MainWindow() {
         initComponents();
         checkboxList = new CheckBoxList();
@@ -56,8 +67,8 @@ public class MainWindow extends javax.swing.JFrame {
         //allFileList = new ArrayList<>();
         allFileList = new HashMap();
         testAbleFuncList = new ArrayList<>();
-        Date now = new Date();        
-        testId.setText(now.toString());
+        Date now = new Date();  
+        testId.setText(now.toString().replaceAll(" ", "_"));
     }
 
     /**
@@ -74,10 +85,12 @@ public class MainWindow extends javax.swing.JFrame {
         newTest = new javax.swing.JButton();
         runButton = new javax.swing.JButton();
         testId = new javax.swing.JTextField();
+        stopButton = new javax.swing.JButton();
         funcListPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         statusPanel = new javax.swing.JPanel();
-        statusLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        testStatus = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         openFile = new javax.swing.JMenuItem();
@@ -88,6 +101,11 @@ public class MainWindow extends javax.swing.JFrame {
         fileChooser.setPreferredSize(new java.awt.Dimension(582, 400));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         newTest.setText("New test");
         newTest.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +128,13 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        stopButton.setText("Stop");
+        stopButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stopButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
         topPanelLayout.setHorizontalGroup(
@@ -118,8 +143,10 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(testId, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newTest)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 390, Short.MAX_VALUE)
                 .addComponent(runButton)
+                .addGap(13, 13, 13)
+                .addComponent(stopButton)
                 .addContainerGap())
         );
         topPanelLayout.setVerticalGroup(
@@ -127,35 +154,35 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(newTest)
                 .addComponent(testId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(runButton))
+                .addComponent(runButton)
+                .addComponent(stopButton))
         );
 
         javax.swing.GroupLayout funcListPanelLayout = new javax.swing.GroupLayout(funcListPanel);
         funcListPanel.setLayout(funcListPanelLayout);
         funcListPanelLayout.setHorizontalGroup(
             funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(funcListPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
+            .addComponent(jScrollPane2)
         );
         funcListPanelLayout.setVerticalGroup(
             funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
         );
 
+        testStatus.setColumns(20);
+        testStatus.setLineWrap(true);
+        testStatus.setRows(5);
+        jScrollPane1.setViewportView(testStatus);
+
         javax.swing.GroupLayout statusPanelLayout = new javax.swing.GroupLayout(statusPanel);
         statusPanel.setLayout(statusPanelLayout);
         statusPanelLayout.setHorizontalGroup(
             statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(statusPanelLayout.createSequentialGroup()
-                .addComponent(statusLabel)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         statusPanelLayout.setVerticalGroup(
             statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(statusPanelLayout.createSequentialGroup()
-                .addComponent(statusLabel)
-                .addGap(0, 11, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
@@ -179,12 +206,9 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(funcListPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(topPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(statusPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(statusPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(funcListPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(topPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +218,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(funcListPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(statusPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(statusPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -213,29 +237,18 @@ public class MainWindow extends javax.swing.JFrame {
                     if(file.isDirectory()){
                     
                     } else {
-                        // Clear result from last browsing
-                        //this.allFuncList.clear();
-                        //ArrayList<ArrayList<String>> allFuncList = new ArrayList();
-                        //this.allFileList.clear();
-                        
                         // Instrument and get list of functions in that file   
                         // allFuncList [index => funcName,lines,params]
                         ArrayList<ArrayList<String>> allFuncList = generateFunctionList(file.getAbsolutePath(), INSMODE, DEVMODE);
                                                 
-                        // fileFuncList [index => filePath,allFuncList]
-                        //ArrayList fileFuncList = new ArrayList();
-                        //fileFuncList.add(filePath);
-                        //fileFuncList.add(allFuncList);
-                        
+                        // fileFuncList [index => filePath,allFuncList]                       
                         // allFileList [index => fileFuncList]
-                        addTestId(allFuncList.get(0).get(1).toString(),testId.getText());
+                        addTestId(allFuncList.get(0).get(1).toString(),testId.getText());                        
+                        addArgument(allFuncList.get(0).get(1).toString());                        
                         this.allFileList.put(file.getAbsolutePath(), allFuncList);
                         
                         // [fileName: {objName:funcName:lines:param}]
                         renderCheckBoxList(allFileList);
-                        
-                        
-                        
                     }
                 }
 
@@ -256,25 +269,84 @@ public class MainWindow extends javax.swing.JFrame {
             int lineNum = lines.size();
             for(int i = 0; i<lineNum; i++) {
                 String line = lines.get(i);                
-                if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){
+                if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") && !line.contains("function")){
                     line = line.replace("_jstestcoverage_func(","_jstestcoverage_func('"+ id + "',");
-                }
-                if(line.contains("_jstestcoverage_line(") && !line.contains("\"(anonymous") ){
+                }else if(line.contains("_jstestcoverage_line(") && !line.contains("\"(anonymous") && !line.contains("function")){
                     line = line.replace("_jstestcoverage_line(","_jstestcoverage_line('"+ id + "',");
                 }
-                if(line.contains("_jstestcoverage_") && !line.trim().startsWith("_jstestcoverage")){                    
+                /*
+                if(line.contains("_jstestcoverage_") && !line.trim().startsWith("_jstestcoverage") && !line.trim().contains("function") ){                    
                     line = line.replace("_jstestcoverage", "\r\n_jstestcoverage");
+                }
+                */
+                lines.set(i, line);
+            }
+            try (FileWriter writer = new FileWriter(filePath)) {
+                for(String l: lines){
+                    l = l + "\r\n";
+                    writer.write(l);
+                }
+            }
+        } catch(Exception e){
+            String message = e.getMessage();
+    	}
+    }
+    
+    private void addArgument(String filePath){
+        List<String> lines = null;
+    	StringBuilder code = new StringBuilder();
+    	
+    	try {
+            lines = Files.readAllLines(Paths.get(filePath), Charset.defaultCharset());
+            int lineNum = lines.size();
+            for(int i = 0; i<lineNum; i++) {
+                String line = lines.get(i);                
+                if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") && !line.contains("function") ){
+                    String funcArgs = line.substring(line.indexOf("(")+1, line.lastIndexOf(")"));
+                    
+                    //.split("\\|");
+                    
+                    String[] tmp = funcArgs.split(",");
+                    
+                    /* tmp[5] = parameters of this function */
+                    if(!tmp[5].replace("\"", "").trim().equals("")){
+                        String[] params = tmp[5].replace("\"", "").trim().split("\\|");
+                        String newParams = "";
+                        
+                        //node:Number    |   str:String
+                        // "node:Number:" + node + "|str:String:" + str   
+                        for(int k=0; k<params.length;k++){                            
+                            String[] arg;
+                            arg = params[k].trim().split(":");
+                            if(k!=0){
+                                newParams += "+ \"|";
+                            } else {
+                                newParams += "\"";
+                            }
+                            newParams += arg[0] + ":" + arg[1]+":\"" + " + " + arg[0];
+                            
+                        }                       
+                        
+                        tmp[5] = newParams;
+                        
+                        
+                        String newFuncArgs = tmp[0];                        
+                        for(int j=1; j<6; j++){
+                            newFuncArgs = newFuncArgs + "," + tmp[j];
+                        }                        
+                        line = "_jstestcoverage_func(" + newFuncArgs + ");";
+                        lines.set(i, line );
+                    }
                 }
                 
                 lines.set(i, line);
             }
-            
-            FileWriter writer = new FileWriter(filePath);
-            for(String l: lines){
-                l = l + "\r\n";
-                writer.write(l);
-            }	
-            writer.close();
+            try (FileWriter writer = new FileWriter(filePath)) {
+                for(String l: lines){
+                    l = l + "\r\n";
+                    writer.write(l);
+                }
+            }
         } catch(Exception e){
             e.getMessage();
     	}
@@ -295,9 +367,9 @@ public class MainWindow extends javax.swing.JFrame {
     private void renderCheckBoxList(HashMap list){
         Set<String> filePathList = list.keySet();
         
-        for(String filePath : filePathList){
+        for(String fp : filePathList){
                        
-            ArrayList<ArrayList<String>> allFuncList = (ArrayList<ArrayList<String>>) list.get(filePath);
+            ArrayList<ArrayList<String>> allFuncList = (ArrayList<ArrayList<String>>) list.get(fp);
             
             
             
@@ -340,9 +412,123 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
     
+    private String currentFuncName = "";
+    private String currentTestedFile = "";
+    private String currentInstrumentFilePath = "";
+    private String currentModulePath = "";
+    private String currentObjName = "";
+    private String[] currentParam;
+    int currentRound;
+    DOHTestCase tc;
+    
+    
+    ActionListener checkStatus = new ActionListener() {
+        int round = 1;
+        public void actionPerformed(ActionEvent evt) {
+            System.out.println("Timer round " + round);
+            if(isRunning()){
+                printStatus("Running\n");                                  
+            } else {
+                printStatus("Finish round " + round + "\n");            
+                round++;
+                timer.stop();
+                System.out.println(currentFuncName + " Timer stop");
+                if(needRerun(currentFuncName)){                
+                    try {
+                        tc.close();
+                        runTest(currentTestedFile, currentInstrumentFilePath, currentModulePath, currentObjName, currentFuncName, currentParam);
+                    } catch(InterruptedException ex){
+                        Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    funcIndex ++;
+                    runTestNextSelectedFuncion();
+                }
+            }
+        }
+    };            
+
+    
+    private boolean runTest(String testedFile, String instrumentFilePath, String modulePath, String objName, String  funcName, String[] param) throws InterruptedException{
+        currentFuncName = funcName;
+        currentTestedFile = testedFile;
+        currentInstrumentFilePath = instrumentFilePath;
+        currentModulePath = modulePath;
+        currentObjName = objName;
+        currentParam = param;
+        
+        int maxTest=50;
+        int k = 0;
+        
+        timer = new Timer( 5000 , checkStatus);
+        timer.setRepeats(true);
+
+        tc = new DOHTestCase(testedFile, instrumentFilePath, modulePath, objName, funcName, param);
+        tc.execute();           
+        Thread.sleep(1000);
+        k++;
+        currentRound = k;                    
+        
+        System.out.println(funcName + " Timer start");
+        timer.start();
+            
+        //} 
+         
+        return false;
+    }
+    
+    private static void printStatus(String txt){
+        testStatus.append(txt);
+        testStatus.update(testStatus.getGraphics());
+    }
+    
+    private boolean needRerun(String funcName){        
+        if(stop){
+            printStatus("========== Stop ==========\n");  
+            return false;
+        }
+        double coveragePct = 0;
+        HTTPGet http = new HTTPGet();       
+        String result = http.load(SERVER + "?action=get_result");        
+        String coverage = http.load(SERVER + "?action=get_coverage&testId=" + testId.getText() + "&funcName=" + funcName + "&percent=" + String.format("%1$,.2f", PCTCOVER));
+        try {
+            coveragePct = Double.parseDouble(coverage);
+        } catch(Exception ex){
+            coveragePct = 0;
+        }
+        if(result.equals("error") || coverage.equals("")){
+            printStatus("Error\n");
+            return false;
+        }
+        if((coveragePct < PCTCOVER)){
+            if(stop){
+                printStatus("========== Stop ==========\n");  
+                return false;
+            }
+            printStatus("Rerun - current coverage: " + coveragePct + "%\n");  
+            return true;
+        } else {
+            printStatus("Overall coverage for " + funcName + " is " + coveragePct + "%\n");      
+        } 
+        return false;
+    }
+    
+    private boolean isRunning(){
+        HTTPGet http = new HTTPGet();
+        String status = http.load(SERVER + "?action=get_status");
+        if(status.equals("running")){
+            return true;
+        }
+        return false;
+    }
+    
+    private int funcIndex = 0;
     
     private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
          // TODO add your handling code here:
+        funcIndex = 0;
+        stop = false;
+        stopButton.setEnabled(true);
         ListModel currentList = checkboxList.getModel();
         this.selectedFuncList.clear();
         for (int i = 0; i < currentList.getSize(); i++) {
@@ -351,24 +537,35 @@ public class MainWindow extends javax.swing.JFrame {
                 this.selectedFuncList.add(testAbleFuncList.get(i));
             }
         }
+        
+        runTestNextSelectedFuncion();
+        
+    }//GEN-LAST:event_runButtonActionPerformed
 
-        for (ArrayList func : this.selectedFuncList) {
+    private void runTestNextSelectedFuncion(){
+        if(funcIndex < selectedFuncList.size()){
+            ArrayList func = selectedFuncList.get(funcIndex);
             String testedFile = func.get(0).toString();
             String instrumentFilePath = func.get(1).toString();
             String modulePath = func.get(2).toString();
             String objName = func.get(3).toString().replaceAll("\"","");
             String funcName = func.get(4).toString().replaceAll("\"","");
-            String[] line = func.get(5).toString().replaceAll("\"","").split(":");
-            String[] param = func.get(6).toString().replaceAll("\"","").split("\\|");
+            String[] line;
+            line = func.get(5).toString().replaceAll("\"","").split(":");
+            String[] param;
+            param = func.get(6).toString().replaceAll("\"","").split("\\|");
+            try {
+                runTest(testedFile, instrumentFilePath, modulePath, objName, funcName, param);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
-            DOHTestCase tc = new DOHTestCase(testedFile, instrumentFilePath, modulePath, objName, funcName, Integer.parseInt(line[0]), Integer.parseInt(line[1]), param);            
-            
-            tc.execute();
+        } else {
+            printStatus("=========== Test finished ===========\n");
         }
-
-
-    }//GEN-LAST:event_runButtonActionPerformed
-
+    }
+    
+    
     private void testIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_testIdActionPerformed
@@ -377,9 +574,17 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_newTestActionPerformed
 
-    private void runTest(ArrayList<String> selectedFuncList){
-        
-    }
+    private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
+        // TODO add your handling code here:
+        stop = true;     
+        stopButton.setEnabled(false);
+    }//GEN-LAST:event_stopButtonActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        //timer.stop();
+    }//GEN-LAST:event_formWindowClosing
+
     
     /**
      * @param args the command line arguments
@@ -422,13 +627,15 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton newTest;
     private javax.swing.JMenuItem openFile;
     private javax.swing.JButton runButton;
-    private javax.swing.JLabel statusLabel;
     private javax.swing.JPanel statusPanel;
+    private javax.swing.JButton stopButton;
     private javax.swing.JTextField testId;
+    private static javax.swing.JTextArea testStatus;
     private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
 }

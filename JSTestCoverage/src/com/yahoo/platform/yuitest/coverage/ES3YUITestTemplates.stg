@@ -16,22 +16,38 @@ ignore(code) ::= <<
 >>
 
 file_header(src,path) ::= <<
-
 var xmlhttp;
 xmlhttp=new XMLHttpRequest();
 
 function _jstestcoverage_func(testId,filePath,objName, funcName,lines, params){
-	//localhost:11112/test?action=cover_func&testId=A235BCX&iterationId=100&funcName=htmlEndoce&parameters=code%3DE%24%23%26 iio()87uo%7C%7Clength%3D0po*90jh&path=1,2,4,5,6,8
-	var qstring = "&testId=" + testId + "&funcName=" + funcName + "&parameters=" + params + "&lines=" + lines;
-	xmlhttp.open("GET","http://localhost:11112/test?action=cover_func" + qstring,true);
+	if(!window.iteration){
+		window.iteration="0";
+	}
+	var qstring = "&testId=" + testId + "&funcName=" + funcName + "&parameters=" + params + "&lines=" + lines + "&iteration=" + window.iteration;
+	xmlhttp.open("GET","http://localhost/jstestcoverage-server/test?action=cover_func" + qstring,false);
 	xmlhttp.send();
 }
 
 function _jstestcoverage_line(testId,filePath,funcName, line){
-
+	if(!window.iteration){
+		window.iteration="0";
+	}
+	var qstring = "&testId=" + testId + "&funcName=" + funcName + "&line=" + line + "&iteration=" + window.iteration;
+	xmlhttp.open("GET","http://localhost/jstestcoverage-server/test?action=cover_line" + qstring,false);
+	xmlhttp.send();
 }
 
-
+_yuitest_coverage = {};
+_yuitest_coverage["<src>"] = {
+    lines: {},
+    functions: {},
+    coveredLines: 0,
+    calledLines: 0,
+    coveredFunctions: 0,
+    calledFunctions: 0,
+    path: "<path>",
+    code: []
+};
 >>
 
 cover_file(src,code,lines,funcs,lineCount,funcCount) ::= <<

@@ -171,7 +171,7 @@ public class JSCoverage {
     			String lastCoverLine = "";
     			String firstCoverLine = "";
     			String coverLines = "";
-    			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){
+    			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") && !line.contains("function")){
     				String funcName = "";
     				String tmpFuncLine="";
     				tmpFuncLine = line.substring(line.indexOf("(")+1, line.lastIndexOf(")"));    				
@@ -244,7 +244,7 @@ public class JSCoverage {
     		int lineNum = lines.size();
     		for(int i = 0; i<lineNum; i++) {
     			String line = lines.get(i);
-    			if(line.contains("_jstestcoverage_line(") && !line.trim().startsWith("_jstestcoverage_line")){
+    			if(line.contains("_jstestcoverage_line(") && !line.trim().startsWith("_jstestcoverage_line") && !line.trim().contains("function _jstestcoverage_")){
     				String[] addNewLine = line.split("_jstestcoverage_line");    							    							
 					lines.set(i, addNewLine[0] + "\r\n" + "_jstestcoverage_line" + addNewLine[1]);    							
 				}		
@@ -276,7 +276,7 @@ public class JSCoverage {
     			if(!IsCommentLine(line) && line.contains("dojo.provide") && !line.contains("_yuitest") && !line.contains("_jstestcoverage")){
     				moduleName = line.substring(line.indexOf("(\"")+2, line.lastIndexOf("\")"));
     			} 
-    			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") ){
+    			if(line.contains("_jstestcoverage_func(") && !line.contains("\"(anonymous") && !line.contains("function")){
     				line = line.substring(line.indexOf("(")+1, line.lastIndexOf(")"));
     				String[] tmp = line.split(",");
     				ArrayList<String> func = new ArrayList<String>();
