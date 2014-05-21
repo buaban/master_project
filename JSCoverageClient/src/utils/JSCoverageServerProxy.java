@@ -9,7 +9,7 @@ import java.net.*;
  *
  * @author pannawat.janthong
  */
-public class HTTPGet {
+public class JSCoverageServerProxy {
     public String load(String urlToRead) {
       URL url;
       HttpURLConnection conn;

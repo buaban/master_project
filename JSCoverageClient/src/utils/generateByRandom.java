@@ -27,6 +27,10 @@ public class generateByRandom implements IParamGenerator {
                 :   param = generateInteger(length);
                     break
                 ;
+            case "boolean"
+                :   param = generateBoolean();
+                    break
+                ;
             default 
                 :   param = generateInteger(length);
                     break
@@ -38,7 +42,7 @@ public class generateByRandom implements IParamGenerator {
     
     
     private String generateString(int length){
-        return RandomStringUtils.randomAlphabetic(length);
+        return RandomStringUtils.randomAlphanumeric(length);
     }
     
     private String generateInteger(int length){
@@ -48,6 +52,15 @@ public class generateByRandom implements IParamGenerator {
         String numStr = RandomStringUtils.randomNumeric(length);
         Integer number = Integer.parseInt(numStr);
         return number.toString();
+    }
+    
+    private String generateBoolean(){
+        String numStr = RandomStringUtils.randomNumeric(1);
+        Integer number = Integer.parseInt(numStr);
+        if(number%2==1){
+            return "true";
+        }
+        return "false";
     }
     
 }

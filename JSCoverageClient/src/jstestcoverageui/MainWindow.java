@@ -5,8 +5,9 @@
 package jstestcoverageui;
 
 import checkboxlist.*;
-import utils.HTTPGet;
-import com.jstestcoverage.JSCoverage;
+import com.google.common.base.Joiner;
+import utils.JSCoverageServerProxy;
+import com.jscoverage.instrumentor.Instrumentor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -54,8 +56,12 @@ public class MainWindow extends javax.swing.JFrame {
     private static String SERVER = "http://localhost/jstestcoverage-server/test";
     
     private static String ROOT_FOLDER = "D:\\Boxes\\Dropbox\\GIT\\master_project\\website";
-    private static double PCTCOVER = 50.0;
+    private double PCTCOVER = 80;
     private boolean stop = false;
+    private static String welcomeMsg = "Please select a JavaScript file.\nFile > Select a JavaScript file";
+    Date now = new Date();  
+    Process chrome;
+    static String CHROMEBIN = System.getenv("CHROME_BIN");
     
     Timer timer;
         
@@ -67,7 +73,6 @@ public class MainWindow extends javax.swing.JFrame {
         //allFileList = new ArrayList<>();
         allFileList = new HashMap();
         testAbleFuncList = new ArrayList<>();
-        Date now = new Date();  
         testId.setText(now.toString().replaceAll(" ", "_"));
     }
 
@@ -86,6 +91,9 @@ public class MainWindow extends javax.swing.JFrame {
         runButton = new javax.swing.JButton();
         testId = new javax.swing.JTextField();
         stopButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        targetPct = new javax.swing.JTextField();
         funcListPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         statusPanel = new javax.swing.JPanel();
@@ -95,12 +103,15 @@ public class MainWindow extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         openFile = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        viewReport = new javax.swing.JMenuItem();
+        viewReportList = new javax.swing.JMenuItem();
 
         fileChooser.setSelectedFile(new java.io.File("D:\\Explorer\\Content\\Space\\javascript\\src"));
         fileChooser.setMinimumSize(new java.awt.Dimension(425, 250));
         fileChooser.setPreferredSize(new java.awt.Dimension(582, 400));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("JSCoverageClient");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -135,15 +146,28 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Test ID:");
+
+        jLabel2.setText("% Coverage Target: ");
+
+        targetPct.setText("80");
+
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(testId, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newTest)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 390, Short.MAX_VALUE)
+                .addGap(64, 64, 64)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(targetPct, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(runButton)
                 .addGap(13, 13, 13)
                 .addComponent(stopButton)
@@ -155,18 +179,21 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(newTest)
                 .addComponent(testId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(runButton)
-                .addComponent(stopButton))
+                .addComponent(stopButton)
+                .addComponent(jLabel1)
+                .addComponent(jLabel2)
+                .addComponent(targetPct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout funcListPanelLayout = new javax.swing.GroupLayout(funcListPanel);
         funcListPanel.setLayout(funcListPanelLayout);
         funcListPanelLayout.setHorizontalGroup(
             funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 754, Short.MAX_VALUE)
         );
         funcListPanelLayout.setVerticalGroup(
             funcListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
         );
 
         testStatus.setColumns(20);
@@ -182,12 +209,12 @@ public class MainWindow extends javax.swing.JFrame {
         );
         statusPanelLayout.setVerticalGroup(
             statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
 
-        openFile.setText("Open a JavaScript file");
+        openFile.setText("Select a JavaScript file");
         openFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openFileActionPerformed(evt);
@@ -197,7 +224,25 @@ public class MainWindow extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Report");
+
+        viewReport.setText("View current test report");
+        viewReport.setName("null"); // NOI18N
+        viewReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewReportActionPerformed(evt);
+            }
+        });
+        jMenu2.add(viewReport);
+
+        viewReportList.setText("View reports list");
+        viewReportList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewReportListActionPerformed(evt);
+            }
+        });
+        jMenu2.add(viewReportList);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -239,8 +284,20 @@ public class MainWindow extends javax.swing.JFrame {
                     } else {
                         // Instrument and get list of functions in that file   
                         // allFuncList [index => funcName,lines,params]
+                        this.allFileList.clear();
                         ArrayList<ArrayList<String>> allFuncList = generateFunctionList(file.getAbsolutePath(), INSMODE, DEVMODE);
-                                                
+                        
+                        /*
+                         * Structure of functionList, 
+                         * [tested file,
+                         * instrumented file,
+                         * module name,
+                         * object name,
+                         * function name,
+                         * lines,
+                         * parameters]
+                         */
+                        
                         // fileFuncList [index => filePath,allFuncList]                       
                         // allFileList [index => fileFuncList]
                         addTestId(allFuncList.get(0).get(1).toString(),testId.getText());                        
@@ -355,13 +412,17 @@ public class MainWindow extends javax.swing.JFrame {
     private ArrayList<ArrayList<String>> generateFunctionList(String filePath, String mode, Boolean devMode){
         
         try {
-            JSCoverage jscov = new JSCoverage(filePath, mode, devMode);
-            return jscov.getFunctionList();
+            Instrumentor ins = new Instrumentor(filePath, mode, devMode);
+            return ins.getFunctionList();
         } catch(Exception e){
             e.toString();
             return null;
         }
         
+    }
+    
+    private void clearCheckBoxList(){
+        this.checkboxList = new CheckBoxList();
     }
   
     private void renderCheckBoxList(HashMap list){
@@ -388,9 +449,27 @@ public class MainWindow extends javax.swing.JFrame {
                             funcName = objName + "." + funcName;
                         } 
                         
+                        funcName = funcName.replaceFirst("space\\.", "");
                         String param = (String)func.get(6);
                         param = param.replaceAll("\"", "");
-                        JCheckBox cb =new JCheckBox("Function: " + funcName + " Parameter:" + param);
+                        JCheckBox cb;
+                        if("".equals(param.trim())){
+                            cb =new JCheckBox("Function: " + funcName);
+                        } else {                            
+                            String[] arrParam = param.split("\\|");
+                            for(int i=0; i<arrParam.length; i++){
+                                String p = arrParam[i];
+                                p = p.replace(":", "(");
+                                p = p+")";
+                                p.replace("null", "unknown");
+                                arrParam[i] = p;
+                            }
+                            Joiner j;
+                            j = Joiner.on(",");
+                            String tmpParam = j.join(arrParam);
+                            cb =new JCheckBox("Function: " + funcName + "   Parameter: " + tmpParam);
+                        }
+                        
                         if(funcName.contains("(anonymous") ){
                       //      System.out.println();
                         }
@@ -419,13 +498,17 @@ public class MainWindow extends javax.swing.JFrame {
     private String currentObjName = "";
     private String[] currentParam;
     int currentRound;
-    DOHTestCase tc;
+    TestModule tc;
     
     
     ActionListener checkStatus = new ActionListener() {
         int round = 1;
         public void actionPerformed(ActionEvent evt) {
             System.out.println("Timer round " + round);
+            if(stop){
+                printStatus("Stop\n");                                  
+                timer.stop();
+            }
             if(isRunning()){
                 printStatus("Running\n");                                  
             } else {
@@ -449,13 +532,17 @@ public class MainWindow extends javax.swing.JFrame {
     };            
 
     
-    private boolean runTest(String testedFile, String instrumentFilePath, String modulePath, String objName, String  funcName, String[] param) throws InterruptedException{
+    private boolean runTest(String testedFile, String instrumentFilePath, String module, String objName, String  funcName, String[] param) throws InterruptedException{
         currentFuncName = funcName;
         currentTestedFile = testedFile;
         currentInstrumentFilePath = instrumentFilePath;
-        currentModulePath = modulePath;
+        currentModulePath = module;
         currentObjName = objName;
         currentParam = param;
+        
+        if("".equals(objName)){
+            objName = module;
+        }
         
         int maxTest=50;
         int k = 0;
@@ -463,7 +550,7 @@ public class MainWindow extends javax.swing.JFrame {
         timer = new Timer( 5000 , checkStatus);
         timer.setRepeats(true);
 
-        tc = new DOHTestCase(testedFile, instrumentFilePath, modulePath, objName, funcName, param);
+        tc = new TestModule(testedFile, instrumentFilePath, module, objName, funcName, param, testId.getText());
         tc.execute();           
         Thread.sleep(1000);
         k++;
@@ -485,36 +572,40 @@ public class MainWindow extends javax.swing.JFrame {
     private boolean needRerun(String funcName){        
         if(stop){
             printStatus("========== Stop ==========\n");  
+            timer.stop();
             return false;
         }
         double coveragePct = 0;
-        HTTPGet http = new HTTPGet();       
+        JSCoverageServerProxy http = new JSCoverageServerProxy();       
         String result = http.load(SERVER + "?action=get_result");        
         String coverage = http.load(SERVER + "?action=get_coverage&testId=" + testId.getText() + "&funcName=" + funcName + "&percent=" + String.format("%1$,.2f", PCTCOVER));
         try {
             coveragePct = Double.parseDouble(coverage);
+            this.PCTCOVER = Double.parseDouble(targetPct.getText());
         } catch(Exception ex){
             coveragePct = 0;
+            this.PCTCOVER = 0;
         }
         if(result.equals("error") || coverage.equals("")){
             printStatus("Error\n");
             return false;
         }
-        if((coveragePct < PCTCOVER)){
+        if((coveragePct < this.PCTCOVER)){
             if(stop){
                 printStatus("========== Stop ==========\n");  
+                timer.stop();
                 return false;
             }
-            printStatus("Rerun - current coverage: " + coveragePct + "%\n");  
+            printStatus("Rerun " + this.currentFuncName + " - current coverage: " + new DecimalFormat("#0.00").format(coveragePct) + "%\n");  
             return true;
         } else {
-            printStatus("Overall coverage for " + funcName + " is " + coveragePct + "%\n");      
+            printStatus("Overall coverage for " + funcName + " is " + new DecimalFormat("#0.00").format(coveragePct) + "%\n");      
         } 
         return false;
     }
     
     private boolean isRunning(){
-        HTTPGet http = new HTTPGet();
+        JSCoverageServerProxy http = new JSCoverageServerProxy();
         String status = http.load(SERVER + "?action=get_status");
         if(status.equals("running")){
             return true;
@@ -522,6 +613,7 @@ public class MainWindow extends javax.swing.JFrame {
         return false;
     }
     
+            
     private int funcIndex = 0;
     
     private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
@@ -543,19 +635,21 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_runButtonActionPerformed
 
     private void runTestNextSelectedFuncion(){
-        if(funcIndex < selectedFuncList.size()){
+        if((funcIndex < selectedFuncList.size()) && !stop){
             ArrayList func = selectedFuncList.get(funcIndex);
             String testedFile = func.get(0).toString();
             String instrumentFilePath = func.get(1).toString();
-            String modulePath = func.get(2).toString();
-            String objName = func.get(3).toString().replaceAll("\"","");
-            String funcName = func.get(4).toString().replaceAll("\"","");
+            String module = func.get(2).toString();
+            String objName;
+            objName = func.get(3).toString().replaceAll("\"","");            
+            String funcName;
+            funcName = func.get(4).toString().replaceAll("\"","");
             String[] line;
             line = func.get(5).toString().replaceAll("\"","").split(":");
             String[] param;
             param = func.get(6).toString().replaceAll("\"","").split("\\|");
             try {
-                runTest(testedFile, instrumentFilePath, modulePath, objName, funcName, param);
+                runTest(testedFile, instrumentFilePath, module, objName, funcName, param);
             } catch (InterruptedException ex) {
                 Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -572,6 +666,10 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void newTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newTestActionPerformed
         // TODO add your handling code here:
+        now = new Date();
+        testId.setText(now.toString().replaceAll(" ", "_"));
+        testId.updateUI();
+        testId.repaint();
     }//GEN-LAST:event_newTestActionPerformed
 
     private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
@@ -584,6 +682,28 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         //timer.stop();
     }//GEN-LAST:event_formWindowClosing
+
+    private void viewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReportActionPerformed
+        // TODO add your handling code here:
+        try {
+            String reportUrl = "http://localhost/jstestcoverage-server/test?action=get_report_summary&testId=" + testId.getText();
+
+            chrome = Runtime.getRuntime().exec(CHROMEBIN + " --new-window " + reportUrl);
+        } catch (Exception ex) {
+            Logger.getLogger(TestModule.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }//GEN-LAST:event_viewReportActionPerformed
+
+    private void viewReportListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReportListActionPerformed
+        // TODO add your handling code here:
+        try {
+            String reportUrl = "http://localhost/jstestcoverage-server/test?action=get_report_list";
+
+            chrome = Runtime.getRuntime().exec(CHROMEBIN + " --new-window " + reportUrl);
+        } catch (Exception ex) {
+            Logger.getLogger(TestModule.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }//GEN-LAST:event_viewReportListActionPerformed
 
     
     /**
@@ -624,6 +744,8 @@ public class MainWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser fileChooser;
     private javax.swing.JPanel funcListPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -634,8 +756,11 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton runButton;
     private javax.swing.JPanel statusPanel;
     private javax.swing.JButton stopButton;
+    private javax.swing.JTextField targetPct;
     private javax.swing.JTextField testId;
     private static javax.swing.JTextArea testStatus;
     private javax.swing.JPanel topPanel;
+    private javax.swing.JMenuItem viewReport;
+    private javax.swing.JMenuItem viewReportList;
     // End of variables declaration//GEN-END:variables
 }

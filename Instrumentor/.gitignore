@@ -1,0 +1,4 @@
+${build.dir}/
+${tmp.dir}/
+JSTestCoverage/bin/*
+JSTestCoverage/src/com/yahoo/platform/yuitest/coverage/classes/*

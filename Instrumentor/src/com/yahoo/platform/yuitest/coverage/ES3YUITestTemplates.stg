@@ -1,0 +1,59 @@
+group ES3YUITestTemplates;
+
+cover_line(src,code,funcName,line) ::= <<
+_jstestcoverage_line("<src>","<funcName>", <line>); 
+<code>
+>>
+
+cover_func(src,code,object,name,line,params) ::= <<
+_jstestcoverage_func("<src>","<object>", "<name>", <line>, "<params>");
+<code>
+>>
+
+
+ignore(code) ::= <<
+<code>
+>>
+
+file_header(src,path) ::= <<
+var xmlhttp;
+xmlhttp=new XMLHttpRequest();
+
+function _jstestcoverage_func(testId,filePath,objName, funcName,lines, params){
+	if(!window.iteration){
+		window.iteration="0";
+	}
+	var qstring = "&testId=" + testId + "&funcName=" + funcName + "&parameters=" + params + "&lines=" + lines + "&iteration=" + window.iteration;
+	xmlhttp.open("GET","http://localhost/jstestcoverage-server/test?action=cover_func" + qstring,false);
+	xmlhttp.send();
+}
+
+function _jstestcoverage_line(testId,filePath,funcName, line){
+	if(!window.iteration){
+		window.iteration="0";
+	}
+	var qstring = "&testId=" + testId + "&funcName=" + funcName + "&line=" + line + "&iteration=" + window.iteration;
+	xmlhttp.open("GET","http://localhost/jstestcoverage-server/test?action=cover_line" + qstring,false);
+	xmlhttp.send();
+}
+
+_yuitest_coverage = {};
+_yuitest_coverage["<src>"] = {
+    lines: {},
+    functions: {},
+    coveredLines: 0,
+    calledLines: 0,
+    coveredFunctions: 0,
+    calledFunctions: 0,
+    path: "<path>",
+    code: []
+};
+>>
+
+cover_file(src,code,lines,funcs,lineCount,funcCount) ::= <<
+_yuitest_coverage["<src>"].lines = <lines>;
+_yuitest_coverage["<src>"].functions = <funcs>;
+//_yuitest_coverage["<src>"].coveredLines = <lineCount>;
+//_yuitest_coverage["<src>"].coveredFunctions = <funcCount>;
+<code>
+>>
