@@ -1,4 +1,5 @@
 Instrumentor
+
  Open Eclipse and then change workspace to this folder; it will open instrumentor source code.
  Under "src\com\jscoverage\instrumentor", you can dry run the instrumentor by using Runner.java
  
