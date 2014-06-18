@@ -1,20 +1,15 @@
-JSCoverage test by DOJO DOH 
----------------------------
-Derive some functions and ANTLR grammar from YUITest
+Instrumentor
+ Open Eclipse and then change workspace to this folder; it will open instrumentor source code.
+ Under "src\com\jscoverage\instrumentor", you can dry run the instrumentor by using Runner.java
+ 
+ 12	boolean devMode = true; // devMode = true means it will not inject the javascript source code and you will see result in temp file 
+ 13	Instrumentor jsc = new Instrumentor("D:\\Explorer\\Content\\Space\\javascript\\src\\testDetermineParam.js", "replace",devMode);  // the first argument is path of javascript source code
+
+ 
+The grammar is at Instrumentor\src\com\yahoo\platform\yuitest\coverage\grammar\ES3YUITest.g
+You can use ANTWorks1.5 to modified it. One you finish the modification, you need to generate code and set out put to /Instrumentor/src/com/yahoo/platform/yuitest/coverage. 
+It will generate 2 files which are ES3YUITestLexer.java and ES3YUITestParser.java
 
 
-
-
-YUITest JavaScript Testing Library
-----------------------------------
-
-To build JavaScript files, run this in the javascript directory:
-
-    ant all
-    
-To build an npm package (output to javascript/build/yuitest/npm), run this in the javascript directory:
-
-    ant npmbuild
-    
-    
-
+You can export this project to JAR and it will be used by JSCOverageClient.
+File > Java > JAR file, then select src folder and click Finish. 
